@@ -8,4 +8,24 @@
  * — from https://tailwindcss.com/docs/plugins#adding-components
  */
 @layer components {
+  article {
+    @apply pb-spacer-mobile1 lg:pb-spacer-desktop1 relative;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      box-shadow: var(--spacer-mobile) var(--spacer-mobile) 0 0
+        var(--tw-color-warning-500);
+
+      @media (min-width: 1024px) {
+        box-shadow: var(--spacer-desktop) var(--spacer-desktop) 0 0
+          var(--tw-color-warning-500);
+      }
+    }
+  }
+
+  .stretched-link {
+    @apply after:absolute after:top-0 after:right-0 after:bottom-0 after:left-0 after:z-1;
+  }
 }

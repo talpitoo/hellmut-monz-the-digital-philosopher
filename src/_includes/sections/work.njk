@@ -5,41 +5,53 @@
                 <h2>Work</h2>
             </div>
             <div class="lg:col-span-2">
-                <div class="h-spacer-mobile29 lg:h-spacer-desktop29 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1">
-                    {# TODO: image placeholder #}
-                    {# <figure>
+                <article>
+                    <div class="h-spacer-mobile29 lg:h-spacer-desktop29 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1">
+                        {# TODO: image placeholder #}
+                        {# <figure>
                         <img src="/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset"/>
                         <figcaption>An elephant at sunset</figcaption>
                     </figure> #}
-                </div>
-                <h3>The Game of the World</h3>
-                <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
-                <ul class="flex gap-3">
-                    <li class="uppercase">Book</li>
-                    <li class="uppercase">Translation</li>
-                    <li class="uppercase">Philosophy</li>
-                </ul>
-            </div>
-            <div class="lg:col-span-4">
-                <div class="h-spacer-mobile29 lg:h-spacer-desktop29 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1"></div>
-                <h3>The Key to Philosophy</h3>
-                <p>A philosophical manual for stealing the priceless short-cut to the center of the universe.</p>
-                <ul class="flex gap-3">
-                    <li class="uppercase">Book</li>
-                    <li class="uppercase">Philosophy</li>
-                    <li class="uppercase">Theft</li>
-                </ul>
-            </div>
-            {% for item in[0, 1, 2] %}
-                <div class="lg:col-span-2">
-                    <div class="h-spacer-mobile14 lg:h-spacer-desktop14 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1"></div>
-                    <h3>The Game of the World</h3>
+                    </div>
+                    <h3>
+                        <a href="#" class="stretched-link">The Game of the World</a>
+                    </h3>
                     <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
                     <ul class="flex gap-3">
                         <li class="uppercase">Book</li>
                         <li class="uppercase">Translation</li>
                         <li class="uppercase">Philosophy</li>
                     </ul>
+                </article>
+            </div>
+            <div class="lg:col-span-4">
+                <article>
+                    <div class="h-spacer-mobile29 lg:h-spacer-desktop29 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1"></div>
+                    <h3>
+                        <a href="#" class="stretched-link">The Key to Philosophy</a>
+                    </h3>
+                    <p>A philosophical manual for stealing the priceless short-cut to the center of the universe.</p>
+                    <ul class="flex gap-3">
+                        <li class="uppercase">Book</li>
+                        <li class="uppercase">Philosophy</li>
+                        <li class="uppercase">Theft</li>
+                    </ul>
+                </article>
+            </div>
+            {% for item in[0, 1, 2] %}
+                <div class="lg:col-span-2">
+                    <article>
+                        <div class="h-spacer-mobile14 lg:h-spacer-desktop14 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1"></div>
+                        <h3>
+                            <a href="#" class="stretched-link">What is this? Philosophy 101</a>
+                        </h3>
+                        <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
+                        <ul class="flex gap-3">
+                            <li class="uppercase">Book</li>
+                            <li class="uppercase">Translation</li>
+                            <li class="uppercase">Philosophy</li>
+                        </ul>
+                    </article>
                 </div>
             {% endfor %}
             <div class="lg:col-span-2 lg:col-start-3">
