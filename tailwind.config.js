@@ -41,7 +41,7 @@ module.exports = {
           700: 'var(--tw-color-gray-700)',
           800: 'var(--tw-color-gray-800)',
         },
-        muted: 'var(--tw-color-gray-500)',
+        muted: 'var(--tw-color-gray-400)',
         light: 'var(--tw-color-gray-100)',
         dark: 'var(--tw-color-gray-800)',
         info: {

@@ -28,4 +28,12 @@
   .stretched-link {
     @apply after:absolute after:top-0 after:right-0 after:bottom-0 after:left-0 after:z-1;
   }
+
+  .list-separator-dot {
+    @apply flex gap-3;
+
+    li + li {
+      @apply before:content-['·'] before:pr-3;
+    }
+  }
 }

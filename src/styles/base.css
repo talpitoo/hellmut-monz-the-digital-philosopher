@@ -10,7 +10,7 @@
   body {
     /* @apply bg-background text-foreground; */
     @apply font-serif relative;
-    @apply before:absolute before:block before:opacity-10 before:left-0 before:right-0 before:top-0 before:bottom-0 before:bg-contain before:bg-repeat-y before:max-w-[1536px] before:mx-auto;
+    @apply before:absolute before:block before:opacity-5 before:left-0 before:right-0 before:top-0 before:bottom-0 before:bg-contain before:bg-repeat-y before:max-w-[1536px] before:mx-auto;
     /* NOTE: not required before:max-h-[675px] */
 
     &::before {

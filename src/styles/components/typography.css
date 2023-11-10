@@ -33,7 +33,14 @@
   }
 
   p {
-    @apply text-spacer-mobile1 lg:text-spacer-desktop1;
+    /* @apply text-spacer-mobile1 lg:text-spacer-desktop1; */
+    --multiplier: .75;
+    --spacer: var(--spacer-mobile);
+    font-size: calc(var(--multiplier) * var(--spacer));
+
+    @media (min-width: 1024px) {
+      --spacer: var(--spacer-desktop);
+    }
   }
 
   p.lead {
