@@ -1,0 +1,16 @@
+/* @layer components { */
+:root {
+  --swiper-pagination-bullet-width: 12px;
+  --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.swiper-pagination-bullet {
+  @apply !border !border-primary;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  @apply text-primary;
+}
+/* } */

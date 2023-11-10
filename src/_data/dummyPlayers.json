@@ -1,0 +1,40 @@
+{
+    "players": [
+        {
+            "id": "1",
+            "name": "Rene Wells",
+            "avatar": "",
+            "location": "Hempstead Lake",
+            "time": "Weekday evenings",
+            "skillLevel": "Adv. Beginner (2.5-3.0 DUPR)",
+            "skillLevelColor": "bg-skill-level-adv-beginner"
+        },
+        {
+            "id": "2",
+            "name": "Lyle Kaufmann",
+            "avatar": "https://images.pexels.com/photos/1370750/pexels-photo-1370750.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "location": "Hempstead Lake",
+            "time": "Weekday evenings, weekends",
+            "skillLevel": "Intermediate (3.0-3.5)",
+            "skillLevelColor": "bg-skill-level-intermediate"
+        },
+        {
+            "id": "3",
+            "name": "Orlando Diggs",
+            "avatar": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "location": "Hempstead Lake",
+            "time": "Weekdays mornings",
+            "skillLevel": "Beginner (2.0-2.5 DUPR)",
+            "skillLevelColor": "bg-skill-level-beginner"
+        },
+        {
+            "id": "4",
+            "name": "Rosalee Melvin",
+            "avatar": "https://images.pexels.com/photos/2726111/pexels-photo-2726111.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "location": "Hempstead Lake",
+            "time": "Weekends",
+            "skillLevel": "Advanced (3.5+ DUPR)",
+            "skillLevelColor": "bg-skill-level-advanced"
+        }
+    ]
+}

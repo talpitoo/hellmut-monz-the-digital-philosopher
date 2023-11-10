@@ -1,0 +1,52 @@
+{
+    "tiles": [
+        {
+            "id": "1",
+            "title": "Tournament",
+            "subtitle": "Women - Doubles Play",
+            "tooltip": "TODO: tooltip content event",
+            "paragraph": "Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+            "location": "Hempstead Lake",
+            "date": "Tuesday, May 5, 2023",
+            "time": "8:30 AM to 10:00 AM",
+            "price": "$30.00 Members / $40.00 Associates",
+            "waitlist": false,
+            "modalConfirmationTitle": "Your request to join [[ item.title ]] has been shared with our staff.",
+            "modalConfirmationText": "Someone will contact you soon with more information.",
+            "skillLevel": "Advanced (3.5+ DUPR)",
+            "skillLevelColor": "bg-skill-level-advanced"
+        },
+        {
+            "id": "2",
+            "title": "Event",
+            "subtitle": "Halloween Doubles",
+            "tooltip": "TODO: tooltip content event",
+            "paragraph": "Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+            "location": "Hempstead Lake",
+            "date": "Tuesday, May 5, 2023",
+            "time": "8:30 AM to 10:00 AM",
+            "price": "$30.00 Members / $40.00 Associates",
+            "waitlist": false,
+            "modalConfirmationTitle": "Your request to join [[ item.title ]] has been shared with our staff.",
+            "modalConfirmationText": "Someone will contact you soon with more information.",
+            "skillLevel": "All Levels",
+            "skillLevelColor": "bg-skill-level-all"
+        },
+        {
+            "id": "3",
+            "title": "Tournament",
+            "subtitle": "Men - Doubles Play",
+            "tooltip": "TODO: tooltip content event",
+            "paragraph": "Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+            "location": "Hempstead Lake",
+            "date": "Tuesday, May 5, 2023",
+            "time": "8:30 AM to 10:00 AM",
+            "price": "$30.00 Members / $40.00 Associates",
+            "waitlist": true,
+            "modalConfirmationTitle": "You’ve been added to the waitlist.",
+            "modalConfirmationText": "You will receive an email if a spot opens up.",
+            "skillLevel": "Adv. Beginner (2.5-3.0 DUPR)",
+            "skillLevelColor": "bg-skill-level-adv-beginner"
+        }
+    ]
+}

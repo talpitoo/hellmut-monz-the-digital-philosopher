@@ -1,0 +1,59 @@
+{
+    "tiles": [
+        {
+            "id": "1",
+            "title": "Open Play",
+            "subtitle": "Mixed | Doubles Play",
+            "tooltip": "TODO: tooltip content reservation",
+            "paragraph": "Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+            "location": "Hempstead Lake",
+            "date": "Tuesday, May 5, 2023",
+            "time": "8:30 AM to 10:00 AM",
+            "price": "",
+            "skillLevel": "Beginner (2.0-2.5 DUPR)",
+            "skillLevelColor": "bg-skill-level-beginner",
+            "showPlayers": true,
+            "showTooltip": false,
+            "showRelatedPlayers": false,
+            "showCancellationPolicy": false,
+            "showInnerRemoveButton": false,
+            "showPaymentModes": false,
+            "showInvite6Players": false
+        },
+        {
+            "id": "2",
+            "title": "Court Time",
+            "subtitle": "2-hour court reservation",
+            "showSubtitlePrice": true,
+            "tooltip": "TODO: tooltip content event",
+            "paragraph": "Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+            "location": "Hempstead Lake, Court 3",
+            "date": "Tuesday, May 5, 2023",
+            "time": "8:30 AM to 10:00 AM",
+            "price": "$30.00 Members / $40.00 Associates",
+            "showCancellationPolicy": false,
+            "showInnerRemoveButton": false,
+            "showPaymentModes": false,
+            "showInvite6Players": false
+        },
+        {
+            "id": "3",
+            "title": "Program",
+            "subtitle": "Program Name - 8 sessions",
+            "tooltip": "TODO: tooltip content event",
+            "paragraph": "Donec id elit non mi porta gravida at eget metus. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.",
+            "location": "Bethpage Tennis",
+            "date": "Tuesday, May 5, 2023",
+            "time": "8:30 AM to 10:00 AM",
+            "price": "$30.00 Members / $40.00 Associates",
+            "skillLevel": "Intermediate (3.0-3.5 DUPR)",
+            "skillLevelColor": "bg-skill-level-intermediate",
+            "showPlayers": true,
+            "showTooltip": false,
+            "showCancellationPolicy": false,
+            "showInnerRemoveButton": false,
+            "showPaymentModes": false,
+            "showInvite6Players": false
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <title>favicon</title>
+    <style>
+        #monz { stroke: black; fill: black }
+
+        @media (prefers-color-scheme: dark) {
+        #monz { stroke: white; fill: white }
+        }
+    </style>
+    <g id="skull">
+        <path id="monz"
+            d="M20.166 4.155l-4.167-4.167-15.999 15.999 15.999 15.999 16.024-16.024-11.858-11.806zM15.999 31.111l-4.167-4.167v-21.889l4.167-4.167 4.167 4.167v21.889l-4.167 4.167z"></path>
+    </g>
+</svg>
+  

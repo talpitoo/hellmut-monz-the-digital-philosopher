@@ -1,0 +1,44 @@
+@layer components {
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply py-[9px] mt-[6px] block w-full rounded-lg border border-[#A0B9C5] placeholder:text-muted;
+    @apply focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    @apply accent-primary text-primary;
+    @apply rounded-sm border border-[#A0B9C5] mr-2;
+    @apply focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 focus:ring-offset-0;
+  }
+
+  [type="radio"] {
+    @apply rounded-full;
+  }
+
+  fieldset {
+    @apply flex flex-col gap-5 lg:gap-6 items-start mb-12;
+  }
+
+  legend {
+    @apply text-xl font-bold text-tertiary mb-6;
+  }
+
+  label {
+    @apply text-sm text-muted;
+  }
+}

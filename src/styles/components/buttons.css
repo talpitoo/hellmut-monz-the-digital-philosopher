@@ -1,0 +1,119 @@
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center border border-transparent px-4 py-[13px] text-base font-semibold leading-none transition-all duration-500;
+
+    /* &:focus {
+			box-shadow: 0 0 0 .25rem rgba(13,110,253,0.25);
+		} */
+  }
+
+  .btn-sm {
+		@apply text-sm py-[7px];
+	}
+
+  .btn-primary {
+    @apply bg-primary text-tertiary;
+    @apply hover:bg-primary-700;
+  }
+
+  .btn-tertiary {
+    @apply bg-tertiary text-light;
+    @apply hover:bg-tertiary;
+  }
+
+  .btn-primary-outline {
+    @apply border-primary text-tertiary;
+    @apply hover:bg-gray-50;
+  }
+
+  .btn-error-outline {
+    @apply border-error bg-error-100 text-dark;
+    @apply hover:bg-error-300;
+  }
+
+  .btn-secondary {
+    @apply relative bg-white text-primary;
+  }
+
+  .btn-social-sign-in {
+    @apply border-[#A0B9C5];
+    @apply hover:bg-gray-50;
+  }
+
+  .btn-icon-right {
+    @apply items-center;
+    @apply after:-my-1 after:ml-2 after:h-5 after:w-5 after:bg-contain after:bg-right after:bg-no-repeat after:transition-all after:duration-500;
+    @apply hover:after:translate-x-1;
+
+    &.btn-arrow {
+      &::after {
+        background-image: url(../img/icons/arrow-right-color-tertiary.svg);
+      }
+    }
+
+    &.btn-arrow.btn-tertiary {
+      &::after {
+        background-image: url(../img/icons/arrow-right-color-white.svg);
+      }
+    }
+  }
+
+  .btn-icon-left {
+    @apply items-center;
+    @apply before:-my-1 before:mr-2 before:h-5 before:w-5 before:bg-contain before:bg-right before:bg-no-repeat;
+
+    &.btn-remove {
+      &::before {
+        background-image: url(../img/icons/x-circle-color-error.svg);
+      }
+    }
+
+    &.btn-add {
+      &::before {
+        background-image: url(../img/icons/plus-color-tertiary.svg);
+      }
+    }
+  }
+
+  .btn-circle {
+    @apply rounded-full !w-[44px] !h-[44px] inline-flex items-center justify-center shrink-0;
+  }
+
+  .btn-swiper {
+    @apply p-0;
+
+    &::after {
+      /* NOTE: use the ::after syntax to avoid overriding swiper's content:... */
+      @apply !text-lg !leading-none !text-tertiary !w-[18px] !h-[18px] text-center;
+    }
+  }
+
+  .link-primary {
+    @apply !text-primary;
+  }
+
+  .link-tertiary {
+    @apply !text-tertiary;
+  }
+
+  .link-white {
+    @apply !text-light;
+  }
+
+  .link-black {
+    @apply !text-dark;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center;
+    @apply before:mr-2 before:h-5 before:w-5 before:rounded-full before:bg-primary before:bg-[length:12px_12px] before:bg-center before:bg-no-repeat before:transition-all before:duration-500;
+
+    /* &.btn-primary { */
+    @apply hover:before:translate-x-1;
+
+    &::before {
+      background-image: url(../img/icons/arrow-right-color-tertiary.svg);
+    }
+    /* } */
+  }
+}

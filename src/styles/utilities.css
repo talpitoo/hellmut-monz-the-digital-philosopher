@@ -1,0 +1,34 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `utilities` layer
+ *
+ * Add your own utility classes to this theme. Complex utility classes should
+ * be added using Tailwind’s plugin system:
+ *
+ * https://tailwindcss.com/docs/plugins#adding-utilities
+ */
+
+@layer utilities {
+  .h-vh-minus-header {
+    height: calc(100vh - 75px);
+
+    @screen lg {
+      height: calc(100vh - 200px);
+    }
+  }
+
+  .max-h-vh-minus-header {
+    @screen lg {
+      max-height: calc(100vh - 200px);
+    }
+  }
+
+  .min-h-screen-minus-header {
+    @screen lg {
+      min-height: calc(100vh - 140px);
+    }
+  }
+
+  .w-table-col-total {
+    @apply w-28;
+  }
+}

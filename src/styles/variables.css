@@ -1,0 +1,6 @@
+:root {
+    /* 100/30=3.333333333 --> the container width is divided with the number of columns (30) */
+    --spacer-mobile: 3.333333333cqi;
+    /* 100/96=1.041666667 --> the container width is divided with the number of columns (96) */
+    --spacer-desktop: 1.041666667cqi;
+}
