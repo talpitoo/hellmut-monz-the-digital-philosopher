@@ -21,75 +21,69 @@
     <header>
   <div class='bg-primary text-dark py-spacer-1'>
     <div class='monz-container'>
-      <div class="grid grid-cols-30 lg:grid-cols-96">
-        <div class="col-span-26 col-start-3 lg:col-span-82 lg:col-start-8">
-          <p class="leading-none">
-            <a href="#" class="link-underline font-bold text-body uppercase">Check out this news!</a>
-          </p>
-        </div>
+      <div class="monz-grid">
+        <p class="leading-none">
+          <a href="#" class="link-underline font-bold text-body uppercase">Check out this news!</a>
+        </p>
       </div>
     </div>
   </div>
 
   <div class='bg-dark text-light'>
     <div class='monz-container'>
-      <div class="grid grid-cols-30 lg:grid-cols-96 uppercase items-center justify-center">
-        <div class="col-span-26 col-start-3 lg:col-span-12 lg:col-start-8 flex">
+      <div class="monz-grid uppercase items-center justify-center">
+        <div class="flex">
           <a
           href='/' class="mx-auto lg:mx-0"
         >
             <img src="/img/logo-m.svg" alt='Hellmut MONZ logo' width='130' height='48' class="w-auto h-spacer-2 my-spacer-3"/>
           </a>
         </div>
-        <div class="monz-col-2 hidden lg:block"></div>
 
         
         
           
-            <div class="lg:col-span-12 hidden lg:block">
+            <div class="hidden lg:block">
               <a href="/about/"
             class="link-underline text-top-navbar font-sans text-light">
                 About
               </a>
             </div>
-            <div class="monz-col-2 hidden lg:block"></div>
           
         
           
-            <div class="lg:col-span-12 hidden lg:block">
+            <div class="hidden lg:block">
               <a href="/work/"
             class="link-underline text-top-navbar font-sans text-light">
                 Work
               </a>
             </div>
-            <div class="monz-col-2 hidden lg:block"></div>
           
         
           
-            <div class="lg:col-span-12 hidden lg:block">
+            <div class="hidden lg:block">
               <a href="/shop/"
             class="link-underline text-top-navbar font-sans text-light">
                 Shop
               </a>
             </div>
-            <div class="monz-col-2 hidden lg:block"></div>
           
         
           
-            <div class="lg:col-span-12 hidden lg:block">
+            <div class="hidden lg:block">
               <a href="/m-log/"
             class="link-underline text-top-navbar font-sans text-light">
                 M-log
               </a>
             </div>
-            <div class="monz-col-2 hidden lg:block"></div>
           
         
 
-        <div class="lg:col-span-12 justify-end gap-spacer-2 hidden lg:flex">
+        <div class="justify-end gap-spacer-2 flex absolute right-0 lg:relative">
           <button
           type='button'
           aria-label='menu'
+          class="hidden lg:block"
         >
             <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-search"></use>
@@ -98,7 +92,7 @@
           <button
           type='button'
           aria-label='menu'
-          class="relative"
+          class="hidden lg:block relative"
         >
             <svg class="w-spacer-3 h-spacer-3 -mt-spacer-1 text-light" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-cart"></use>
@@ -108,18 +102,18 @@
           <button
           type='button'
           aria-label='menu'
+          class="hidden lg:block"
         >
             <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-fullscreen"></use>
             </svg>
           </button>
-        </div>
-        <div class="col-span-2 lg:col-span-7 h-spacer-2">
+
           <button
           type='button'
           aria-label='menu'
           id="burger-menu"
-          class="-ml-spacer-2 lg:ml-spacer-2"
+          class="lg:-right-spacer-2 mr-spacer-2 lg:-mr-spacer-2 lg:absolute"
         >
             <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-hamburger"></use>
