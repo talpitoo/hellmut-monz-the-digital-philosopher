@@ -1,0 +1,34 @@
+/* abstractions on top of TailwindCSS grid https://tailwindcss.com/docs/display#grid for better readability */
+@layer components {
+  .monz-container {
+    container-type: inline-size;
+    @apply px-0 lg:mx-auto lg:max-w-[1536px];
+  }
+
+  @container (min-width: 768px) {
+    /* NOTE: https://developer.mozilla.org/en-US/docs/Web/CSS/@container */
+    .monz-container .text-top-navbar {
+      font-size: calc(2 * var(--spacer-desktop) - 7px) !important;
+    }
+  }
+
+  .monz-grid {
+    @apply grid w-full lg:grid-cols-6 px-spacer-2 lg:px-spacer-7 gap-spacer-2;
+  }
+
+  .monz-col-2 {
+    @apply lg:col-span-2;
+  }
+
+  .monz-col-3 {
+    @apply lg:col-span-3;
+  }
+
+  .monz-col-4 {
+    @apply lg:col-span-4;
+  }
+
+  .monz-col-6 {
+    @apply lg:col-span-6;
+  }
+}

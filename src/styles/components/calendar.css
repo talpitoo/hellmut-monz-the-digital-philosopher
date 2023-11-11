@@ -1,7 +1,0 @@
-@layer components {
-  .tileReservation-noborder {
-    > .tile {
-      @apply border-none p-0 shadow-none rounded-none;
-    }
-  }
-}

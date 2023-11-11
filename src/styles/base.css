@@ -7,6 +7,11 @@
  */
 
 @layer base {
+  /* html,
+  body {
+    @apply overflow-x-hidden;
+  } */
+
   body {
     /* @apply bg-background text-foreground; */
     @apply font-serif relative;
@@ -21,17 +26,6 @@
       &::before {
         background-image: url(../img/grid-reference-desktop.jpg);
       }
-    }
-  }
-
-  .container-custom {
-    container-type: inline-size;
-    @apply lg:mx-auto lg:max-w-[1536px];
-  }
-
-  @container (min-width: 768px) {
-    .container-custom .text-top-navbar {
-      font-size: calc(2 * var(--spacer-desktop) - 7px) !important;
     }
   }
 }
