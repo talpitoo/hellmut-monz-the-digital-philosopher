@@ -1,6 +1,7 @@
 import '../styles/main.css';
 import 'flowbite';
-import { Dropdown, Tabs } from 'flowbite';
+import { Dropdown } from 'flowbite';
+// import { Dropdown, Tabs } from 'flowbite';
 // import Swiper from 'swiper/bundle'; // import Swiper bundle with all modules installed
 // import 'swiper/css/bundle'; // import styles bundle
 
