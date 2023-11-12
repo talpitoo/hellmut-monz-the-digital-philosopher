@@ -5,10 +5,14 @@
     @apply px-0 lg:mx-auto lg:max-w-[1536px];
   }
 
-  @container (min-width: 768px) {
+  .monz-container .text-top-navbar {
+    font-size: calc(2 * var(--spacer));
+  }
+
+  @container (min-width: 1024px) {
     /* NOTE: https://developer.mozilla.org/en-US/docs/Web/CSS/@container */
     .monz-container .text-top-navbar {
-      font-size: calc(2 * var(--spacer-desktop) - 7px) !important;
+      font-size: calc(2 * var(--spacer) - 7px);
     }
   }
 
