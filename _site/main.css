@@ -1,6 +1,3 @@
-/*!*********************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/main.css ***!
-  \*********************************************************************************************************************************************/
 /**
  * Color CSS variables.
  */
@@ -914,13 +911,14 @@ video {
   background: #1C64F2;
   border-color: #1C64F2;
 }
- /* html,
+ html,
   body {
-    @apply overflow-x-hidden;
-  } */
+  overflow-x: hidden;
+}
  body {
     /* @apply bg-background text-foreground; */
     position: relative;
+    padding-top: calc(11 * var(--spacer));
     font-family: Monz-1500MegaRegular, sans-serif;
   }
  body::before {
@@ -1461,6 +1459,9 @@ video {
  .inset-0 {
   inset: 0px;
 }
+ .-bottom-1 {
+  bottom: -0.25rem;
+}
  .-top-1 {
   top: -0.25rem;
 }
@@ -1479,11 +1480,8 @@ video {
  .top-0 {
   top: 0px;
 }
- .left-spacer-2 {
-  left: calc(2 * var(--spacer));
-}
- .-right-spacer-2 {
-  right: calc(calc(2 * var(--spacer)) * -1);
+ .z-1 {
+  z-index: 1;
 }
  .z-10 {
   z-index: 10;
@@ -1509,17 +1507,11 @@ video {
  .col-span-2 {
   grid-column: span 2 / span 2;
 }
- .col-span-26 {
-  grid-column: span 26 / span 26;
-}
  .col-span-5 {
   grid-column: span 5 / span 5;
 }
  .col-span-7 {
   grid-column: span 7 / span 7;
-}
- .col-start-3 {
-  grid-column-start: 3;
 }
  .mx-auto {
   margin-left: auto;
@@ -1528,9 +1520,6 @@ video {
  .my-spacer-3 {
   margin-top: calc(3 * var(--spacer));
   margin-bottom: calc(3 * var(--spacer));
-}
- .-ml-spacer-2 {
-  margin-left: calc(calc(2 * var(--spacer)) * -1);
 }
  .-mt-spacer-1 {
   margin-top: calc(var(--spacer) * -1);
@@ -1556,6 +1545,9 @@ video {
  .mb-spacer-3 {
   margin-bottom: calc(3 * var(--spacer));
 }
+ .mr-spacer-2 {
+  margin-right: calc(2 * var(--spacer));
+}
  .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1564,15 +1556,6 @@ video {
 }
  .mt-spacer-3 {
   margin-top: calc(3 * var(--spacer));
-}
- .ml-spacer-2 {
-  margin-left: calc(2 * var(--spacer));
-}
- .-mr-spacer-2 {
-  margin-right: calc(calc(2 * var(--spacer)) * -1);
-}
- .mr-spacer-2 {
-  margin-right: calc(2 * var(--spacer));
 }
  .block {
   display: block;
@@ -1973,6 +1956,9 @@ video {
  .font-sans {
   font-family: Monz-069HexagonaBold, serif;
 }
+ .text-\[0px\] {
+  font-size: 0px;
+}
  .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -2223,11 +2209,11 @@ video {
   .lg\:col-span-12 {
     grid-column: span 12 / span 12;
   }
+  .lg\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
   .lg\:col-span-7 {
     grid-column: span 7 / span 7;
-  }
-  .lg\:col-span-82 {
-    grid-column: span 82 / span 82;
   }
   .lg\:col-start-3 {
     grid-column-start: 3;
@@ -2235,30 +2221,21 @@ video {
   .lg\:col-start-4 {
     grid-column-start: 4;
   }
-  .lg\:col-start-8 {
-    grid-column-start: 8;
-  }
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
   }
+  .lg\:-mr-spacer-2 {
+    margin-right: calc(calc(2 * var(--spacer)) * -1);
+  }
   .lg\:mb-0 {
     margin-bottom: 0px;
-  }
-  .lg\:ml-spacer-2 {
-    margin-left: calc(2 * var(--spacer));
   }
   .lg\:mt-0 {
     margin-top: 0px;
   }
-  .lg\:-mr-spacer-2 {
-    margin-right: calc(calc(2 * var(--spacer)) * -1);
-  }
   .lg\:block {
     display: block;
-  }
-  .lg\:flex {
-    display: flex;
   }
   .lg\:grid {
     display: grid;
