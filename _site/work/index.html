@@ -30,9 +30,9 @@
     </div>
 </div>
 
-  <div class='bg-dark text-light'>
+  <div class='monz-navbar bg-dark text-light'>
     <div class='monz-container'>
-      <div class="monz-grid uppercase items-center justify-center">
+      <div class="monz-grid uppercase items-center justify-center relative gap-0 lg:gap-spacer-2">
         <div class="flex">
           <a
           href='/' class="mx-auto lg:mx-0"
@@ -44,7 +44,7 @@
         
         
           
-            <div class="hidden lg:block">
+            <div class="x-hidden lg:block">
               <a href="/about/"
             class="link-underline text-top-navbar font-sans text-light">
                 About
@@ -53,7 +53,7 @@
           
         
           
-            <div class="hidden lg:block">
+            <div class="x-hidden lg:block">
               <a href="/work/"
             class="link-underline text-top-navbar font-sans text-dark hover:text-muted">
                 Work
@@ -62,7 +62,7 @@
           
         
           
-            <div class="hidden lg:block">
+            <div class="x-hidden lg:block">
               <a href="/shop/"
             class="link-underline text-top-navbar font-sans text-light">
                 Shop
@@ -71,7 +71,7 @@
           
         
           
-            <div class="hidden lg:block">
+            <div class="x-hidden lg:block">
               <a href="/m-log/"
             class="link-underline text-top-navbar font-sans text-light">
                 M-log
@@ -80,26 +80,31 @@
           
         
 
-        <div class="justify-end gap-spacer-2 flex absolute right-0 lg:relative">
+        <div class="justify-end lg:gap-spacer-2 flex flex-col lg:flex-row right-0">
+
           <button
           type='button'
           aria-label='menu'
-          class="hidden lg:block"
+          class="x-hidden lg:block mt-spacer-4 lg:mt-0"
         >
-            <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
+            <svg class="w-spacer-2 h-spacer-2 text-light hidden lg:block" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-search"></use>
             </svg>
+            <span class="lg:sr-only font-sans uppercase">Search</span>
           </button>
+
           <button
           type='button'
           aria-label='menu'
-          class="hidden lg:block relative"
+          class="x-hidden lg:block relative"
         >
-            <svg class="w-spacer-3 h-spacer-3 -mt-spacer-1 text-light" aria-hidden="true">
+            <svg class="w-spacer-3 h-spacer-3 -mt-spacer-1 text-light hidden lg:block" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-cart"></use>
             </svg>
-            <span class="absolute flex items-center justify-center top-0 bottom-0 left-0 right-0 font-sans text-center text-spacer-1">0</span>
+            <span class="lg:sr-only font-sans uppercase">Cart</span>
+            <span class="hidden lg:flex absolute items-center justify-center top-0 bottom-0 left-0 right-0 font-sans text-center text-spacer-1">0</span>
           </button>
+
           <button
           type='button'
           aria-label='menu'
@@ -108,17 +113,22 @@
             <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-fullscreen"></use>
             </svg>
+            <span class="sr-only">Full screen</span>
           </button>
 
           <button
           type='button'
           aria-label='menu'
           id="burger-menu"
-          class="lg:-right-spacer-2 mr-spacer-2 lg:-mr-spacer-2 lg:absolute"
+          class="absolute right-0 top-spacer-3 mr-spacer-2 lg:right-spacer-1"
         >
-            <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
+            <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true" data-icon-hamburger>
               <use href="/img/icons/dist/sprite.svg#icon-hamburger"></use>
             </svg>
+            <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true" data-icon-close>
+              <use href="/img/icons/dist/sprite.svg#icon-close"></use>
+            </svg>
+            <span class="sr-only">Menu</span>
           </button>
         </div>
       </div>

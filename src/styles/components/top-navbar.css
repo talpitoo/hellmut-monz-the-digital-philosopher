@@ -1,19 +1,27 @@
 @layer components {
+  .x-hidden,
+  [data-icon-close] {
+    @apply hidden;
+  }
+
   .mobile-menu-expanded {
     @apply overflow-hidden;
 
     body {
       @apply overflow-hidden;
     }
-  }
 
-  [data-main-menu] {
-    /* @apply z-1; */
-    @apply -z-1 -translate-y-full opacity-0 lg:transform-none lg:opacity-100;
+    .monz-navbar {
+      @apply text-center lg:text-left min-h-screen;
+    }
 
-    .mobile-menu-expanded & {
-      /* @apply -z-1 -translate-y-full opacity-0 lg:transform-none lg:opacity-100; */
-      @apply z-1 translate-y-0 opacity-100;
+    .x-hidden,
+    [data-icon-close] {
+      @apply block;
+    }
+
+    [data-icon-hamburger] {
+      @apply hidden;
     }
   }
 }

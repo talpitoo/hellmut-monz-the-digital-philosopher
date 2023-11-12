@@ -84,6 +84,7 @@ module.exports = {
         'spacer-1': 'var(--spacer)',
         'spacer-2': 'calc(2 * var(--spacer))',
         'spacer-3': 'calc(3 * var(--spacer))',
+        'spacer-4': 'calc(4 * var(--spacer))',
         'spacer-7': 'calc(7 * var(--spacer))',
         'spacer-11': 'calc(11 * var(--spacer))',
         'spacer-12': 'calc(12 * var(--spacer))',
