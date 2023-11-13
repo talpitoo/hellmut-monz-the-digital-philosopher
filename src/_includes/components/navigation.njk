@@ -16,25 +16,25 @@
         {% set navPages = collections.all | eleventyNavigation %}
         {% for entry in navPages %}
           {% if entry.includeSelf != false %}
-            <div class="x-hidden lg:block">
+            <div class="x-hidden lg:block lg:relative">
               {# <a href="{{ entry.url }}"
             class="link-underline text-top-navbar font-sans {{'text-dark hover:text-muted' if entry.url in page.url else 'text-light'}}">
                 {{ entry.title }}
               </a> #}
 
-              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="link-underline text-top-navbar uppercase font-sans {{'text-dark hover:text-muted' if entry.url in page.url else 'text-light'}}" type="button">{{ entry.title }}</button>
+              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown{{ entry.title }}" class="link-underline text-top-navbar uppercase font-sans {{'text-dark hover:text-muted' if entry.url in page.url else 'text-light'}}" type="button">{{ entry.title }}</button>
 
               {# NOTE: dropdown menu #}
-              <div id="dropdown" class="z-10 hidden bg-gray-100 w-spacer-12">
+              <div id="dropdown{{ entry.title }}" class="!static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
                 <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdownDefaultButton">
                   <li>
-                    <a href="#" class="block text-body link-underline mb-spacer-1">Hello</a>
+                    <a href="#" class="block lg:text-body link-underline mb-spacer-1">Hello</a>
                   </li>
                   <li>
-                    <a href="#" class="block text-body link-underline mb-spacer-1">The story</a>
+                    <a href="#" class="block lg:text-body link-underline mb-spacer-1">The story</a>
                   </li>
                   <li>
-                    <a href="#" class="block text-body link-underline mb-spacer-1">Contact</a>
+                    <a href="#" class="block lg:text-body link-underline mb-spacer-1">Contact</a>
                   </li>
                 </ul>
               </div>

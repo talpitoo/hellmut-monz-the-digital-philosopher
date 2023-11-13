@@ -1264,8 +1264,9 @@ video {
  @container (min-width: 1024px) {
     /* NOTE: https://developer.mozilla.org/en-US/docs/Web/CSS/@container */
     .monz-container .text-top-navbar {
+    line-height: 1;
       font-size: calc(2 * var(--spacer) - 7px);
-    }
+  }
   }
  .monz-grid {
   display: grid;
@@ -1446,6 +1447,9 @@ video {
 }
  .collapse {
   visibility: collapse;
+}
+ .\!static {
+  position: static !important;
 }
  .static {
   position: static;
@@ -1709,6 +1713,9 @@ video {
 }
  .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+ .\!transform-none {
+  transform: none !important;
 }
  .transform-none {
   transform: none;
@@ -2214,6 +2221,18 @@ video {
     white-space: nowrap;
     border-width: 0;
   }
+  .lg\:\!absolute {
+    position: absolute !important;
+  }
+  .lg\:relative {
+    position: relative;
+  }
+  .lg\:\!inset-auto {
+    inset: auto !important;
+  }
+  .lg\:\!top-spacer-5 {
+    top: calc(5 * var(--spacer)) !important;
+  }
   .lg\:right-spacer-1 {
     right: var(--spacer);
   }
@@ -2272,6 +2291,9 @@ video {
   .lg\:gap-spacer-2 {
     gap: calc(2 * var(--spacer));
   }
+  .lg\:bg-gray-100 {
+    background-color: var(--tw-color-gray-100);
+  }
   .lg\:p-6 {
     padding: 1.5rem;
   }
@@ -2282,6 +2304,10 @@ video {
   .lg\:py-section {
     padding-top: calc(11 * var(--spacer));
     padding-bottom: calc(11 * var(--spacer));
+  }
+  .lg\:text-body {
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
   }
 }
  
