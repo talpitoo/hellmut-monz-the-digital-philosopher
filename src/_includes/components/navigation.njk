@@ -13,6 +13,15 @@
           </a>
         </div>
 
+        {# NOTE: the content comes from src/_data/dummyPlayers.json #}
+        {# {% for player in dummyPlayers.players %}
+          <div class="flex gap-4">
+            {% if player.avatar is defined and player.avatar !== '' %}
+              <img src="{{ player.avatar }}" class="w-10 h-10 rounded-full shrink-0 object-cover" alt="{{ player.name }}">
+            {% else %}
+          </div>
+        {% endfor %} #}
+
         {% set navPages = collections.all | eleventyNavigation %}
         {% for entry in navPages %}
           {% if entry.includeSelf != false %}
@@ -22,22 +31,20 @@
                 {{ entry.title }}
               </a> #}
 
-              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown{{ entry.title }}" class="link-underline text-top-navbar uppercase font-sans {{'text-dark hover:text-muted' if entry.url in page.url else 'text-light'}}" type="button">{{ entry.title }}</button>
+              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown{{ entry.title }}" class="link-underline text-top-navbar uppercase font-sans {{'text-muted' if entry.url in page.url else 'text-light'}}" type="button">{{ entry.title }}</button>
 
               {# NOTE: dropdown menu #}
-              <div id="dropdown{{ entry.title }}" class="!static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
-                <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdownDefaultButton">
-                  <li>
-                    <a href="#" class="block lg:text-body link-underline mb-spacer-1">Hello</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block lg:text-body link-underline mb-spacer-1">The story</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block lg:text-body link-underline mb-spacer-1">Contact</a>
-                  </li>
-                </ul>
-              </div>
+              {% if entry.children.length %}
+                <div id="dropdown{{ entry.title }}" class="!static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
+                  <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdownDefaultButton">
+                    {% for child in entry.children %}
+                      <li>
+                        <a href="{{ child.url }}" class="block lg:text-body link-underline mb-spacer-1">{{ child.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% endif %}
             </div>
           {% endif %}
         {% endfor %}

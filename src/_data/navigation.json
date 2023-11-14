@@ -1,5 +1,5 @@
 {
-    "items": [
+    "navigationitems": [
         {
             "name": "test@example.com",
             "link": "mailto:test@example.com"

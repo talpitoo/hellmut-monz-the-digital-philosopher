@@ -1597,6 +1597,9 @@ video {
  .hidden {
   display: none;
 }
+ .h-10 {
+  height: 2.5rem;
+}
  .h-12 {
   height: 3rem;
 }
@@ -1642,6 +1645,9 @@ video {
  .w-1\/2 {
   width: 50%;
 }
+ .w-10 {
+  width: 2.5rem;
+}
  .w-12 {
   width: 3rem;
 }
@@ -1683,6 +1689,9 @@ video {
 }
  .flex-shrink {
   flex-shrink: 1;
+}
+ .shrink-0 {
+  flex-shrink: 0;
 }
  .grow {
   flex-grow: 1;
@@ -1770,6 +1779,9 @@ video {
 }
  .gap-2 {
   gap: 0.5rem;
+}
+ .gap-4 {
+  gap: 1rem;
 }
  .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1903,6 +1915,9 @@ video {
 }
  .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
+}
+ .object-cover {
+  object-fit: cover;
 }
  .p-1 {
   padding: 0.25rem;
