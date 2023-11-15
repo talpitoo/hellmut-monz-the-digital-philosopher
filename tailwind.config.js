@@ -81,6 +81,7 @@ module.exports = {
         'section': 'calc(11 * var(--spacer))',
         'section-sm': 'calc(4 * var(--spacer))',
 
+        'spacer-1/2': 'calc(0.5 * var(--spacer))',
         'spacer-1': 'var(--spacer)',
         'spacer-2': 'calc(2 * var(--spacer))',
         'spacer-3': 'calc(3 * var(--spacer))',

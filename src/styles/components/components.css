@@ -30,4 +30,10 @@
       @apply before:content-['·'] before:pr-3;
     }
   }
+
+  .list-greater {
+    li {
+      @apply before:content-[">"] before:mr-spacer-1/2;
+    }
+  }
 }

@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }} | MONZ: Designer + Researcher + Philosopher + Artist + Joker</title>
-    {# {% if description %}<meta name="description" content="{{ description }}">{% endif %} #}
-    <meta name="description" content="Designer + Researcher + Philosopher + Artist + Joker">
+    {% if description %}
+      <meta name="description" content="{{ description }}">
+    {% else %}
+      <meta name="description" content="Designer + Researcher + Philosopher + Artist + Joker">
+    {% endif %}
     <meta name="keywords" content="design, research, philosophy, art, jokes">
     <meta name="author" content="Hellmut Monz">
 

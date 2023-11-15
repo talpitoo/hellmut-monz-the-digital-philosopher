@@ -1399,6 +1399,11 @@ video {
   --tw-content: '·';
   content: var(--tw-content);
 }
+ .list-greater li::before {
+  margin-right: calc(0.5 * var(--spacer));
+  --tw-content: ">";
+  content: var(--tw-content);
+}
  /* abstractions on top of TailwindCSS grid https://tailwindcss.com/docs/display#grid for better readability */
  /* @layer components { */
  :root {
@@ -1558,6 +1563,9 @@ video {
  .mb-spacer-3 {
   margin-bottom: calc(3 * var(--spacer));
 }
+ .ml-spacer-1 {
+  margin-left: var(--spacer);
+}
  .mr-spacer-2 {
   margin-right: calc(2 * var(--spacer));
 }
@@ -1627,6 +1635,9 @@ video {
  .h-spacer-1 {
   height: var(--spacer);
 }
+ .h-spacer-1\/2 {
+  height: calc(0.5 * var(--spacer));
+}
  .h-spacer-14 {
   height: calc(14 * var(--spacer));
 }
@@ -1671,6 +1682,9 @@ video {
 }
  .w-spacer-1 {
   width: var(--spacer);
+}
+ .w-spacer-1\/2 {
+  width: calc(0.5 * var(--spacer));
 }
  .w-spacer-12 {
   width: calc(12 * var(--spacer));
@@ -2056,6 +2070,9 @@ video {
  .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+ .line-through {
+  text-decoration-line: line-through;
 }
  .opacity-0 {
   opacity: 0;

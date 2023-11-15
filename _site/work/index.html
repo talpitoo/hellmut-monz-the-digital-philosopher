@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Work | MONZ: Designer + Researcher + Philosopher + Artist + Joker</title>
     
-    <meta name="description" content="Designer + Researcher + Philosopher + Artist + Joker">
+      <meta name="description" content="TODO">
+    
     <meta name="keywords" content="design, research, philosophy, art, jokes">
     <meta name="author" content="Hellmut Monz">
 
@@ -50,12 +51,17 @@
             <div class="x-hidden lg:block lg:relative">
               
 
-              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdownAbout" class="link-underline text-top-navbar uppercase font-sans text-light" type="button">About</button>
+              <button id="dropdownAboutButton" data-dropdown-toggle="dropdownAbout" class="link-underline text-top-navbar uppercase font-sans inline-flex items-center text-light" type="button">
+                About
+                <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
+                  <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                </svg>
+              </button>
 
               
               
                 <div id="dropdownAbout" class="!static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
-                  <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdownDefaultButton">
+                  <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdownAboutButton">
                     
                       <li>
                         <a href="/about/hello/" class="block lg:text-body link-underline mb-spacer-1">Hello</a>
@@ -79,7 +85,12 @@
             <div class="x-hidden lg:block lg:relative">
               
 
-              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdownWork" class="link-underline text-top-navbar uppercase font-sans text-muted" type="button">Work</button>
+              <button id="dropdownWorkButton" data-dropdown-toggle="dropdownWork" class="link-underline text-top-navbar uppercase font-sans inline-flex items-center text-muted" type="button">
+                Work
+                <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
+                  <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                </svg>
+              </button>
 
               
               
@@ -90,7 +101,12 @@
             <div class="x-hidden lg:block lg:relative">
               
 
-              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdownShop" class="link-underline text-top-navbar uppercase font-sans text-light" type="button">Shop</button>
+              <button id="dropdownShopButton" data-dropdown-toggle="dropdownShop" class="link-underline text-top-navbar uppercase font-sans inline-flex items-center text-light" type="button">
+                Shop
+                <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
+                  <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                </svg>
+              </button>
 
               
               
@@ -101,7 +117,12 @@
             <div class="x-hidden lg:block lg:relative">
               
 
-              <button id="dropdownDefaultButton" data-dropdown-toggle="dropdownM-log" class="link-underline text-top-navbar uppercase font-sans text-light" type="button">M-log</button>
+              <button id="dropdownM-logButton" data-dropdown-toggle="dropdownM-log" class="link-underline text-top-navbar uppercase font-sans inline-flex items-center text-light" type="button">
+                M-log
+                <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
+                  <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                </svg>
+              </button>
 
               
               
@@ -206,7 +227,7 @@
       <div class="monz-col-2 lg:col-start-3">
         <img src="/img/logo-monz.svg" alt='Hellmut MONZ' width='515' height='125' class="w-full h-auto my-spacer-3"/>
         <p class="leading-none mb-spacer-1">Subscribe to a monztrous newsletter.</p>
-        <form class="mb-spacer-3">
+        <form class="mb-spacer-3" id="newsletter">
           <label class="block">
             <input type="email" class="rounded-none block w-full mb-spacer-1" placeholder="Your Email Address" required aria-label="Your Email Address">
           </label>
