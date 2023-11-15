@@ -40,7 +40,7 @@
 
               {# NOTE: dropdown menu #}
               {% if entry.children.length %}
-                <div id="dropdown{{ entry.title }}" class="!static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
+                <div id="dropdown{{ entry.title }}" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
                   <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdown{{ entry.title }}Button">
                     {% for child in entry.children %}
                       <li>

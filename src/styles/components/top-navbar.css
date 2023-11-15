@@ -23,5 +23,13 @@
     [data-icon-hamburger] {
       @apply hidden;
     }
+
+    .monz-dropdown {
+      @apply lg:block lg:bg-dark lg:!top-spacer-2;
+
+      a {
+        @apply lg:text-light;
+      }
+    }
   }
 }

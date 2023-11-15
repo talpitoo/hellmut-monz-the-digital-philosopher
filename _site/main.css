@@ -1320,6 +1320,16 @@ video {
  .mobile-menu-expanded [data-icon-hamburger] {
   display: none;
 }
+ @media (min-width: 1024px) {
+  .mobile-menu-expanded .monz-dropdown {
+    top: calc(2 * var(--spacer)) !important;
+    display: block;
+    background-color: var(--tw-color-gray-800);
+  }
+  .mobile-menu-expanded .monz-dropdown a {
+    color: var(--tw-color-gray-100);
+  }
+}
  p + p,
   h1 + p,
   h2 + p,
