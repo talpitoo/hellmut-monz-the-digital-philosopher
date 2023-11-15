@@ -13,8 +13,8 @@
           </a>
         </div>
 
-        {# NOTE: the content comes from src/_data/dummyPlayers.json #}
-        {# {% for player in dummyPlayers.players %}
+        {# NOTE: example code for later; the content comes from src/_data/navigation.json #}
+        {# {% for player in navigationitems.players %}
           <div class="flex gap-4">
             {% if player.avatar is defined and player.avatar !== '' %}
               <img src="{{ player.avatar }}" class="w-10 h-10 rounded-full shrink-0 object-cover" alt="{{ player.name }}">
@@ -25,13 +25,8 @@
         {% set navPages = collections.all | eleventyNavigation %}
         {% for entry in navPages %}
           {% if entry.includeSelf != false %}
-            <div class="x-hidden lg:block lg:relative">
-              {# <a href="{{ entry.url }}"
-            class="link-underline text-top-navbar font-sans {{'text-dark hover:text-muted' if entry.url in page.url else 'text-light'}}">
-                {{ entry.title }}
-              </a> #}
-
-              <button id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" class="link-underline text-top-navbar uppercase font-sans inline-flex items-center {{'text-muted' if entry.url in page.url else 'text-light'}}" type="button">
+            <div class="monz-hidden lg:block lg:relative">
+              <button id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" class="monz-dropdown-trigger link-underline text-top-navbar uppercase font-sans inline-flex items-center {{'text-muted' if entry.url in page.url else 'text-light'}}" type="button">
                 {{ entry.title }}
                 <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
                   <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
@@ -54,12 +49,35 @@
           {% endif %}
         {% endfor %}
 
+        {# NOTE: the 'Site' dropdown is a custom positioned addition #}
+        <div class="hidden lg:monz-hidden lg:absolute left-spacer-21 top-spacer-21">
+          <button id="dropdownSiteButton" data-dropdown-toggle="dropdownSite" class="monz-dropdown-trigger link-underline text-top-navbar uppercase font-sans inline-flex items-center text-light" type="button">
+            Site
+            <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
+              <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+            </svg>
+          </button>
+          <div id="dropdownSite" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
+            <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdownSiteButton">
+              <li>
+                <a href="/search" class="block lg:text-body link-underline mb-spacer-1">Search</a>
+              </li>
+              <li>
+                <a href="/search" class="block lg:text-body link-underline mb-spacer-1">Shopping cart</a>
+              </li>
+              <li>
+                <a href="/search" class="block lg:text-body link-underline mb-spacer-1 whitespace-nowrap">Terms & conditions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div class="justify-end lg:gap-spacer-2 flex flex-col lg:flex-row right-0">
 
           <button
           type='button'
           aria-label='menu'
-          class="x-hidden lg:block mt-spacer-4 lg:mt-0"
+          class="monz-hidden lg:block mt-spacer-4 lg:mt-0"
         >
             <svg class="w-spacer-2 h-spacer-2 text-light hidden lg:block" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-search"></use>
@@ -70,7 +88,7 @@
           <button
           type='button'
           aria-label='menu'
-          class="x-hidden lg:block relative"
+          class="monz-hidden lg:block relative"
         >
             <svg class="w-spacer-3 h-spacer-3 -mt-spacer-1 text-light hidden lg:block" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-cart"></use>

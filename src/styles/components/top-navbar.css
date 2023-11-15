@@ -1,5 +1,5 @@
 @layer components {
-  .x-hidden,
+  .monz-hidden,
   [data-icon-close] {
     @apply hidden;
   }
@@ -15,7 +15,7 @@
       @apply text-center lg:text-left min-h-screen;
     }
 
-    .x-hidden,
+    .monz-hidden,
     [data-icon-close] {
       @apply block;
     }
@@ -29,6 +29,12 @@
 
       a {
         @apply lg:text-light;
+      }
+    }
+
+    .monz-dropdown-trigger {
+      svg {
+        @apply hidden;
       }
     }
   }

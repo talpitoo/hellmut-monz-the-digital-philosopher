@@ -91,6 +91,7 @@ module.exports = {
         'spacer-11': 'calc(11 * var(--spacer))',
         'spacer-12': 'calc(12 * var(--spacer))',
         'spacer-14': 'calc(14 * var(--spacer))',
+        'spacer-21': 'calc(21 * var(--spacer))',
         'spacer-29': 'calc(29 * var(--spacer))',
       },
       gap: {
