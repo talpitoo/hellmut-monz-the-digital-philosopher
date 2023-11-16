@@ -613,7 +613,7 @@
                 <p class="lead">Hellmut Munz is lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas congue vehicula dui, ut tempus arcu posuere ac. Vestibulum eu magna semper, porttitor libero.</p>
             </div>
             <div class="monz-col-2 lg:col-start-3">
-                <a href="#" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">More about Hellmut --&gt;</a>
+                <a href="/about/hello" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">More about Hellmut --&gt;</a>
             </div>
         </div>
     </div>
@@ -625,14 +625,16 @@
     <div class="monz-grid">
       <div class="monz-col-2 lg:col-start-3">
         <img src="/img/logo-monz.svg" alt='Hellmut MONZ' width='515' height='125' class="w-full h-auto mb-spacer-3"/>
-        <p class="leading-none mb-spacer-1">Subscribe to a monztrous newsletter.</p>
-        
-        <form class="mb-spacer-3" id="newsletter">
-          <label class="block">
-            <input type="email" class="rounded-none block w-full mb-spacer-1" placeholder="Your Email Address" required aria-label="Your Email Address">
-          </label>
-          <button type="submit" class="bg-primary block w-full uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Subscribe</button>
-        </form>
+        <div id="newsletter-wrapper">
+          <p class="leading-none mb-spacer-1" data-animation="true">Subscribe to a monztrous newsletter.</p>
+          
+          <form class="mb-spacer-3" id="newsletter">
+            <label class="block" data-animation="true">
+              <input type="email" class="rounded-none block w-full mb-spacer-1 text-body" placeholder="Your Email Address" required aria-label="Your Email Address">
+            </label>
+            <button type="submit" class="bg-primary block w-full uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body" data-animation="true">Subscribe</button>
+          </form>
+        </div>
         <p class="leading-none mb-spacer-1">
           <a href="#" class="link-underline">youtube</a>
           <a href="#" class="link-underline">github</a>
@@ -649,6 +651,8 @@
 </footer>
 
     
-    <script src="/main.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+    <script src="/main.js" defer></script>
   </body>
 </html>
