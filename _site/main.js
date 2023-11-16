@@ -4494,7 +4494,6 @@ esm_events.init();
 
 
 
-// import { Dropdown, Tabs } from 'flowbite';
 // import Swiper from 'swiper/bundle'; // import Swiper bundle with all modules installed
 // import 'swiper/css/bundle'; // import styles bundle
 
@@ -4502,7 +4501,7 @@ esm_events.init();
 document.addEventListener("DOMContentLoaded", function () {
     console.debug("DOM loaded");
 
-    //wait until images, links, fonts, stylesheets, and js is loaded
+    // wait until images, links, fonts, stylesheets, and js is loaded
     window.addEventListener("load", function (e) {
 
         /**
@@ -4512,14 +4511,26 @@ document.addEventListener("DOMContentLoaded", function () {
          */
         var root = document.documentElement;
         var burgerMenu = document.getElementById('burger-menu');
-        var burgerMenuClose = document.getElementById('burger-menu-close');
         if (burgerMenu) {
-            //   var burgerMenuClose = document.getElementById('burger-menu-close');
             burgerMenu.addEventListener('click', function () {
                 root.classList.toggle("mobile-menu-expanded");
             });
-            burgerMenuClose.addEventListener('click', function () {
-                root.classList.toggle("mobile-menu-expanded");
+        }
+
+
+
+        /**
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         * full-screen
+         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+         */
+        var toggleFullscreen = document.getElementById('btn-fullscreen');
+        if (toggleFullscreen) {
+            toggleFullscreen.addEventListener('click', function () {
+                root.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full screen: ${err.message}`);
+                });
+                // NOTE: in case we have a button: document.exitFullscreen();
             });
         }
 

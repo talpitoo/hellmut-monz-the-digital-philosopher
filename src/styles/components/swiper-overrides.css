@@ -1,4 +1,4 @@
-/* @layer components { */
+/* 
 :root {
   --swiper-pagination-bullet-width: 12px;
   --swiper-pagination-bullet-size: 12px;
@@ -12,5 +12,4 @@
 .swiper-button-prev::after,
 .swiper-button-next::after {
   @apply text-primary;
-}
-/* } */
+} */

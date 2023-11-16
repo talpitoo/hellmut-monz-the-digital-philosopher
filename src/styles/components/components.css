@@ -36,4 +36,9 @@
       @apply before:content-[">"] before:mr-spacer-1/2;
     }
   }
+
+  .monz-icon-active {
+    @apply relative;
+    @apply after:absolute after:block after:w-full after:border-b-2 after:border-solid after:border-light after:mt-1;
+  }
 }

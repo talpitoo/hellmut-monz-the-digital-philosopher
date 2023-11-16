@@ -1,5 +1,6 @@
 {% include "components/upward-facing-triangles.njk" %}
 
+{# NOTE: this work.njk is dynamic, it is loading data from src/_data/featuredArticlesWork.json and iterates through them #}
 <section class='bg-dark text-light py-section-sm'>
     <div class='monz-container'>
         <div class="monz-grid">
@@ -40,22 +41,43 @@
                     </ul>
                 </article>
             </div>
-            {% for item in[0, 1, 2] %}
-                <div class="monz-col-2">
-                    <article>
-                        <div class="h-spacer-14 bg-success mb-spacer-1"></div>
-                        <h3>
-                            <a href="#" class="stretched-link">What is this? Philosophy 101</a>
-                        </h3>
-                        <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
-                        <ul class="list-separator-dot text-muted">
-                            <li class="uppercase">Book</li>
-                            <li class="uppercase">Translation</li>
-                            <li class="uppercase">Philosophy</li>
-                        </ul>
-                    </article>
-                </div>
+
+            {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
+            {% for featuredArticle in featuredArticlesWork.featuredArticles %}
+                {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
+                    <div class="monz-col-2">
+                        <article>
+                            <div class="h-spacer-14 bg-success mb-spacer-1">
+                                <figure class="h-full">
+                                    <picture class="block h-full">
+                                        {# NOTE: please refer to src/_includes/components/picture-example.njk for a static example #}
+                                        {# WebP format for modern browsers #}
+                                        <source srcset="{{ featuredArticle.coverPhoto['webP'] }} 1x, {{ featuredArticle.coverPhoto['webP2x'] }} 2x" type="image/webp">
+
+                                        {# JPG format for browsers that do not support WebP #}
+                                        <source srcset="{{ featuredArticle.coverPhoto['jpg'] }} 1x, {{ featuredArticle.coverPhoto['jpg2x'] }} 2x" type="image/jpeg">
+
+                                        {# fallback for browsers that do not support the <picture> element #}
+                                        <img src="{{ featuredArticle.coverPhoto['jpg'] }}" alt="Back View of Astronauts Holding Hands" class="object-cover w-full h-full" width="640" height="424">
+                                    </picture>
+                                    {# NOTE: optional caption #}
+                                    {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
+                                </figure>
+                            </div>
+                            <h3>
+                                <a href="#" class="stretched-link">{{ featuredArticle.title }}</a>
+                            </h3>
+                            <p>{{ featuredArticle.description }}</p>
+                            <ul class="list-separator-dot text-muted">
+                                {% for tag in featuredArticle.tags %}
+                                    <li class="uppercase">{{ tag }}</li>
+                                {% endfor %}
+                            </ul>
+                        </article>
+                    </div>
+                {% endif %}
             {% endfor %}
+
             <div class="monz-col-2 lg:col-start-3">
                 <a href="#" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">View more work --&gt;</a>
             </div>

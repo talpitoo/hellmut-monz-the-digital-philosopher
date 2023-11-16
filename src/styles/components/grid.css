@@ -21,6 +21,10 @@
     @apply grid w-full lg:grid-cols-6 px-spacer-2 lg:px-spacer-7 gap-spacer-2;
   }
 
+  .monz-col-1 {
+    @apply lg:col-span-1;
+  }
+
   .monz-col-2 {
     @apply lg:col-span-2;
   }
@@ -31,6 +35,10 @@
 
   .monz-col-4 {
     @apply lg:col-span-4;
+  }
+
+  .monz-col-5 {
+    @apply lg:col-span-5;
   }
 
   .monz-col-6 {
