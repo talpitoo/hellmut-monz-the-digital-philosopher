@@ -11,6 +11,13 @@
                 <article>
                     <div class="h-spacer-29 bg-success mb-spacer-1">
                         <figure class="h-full">
+                            {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
+                            {% set pictureObject = {
+                                'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                                'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                                'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                                'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
+                            } %}
                             {% include "components/picture-example.njk" %}
                             {# NOTE: optional caption #}
                             {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
@@ -49,17 +56,9 @@
                         <article>
                             <div class="h-spacer-14 bg-success mb-spacer-1">
                                 <figure class="h-full">
-                                    <picture class="block h-full">
-                                        {# NOTE: please refer to src/_includes/components/picture-example.njk for a static example #}
-                                        {# WebP format for modern browsers #}
-                                        <source srcset="{{ featuredArticle.coverPhoto['webP'] }} 1x, {{ featuredArticle.coverPhoto['webP2x'] }} 2x" type="image/webp">
-
-                                        {# JPG format for browsers that do not support WebP #}
-                                        <source srcset="{{ featuredArticle.coverPhoto['jpg'] }} 1x, {{ featuredArticle.coverPhoto['jpg2x'] }} 2x" type="image/jpeg">
-
-                                        {# fallback for browsers that do not support the <picture> element #}
-                                        <img src="{{ featuredArticle.coverPhoto['jpg'] }}" alt="Back View of Astronauts Holding Hands" class="object-cover w-full h-full" width="640" height="424">
-                                    </picture>
+                                    {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                                    {% set pictureObject = featuredArticle.coverPhoto %}
+                                    {% include "components/picture-example.njk" %}
                                     {# NOTE: optional caption #}
                                     {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
                                 </figure>
