@@ -16,7 +16,7 @@ export function initializeSwiper() {
         const swiper = new Swiper(exampleSwiper, {
             modules: [Navigation],
             slidesPerView: 1,
-            spaceBetween: 30,
+            // spaceBetween: 20,
             loop: true,
             navigation: {
                 nextEl: '.swiper-button-next',

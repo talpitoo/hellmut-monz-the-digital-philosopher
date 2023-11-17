@@ -1,6 +1,6 @@
 @layer components {
   .monz-hidden,
-  [data-icon-close] {
+  .monz-icon-close {
     @apply hidden;
   }
 
@@ -16,11 +16,11 @@
     }
 
     .monz-hidden,
-    [data-icon-close] {
+    .monz-icon-close {
       @apply block;
     }
 
-    [data-icon-hamburger] {
+    .monz-icon-hamburger {
       @apply hidden;
     }
 

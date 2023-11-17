@@ -26,7 +26,7 @@
 
               {# NOTE: dropdown menu #}
               {% if entry.children.length %}
-                <div id="dropdown{{ entry.title }}" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
+                <div id="dropdown{{ entry.title }}" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-full lg:w-spacer-12">
                   <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdown{{ entry.title }}Button">
                     {% for child in entry.children %}
                       <li>
@@ -48,7 +48,7 @@
               <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
             </svg>
           </button>
-          <div id="dropdownSite" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-spacer-12">
+          <div id="dropdownSite" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-full lg:w-spacer-12">
             <ul class="p-spacer-1 text-spacer-1" aria-labelledby="dropdownSiteButton">
               <li>
                 <a href="/search" class="block lg:text-body link-underline mb-spacer-1 {{'underline underline-offset-4 decoration-2' if "search" in page.url}}">Search</a>
@@ -106,10 +106,10 @@
           id="burger-menu"
           class="absolute right-0 top-spacer-3 mr-spacer-2 lg:right-spacer-1"
         >
-            <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true" data-icon-hamburger>
+            <svg class="w-spacer-2 h-spacer-2 text-light monz-icon-hamburger" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-hamburger"></use>
             </svg>
-            <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true" data-icon-close>
+            <svg class="w-spacer-2 h-spacer-2 text-light monz-icon-close" aria-hidden="true">
               <use href="/img/icons/dist/sprite.svg#icon-close"></use>
             </svg>
             <span class="sr-only">Menu</span>

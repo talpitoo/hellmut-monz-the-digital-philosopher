@@ -20,27 +20,51 @@ eleventyNavigation:
                 <p>Sed consectetur viverra urna id porttitor. Maecenas risus lorem, sollicitudin at leo sed, consequat convallis velit. Pellentesque fermentum finibus libero, non mattis lectus sagittis mattis. Donec maximus, magna ac pharetra condimentum, lorem justo posuere lacus, et dignissim purus risus sit amet nunc. Duis ultricies mauris sed orci convallis, et auctor nisl condimentum. Nunc elementum, ipsum id auctor egestas, sem ante mattis ex, nec pharetra ex dui eu eros. Nam in accumsan tellus. Nulla tincidunt neque erat, id cursus elit iaculis et. Duis dapibus enim volutpat lorem rutrum, id tincidunt velit accumsan.</p>
 
                 {# NOTE: swiper #}
-                <div class="swiper" id="monz-swiper">
-                    <div class="swiper-wrapper">
-                        {% for slides in[
-                            0,
-                            1,
-                            2,
-                            3,
-                            4,
-                            5
-                        ] %}
-                            <div class="swiper-slide">
-                                {# NOTE: translate-x-0 transform-gpu max-w-full #}
-                                <div class="h-spacer-14 bg-success mb-spacer-1">
-                                    Slide {{ loop.index}}
+                <div class="relative">
+                    <div class="swiper mt-spacer-2 -mx-spacer-1" id="monz-swiper">
+                        <div class="swiper-wrapper">
+                            {% for slides in[
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5
+                            ] %}
+                                <div class="swiper-slide px-spacer-1 pb-spacer-1">
+                                    <article>
+                                        <figure>
+                                            <div class="h-spacer-14">
+                                                {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
+                                                {% set pictureObject = {
+                                            'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                                            'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                                            'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                                            'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
+                                        } %}
+                                                {% include "components/picture-example.njk" %}
+                                            </div>
+                                            {# NOTE: optional caption #}
+                                            <figcaption class="text-spacer-1 pt-spacer-1"><a href="#" class="stretched-link">Slide {{ loop.index}}</a></figcaption>
+                                        </figure>
+                                    </article>
                                 </div>
-                            </div>
-                        {% endfor %}
+                            {% endfor %}
+                        </div>
                     </div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <button type="button" class="swiper-button-prev -left-spacer-1.5 lg:-left-spacer-3">
+                        <span class="sr-only">previous slide</span>
+                        <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                            <use href="/img/icons/dist/sprite.svg#icon-caret-left"></use>
+                        </svg>
+                    </button>
+                    <button type="button" class="swiper-button-next -right-spacer-1.5 lg:-right-spacer-3">
+                        <span class="sr-only">next slide</span>
+                        <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                            <use href="/img/icons/dist/sprite.svg#icon-caret-right"></use>
+                        </svg>
+                    </button>
                 </div>
                 {# NOTE: end swiper #}
             </div>
