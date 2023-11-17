@@ -33,13 +33,16 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        include: path.resolve(__dirname, 'src/styles'), // Ensure only styles/main.css is processed
+        include: path.resolve(__dirname, 'src/styles'), // ensure only styles/main.css is processed
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              url: false, // Add this option to prevent URL handling
+              url: false, // add this option to prevent URL handling
+              // plugins: () => [
+              //   require("autoprefixer")()
+              // ],
             },
           },
           'postcss-loader',
