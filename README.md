@@ -1,4 +1,4 @@
-# MONZ frontend using 11ty/TailwindCSS/Flowbite
+# MONZ frontend using 11ty/TailwindCSS/Flowbite/GSAP/Swiper
 
 ![MONZ](https://www.m-o.nz/images/monz_O_hover.png)
 

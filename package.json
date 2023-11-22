@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "keywords": [
     "11ty",
-    "HTML",
-    "TailwindCSS"
+    "TailwindCSS",
+    "Flowbite",
+    "GSAP",
+    "Swiper"
   ],
   "description": "The frontend of MONZ",
   "private": true,

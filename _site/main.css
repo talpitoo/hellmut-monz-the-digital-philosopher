@@ -1489,6 +1489,9 @@ video {
   text-decoration-line: underline;
   text-underline-offset: 4px;
 }
+ .link-underline-spacer:hover {
+  text-underline-offset: var(--spacer);
+}
  article {
   position: relative;
   padding-bottom: var(--spacer);
@@ -2228,6 +2231,9 @@ video {
 }
  .underline-offset-4 {
   text-underline-offset: 4px;
+}
+ .underline-offset-spacer {
+  text-underline-offset: var(--spacer);
 }
  .opacity-0 {
   opacity: 0;
