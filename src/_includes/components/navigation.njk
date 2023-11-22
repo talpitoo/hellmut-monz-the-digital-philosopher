@@ -17,12 +17,22 @@
         {% for entry in navPages %}
           {% if entry.includeSelf != false %}
             <div class="monz-hidden lg:block lg:relative">
-              <button id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" class="monz-dropdown-trigger link-underline link-underline-spacer text-top-navbar uppercase font-sans inline-flex items-center text-light {{'underline underline-offset-spacer decoration-2' if entry.url in page.url}}" type="button">
-                {{ entry.title }}
-                <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
-                  <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
-                </svg>
-              </button>
+              <div class="">
+                {# NOTE: adaptive markup mobile/desktop #}
+                <a href="{{ entry.url }}" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="hidden lg:inline-flex monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
+                  {{ entry.title }}
+                  <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
+                    <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                  </svg>
+                </a>
+
+                <button type="button" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="lg:hidden monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans inline-flex items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
+                  {{ entry.title }}
+                  <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true">
+                    <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                  </svg>
+                </button>
+              </div>
 
               {# NOTE: dropdown menu #}
               {% if entry.children.length %}

@@ -48,6 +48,6 @@
   }
 
   .link-underline-spacer {
-    @apply hover:underline-offset-spacer;
+    @apply lg:hover:underline-offset-spacer;
   }
 }

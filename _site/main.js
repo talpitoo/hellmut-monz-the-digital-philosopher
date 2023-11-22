@@ -23210,6 +23210,7 @@ function initializeSwiper() {
 
 
 
+// import { handleDropdownClick } from './modules/topNavbarDropdown';
 
 
 
@@ -23221,6 +23222,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // wait until images, links, fonts, stylesheets, and js is loaded
     window.addEventListener("load", function (e) {
         initializeMobileMenu();
+        // handleDropdownClick();
         initializeFullscreen();
         initializeNewsletterAnimation();
         initializeSwiper();
