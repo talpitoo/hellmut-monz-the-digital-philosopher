@@ -1783,6 +1783,9 @@ video {
  .h-full {
   height: 100%;
 }
+ .h-section-sm {
+  height: calc(4 * var(--spacer));
+}
  .h-spacer-1 {
   height: var(--spacer);
 }
@@ -1849,6 +1852,10 @@ video {
  .grow {
   flex-grow: 1;
 }
+ .\!translate-y-0 {
+  --tw-translate-y: 0px !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
  .-translate-x-full {
   --tw-translate-x: -100%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1867,6 +1874,10 @@ video {
 }
  .translate-y-full {
   --tw-translate-y: 100%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+ .translate-y-spacer-30 {
+  --tw-translate-y: calc(30 * var(--spacer));
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
  .rotate-180 {
@@ -2135,6 +2146,9 @@ video {
  .pb-spacer-2 {
   padding-bottom: calc(2 * var(--spacer));
 }
+ .pb-spacer-33 {
+  padding-bottom: calc(33 * var(--spacer));
+}
  .pt-2 {
   padding-top: 0.5rem;
 }
@@ -2273,6 +2287,9 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+ .duration-300 {
+  transition-duration: 300ms;
+}
  .ease-out {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
@@ -2313,6 +2330,10 @@ video {
     content: var(--tw-content);
     border-color: var(--tw-color-gray-100);
   }
+}
+ .hover\:\!translate-y-0:hover {
+  --tw-translate-y: 0px !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
  .hover\:border-gray-300:hover {
   border-color: var(--tw-color-gray-300);

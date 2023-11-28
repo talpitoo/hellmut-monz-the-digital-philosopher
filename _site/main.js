@@ -13835,42 +13835,132 @@ ScrollTrigger_ScrollTrigger.core = {
 };
 ScrollTrigger_getGSAP() && ScrollTrigger_gsap.registerPlugin(ScrollTrigger_ScrollTrigger);
 
-;// CONCATENATED MODULE: ./src/scripts/modules/newsletterAnimation.js
+;// CONCATENATED MODULE: ./src/scripts/modules/topNavbarNewsBarReveal.js
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * fade in the newsletter once scrolled into view, using GSAP https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+ * reveal the news bar (above the top menu), using GSAP https://gsap.com/docs/v3/Plugins/ScrollTrigger/
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
-// import gsap from 'gsap';
-// typical import
+// import GSAP and its plugins, then register them
 
 
-// get other plugins:
-
-
-// don't forget to register plugins
 gsapWithCSS.registerPlugin(ScrollTrigger_ScrollTrigger);
 
-function initializeNewsletterAnimation() {
-    // set initial state (hidden)
-    gsapWithCSS.set('#newsletter-wrapper [data-animation="true"]', {
-        opacity: 0.01,
-        xPercent: -50,
-    });
+function initializeNewsbarReveal() {
+    // NOTE: documentation at https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/
+    let mm = gsapWithCSS.matchMedia(),
+        breakPoint = 1024;
 
-    // animate to visible state
-    gsapWithCSS.to('#newsletter-wrapper [data-animation="true"]', {
-        scrollTrigger: {
-            trigger: "footer",
-            end: "top center", // end the animation when the top of the footer reaches the center of the viewport
-            scrub: 2, // smoothly animate the opacity as you scroll
-        },
-        stagger: 0.1,
-        opacity: 1,
-        xPercent: 0,
+    mm.add({
+        // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
+        isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
+        isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
+    }, (context) => {
+        // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+        let { isDesktop, isMobile } = context.conditions,
+            headerHeight = document.getElementById('newsbar').offsetHeight;
+            // NOTE: example definitions
+            // target = isDesktop ? ".desktop" : ".mobile",
+            // tl = gsap.timeline({
+            //     scrollTrigger: {
+            //         trigger: ".gray",
+            //         scrub: 1,
+            //         end: "200%",
+            //         pin: true
+            //     }
+            // });
+
+        // hide on scroll down, then reveal it again on when the scroll top of the viewport is reached
+        gsapWithCSS.to('#newsbar', {
+            scrollTrigger: {
+                trigger: "body",
+                start: "top top", // start the animation when the top of the trigger element reaches the top of the viewport
+                toggleActions: "play reverse play reverse", // play the animation forward when entering the trigger, and in reverse when leaving
+            },
+            marginTop: `-${headerHeight}px`,
+            // duration: 0.3,
+            // onComplete: function () {
+            //     document.getElementById('newsbar').classList.add('hidden');
+            // },
+        });
+
+        // NOTE: example code
+        // tl.to(target, { scale: 2, rotation: 360 }).to(target, { scale: 1 });
+        // // works for non-ScrollTrigger animations too: 
+        // gsap.to(target, { backgroundColor: "#2c7ad2", duration: 0.8, ease: "none", repeat: -1, yoyo: true });
+
+        return () => {
+            // optionally return a cleanup function that will be called when the media query no longer matches
+        }
     });
 }
+;// CONCATENATED MODULE: ./src/scripts/modules/footerReveal.js
+/**
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * reveal the footer, using GSAP https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+// import GSAP and its plugins, then register them
 
+
+gsapWithCSS.registerPlugin(ScrollTrigger_ScrollTrigger);
+
+function initializeFooterReveal() {
+    // NOTE: documentation at https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/ and maybe https://gsap.com/docs/v3/Plugins/ScrollTrigger/static.addEventListener()/
+    let mm = gsapWithCSS.matchMedia(),
+        breakPoint = 1024;
+
+    mm.add({
+        // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
+        isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
+        isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
+    }, (context) => {
+        // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
+        let { isDesktop, isMobile } = context.conditions;
+
+        gsapWithCSS.to('footer', {
+            scrollTrigger: {
+                trigger: "body",
+                start: "bottom bottom+=1", // start the animation when the bottom of the trigger element reaches the bottom of the viewport
+                toggleActions: "play reverse play reverse", // play the animation forward when entering the trigger, and in reverse when leaving
+                // TODO: debug
+                // markers: true,
+                // toggleClass: '!translate-y-0',
+            },
+            translateY: 0,
+            duration: 0.1,
+            // TODO: debug
+            // onToggle: (self) => {
+            //     const footer = document.getElementById('footer');
+            //     if (self.isActive) {
+            //         // Add your class when the trigger is active
+            //         footer.classList.add('!translate-y-0');
+            //     } else {
+            //         // Remove your class when the trigger is not active
+            //         footer.classList.remove('!translate-y-0');
+            //     }
+            // },
+        });
+
+        if (isMobile) {
+            const footerButton = document.getElementById('footer-reveal');
+            const footer = document.getElementById('footer');
+        
+            if (footerButton && footer) {
+                footerButton.addEventListener('click', function () {
+                    footer.classList.toggle('translate-y-spacer-30');
+                    footer.classList.toggle('!translate-y-0');
+                });
+            }
+        }
+
+
+        return () => {
+            // optionally return a cleanup function that will be called when the media query no longer matches
+        }
+    });
+
+}
 ;// CONCATENATED MODULE: ./node_modules/swiper/shared/ssr-window.esm.mjs
 /**
  * SSR Window 4.0.2
@@ -23210,7 +23300,8 @@ function initializeSwiper() {
 
 
 
-// import { handleDropdownClick } from './modules/topNavbarDropdown';
+
+// import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
 
 
 
@@ -23222,9 +23313,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // wait until images, links, fonts, stylesheets, and js is loaded
     window.addEventListener("load", function (e) {
         initializeMobileMenu();
-        // handleDropdownClick();
         initializeFullscreen();
-        initializeNewsletterAnimation();
+        // initializeNewsletterAnimation();
+        initializeFooterReveal();
+        initializeNewsbarReveal();
         initializeSwiper();
 
         console.debug("window loaded");

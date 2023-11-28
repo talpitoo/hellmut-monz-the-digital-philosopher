@@ -3,14 +3,9 @@
  * fade in the newsletter once scrolled into view, using GSAP https://gsap.com/docs/v3/Plugins/ScrollTrigger/
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  */
-// import gsap from 'gsap';
-// typical import
+// import GSAP and its plugins, then register them
 import gsap from "gsap";
-
-// get other plugins:
 import ScrollTrigger from "gsap/ScrollTrigger";
-
-// don't forget to register plugins
 gsap.registerPlugin(ScrollTrigger);
 
 export function initializeNewsletterAnimation() {

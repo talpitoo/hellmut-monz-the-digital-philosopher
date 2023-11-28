@@ -1,9 +1,10 @@
 import '../styles/main.css';
 import { Dropdown } from 'flowbite';
 import { initializeMobileMenu } from './modules/hamburger';
-// import { handleDropdownClick } from './modules/topNavbarDropdown';
 import { initializeFullscreen } from './modules/fullscreen';
-import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
+// import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
+import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
+import { initializeFooterReveal } from './modules/footerReveal';
 import { initializeSwiper } from './modules/swiperInstances';
 
 // wait until DOM is ready
@@ -13,9 +14,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // wait until images, links, fonts, stylesheets, and js is loaded
     window.addEventListener("load", function (e) {
         initializeMobileMenu();
-        // handleDropdownClick();
         initializeFullscreen();
-        initializeNewsletterAnimation();
+        // initializeNewsletterAnimation();
+        initializeFooterReveal();
+        initializeNewsbarReveal();
         initializeSwiper();
 
         console.debug("window loaded");

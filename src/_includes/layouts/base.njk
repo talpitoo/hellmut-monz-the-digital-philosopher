@@ -25,6 +25,9 @@
 
     <main>
       {{ content | safe }}
+
+      {# NOTE: undo the footer reveal offset #}
+      <div class="bg-dark pb-spacer-33"></div>
     </main>
 
     {% include "../components/footer.njk" %}

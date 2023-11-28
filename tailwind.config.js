@@ -94,6 +94,8 @@ module.exports = {
         'spacer-14': 'calc(14 * var(--spacer))',
         'spacer-21': 'calc(21 * var(--spacer))',
         'spacer-29': 'calc(29 * var(--spacer))',
+        'spacer-30': 'calc(30 * var(--spacer))',
+        'spacer-33': 'calc(33 * var(--spacer))',
       },
       textUnderlineOffset: {
         spacer: 'var(--spacer)',
