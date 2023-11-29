@@ -4501,6 +4501,7 @@ function initializeMobileMenu() {
   var burgerMenu = document.getElementById('burger-menu');
   if (burgerMenu) {
     burgerMenu.addEventListener('click', function () {
+      root.classList.remove("footer-expanded"); // NOTE: collapse the footer if it was expanded
       root.classList.toggle("mobile-menu-expanded");
     });
   }
@@ -13835,65 +13836,6 @@ ScrollTrigger_ScrollTrigger.core = {
 };
 ScrollTrigger_getGSAP() && ScrollTrigger_gsap.registerPlugin(ScrollTrigger_ScrollTrigger);
 
-;// CONCATENATED MODULE: ./src/scripts/modules/topNavbarNewsBarReveal.js
-/**
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * reveal the news bar (above the top menu), using GSAP https://gsap.com/docs/v3/Plugins/ScrollTrigger/
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- */
-// import GSAP and its plugins, then register them
-
-
-gsapWithCSS.registerPlugin(ScrollTrigger_ScrollTrigger);
-
-function initializeNewsbarReveal() {
-    // NOTE: documentation at https://gsap.com/docs/v3/GSAP/gsap.matchMedia()/
-    let mm = gsapWithCSS.matchMedia(),
-        breakPoint = 1024;
-
-    mm.add({
-        // set up any number of arbitrarily-named conditions. The function below will be called when ANY of them match.
-        isDesktop: `(min-width: ${breakPoint}px) and (prefers-reduced-motion: no-preference)`,
-        isMobile: `(max-width: ${breakPoint - 1}px) and (prefers-reduced-motion: no-preference)`
-    }, (context) => {
-        // context.conditions has a boolean property for each condition defined above indicating if it's matched or not.
-        let { isDesktop, isMobile } = context.conditions,
-            headerHeight = document.getElementById('newsbar').offsetHeight;
-            // NOTE: example definitions
-            // target = isDesktop ? ".desktop" : ".mobile",
-            // tl = gsap.timeline({
-            //     scrollTrigger: {
-            //         trigger: ".gray",
-            //         scrub: 1,
-            //         end: "200%",
-            //         pin: true
-            //     }
-            // });
-
-        // hide on scroll down, then reveal it again on when the scroll top of the viewport is reached
-        gsapWithCSS.to('#newsbar', {
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top", // start the animation when the top of the trigger element reaches the top of the viewport
-                toggleActions: "play reverse play reverse", // play the animation forward when entering the trigger, and in reverse when leaving
-            },
-            marginTop: `-${headerHeight}px`,
-            // duration: 0.3,
-            // onComplete: function () {
-            //     document.getElementById('newsbar').classList.add('hidden');
-            // },
-        });
-
-        // NOTE: example code
-        // tl.to(target, { scale: 2, rotation: 360 }).to(target, { scale: 1 });
-        // // works for non-ScrollTrigger animations too: 
-        // gsap.to(target, { backgroundColor: "#2c7ad2", duration: 0.8, ease: "none", repeat: -1, yoyo: true });
-
-        return () => {
-            // optionally return a cleanup function that will be called when the media query no longer matches
-        }
-    });
-}
 ;// CONCATENATED MODULE: ./src/scripts/modules/footerReveal.js
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -13920,40 +13862,23 @@ function initializeFooterReveal() {
 
         gsapWithCSS.to('footer', {
             scrollTrigger: {
-                trigger: "body",
+                trigger: "html",
                 start: "bottom bottom+=1", // start the animation when the bottom of the trigger element reaches the bottom of the viewport
                 toggleActions: "play reverse play reverse", // play the animation forward when entering the trigger, and in reverse when leaving
-                // TODO: debug
-                // markers: true,
-                // toggleClass: '!translate-y-0',
+                toggleClass: 'footer-expanded',
             },
-            translateY: 0,
-            duration: 0.1,
-            // TODO: debug
-            // onToggle: (self) => {
-            //     const footer = document.getElementById('footer');
-            //     if (self.isActive) {
-            //         // Add your class when the trigger is active
-            //         footer.classList.add('!translate-y-0');
-            //     } else {
-            //         // Remove your class when the trigger is not active
-            //         footer.classList.remove('!translate-y-0');
-            //     }
-            // },
         });
 
         if (isMobile) {
+            var root = document.documentElement;
             const footerButton = document.getElementById('footer-reveal');
-            const footer = document.getElementById('footer');
-        
-            if (footerButton && footer) {
+
+            if (footerButton) {
                 footerButton.addEventListener('click', function () {
-                    footer.classList.toggle('translate-y-spacer-30');
-                    footer.classList.toggle('!translate-y-0');
+                    root.classList.toggle("footer-expanded");
                 });
             }
         }
-
 
         return () => {
             // optionally return a cleanup function that will be called when the media query no longer matches
@@ -23296,15 +23221,50 @@ function initializeSwiper() {
     }
 }
 
+;// CONCATENATED MODULE: ./src/scripts/modules/newsBar.js
+/**
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * newsbar & sessionStorage
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+function initializeNewsBarSessionStorage() {
+  var root = document.documentElement;
+
+  // Check if the link was previously clicked
+  if (sessionStorage.getItem('newsLinkClicked')) {
+    root.classList.add('newsbar-hidden');
+  }
+
+  // Function to handle link click
+  function handleLinkClick(event) {
+    // Prevent default link behavior
+    event.preventDefault();
+
+    // Store in sessionStorage that the link was clicked
+    sessionStorage.setItem('newsLinkClicked', true);
+    root.classList.add('newsbar-hidden');
+
+    // Redirect to the link
+    window.location.href = event.target.href;
+  }
+
+  const newsLink = document.querySelector('.monz-newsbar a');
+  if (newsLink) {
+    newsLink.addEventListener('click', handleLinkClick);
+  }
+
+}
 ;// CONCATENATED MODULE: ./src/scripts/main.js
 
 
 
 
+
+
+
+// NOTE: not used but kept for code reference
 // import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
-
-
-
+// import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
 
 // wait until DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
@@ -23314,10 +23274,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("load", function (e) {
         initializeMobileMenu();
         initializeFullscreen();
-        // initializeNewsletterAnimation();
         initializeFooterReveal();
-        initializeNewsbarReveal();
         initializeSwiper();
+        initializeNewsBarSessionStorage();
+
+        // NOTE: not used but kept for code reference
+        // initializeNewsletterAnimation();
+        // initializeNewsbarReveal();
 
         console.debug("window loaded");
     }, false);

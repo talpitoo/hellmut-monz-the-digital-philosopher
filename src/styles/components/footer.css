@@ -1,0 +1,5 @@
+.footer-expanded {
+  footer {
+    @apply translate-y-0;
+  }
+}

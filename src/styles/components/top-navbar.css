@@ -4,11 +4,21 @@
     @apply hidden;
   }
 
+  .newsbar-hidden {
+    .monz-newsbar {
+      @apply hidden;
+    }
+  }
+
   .mobile-menu-expanded {
     @apply overflow-hidden;
 
     body {
       @apply overflow-hidden;
+    }
+
+    .monz-newsbar {
+      @apply hidden;
     }
 
     .monz-navbar {

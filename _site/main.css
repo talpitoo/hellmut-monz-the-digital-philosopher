@@ -1144,15 +1144,14 @@ video {
   background: #1C64F2;
   border-color: #1C64F2;
 }
- html,
-  body {
+ html {
   overflow-x: hidden;
 }
  body {
     /* @apply bg-background text-foreground; */
     position: relative;
-    padding-top: calc(11 * var(--spacer));
     font-family: Monz-1500MegaRegular, sans-serif;
+    /* NOTE: for fixed top navbar, .pt-spacer-11 was used to offset */
   }
  body::before {
   position: absolute;
@@ -1409,6 +1408,12 @@ video {
   .monz-icon-close {
   display: none;
 }
+ .newsbar-hidden .monz-newsbar {
+  display: none;
+}
+ .mobile-menu-expanded .monz-newsbar {
+  display: none;
+}
  .mobile-menu-expanded .monz-navbar {
   min-height: 100vh;
   text-align: center;
@@ -1522,6 +1527,10 @@ video {
   --tw-content: ">";
   content: var(--tw-content);
 }
+ .footer-expanded footer {
+  --tw-translate-y: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
  /* abstractions on top of TailwindCSS grid https://tailwindcss.com/docs/display#grid for better readability */
  .swiper-button-prev,
 .swiper-button-next {
@@ -1596,6 +1605,9 @@ video {
 }
  .relative {
   position: relative;
+}
+ .sticky {
+  position: sticky;
 }
  .inset-0 {
   inset: 0px;
@@ -1851,10 +1863,6 @@ video {
 }
  .grow {
   flex-grow: 1;
-}
- .\!translate-y-0 {
-  --tw-translate-y: 0px !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
  .-translate-x-full {
   --tw-translate-x: -100%;

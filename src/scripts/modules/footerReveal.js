@@ -23,40 +23,23 @@ export function initializeFooterReveal() {
 
         gsap.to('footer', {
             scrollTrigger: {
-                trigger: "body",
+                trigger: "html",
                 start: "bottom bottom+=1", // start the animation when the bottom of the trigger element reaches the bottom of the viewport
                 toggleActions: "play reverse play reverse", // play the animation forward when entering the trigger, and in reverse when leaving
-                // TODO: debug
-                // markers: true,
-                // toggleClass: '!translate-y-0',
+                toggleClass: 'footer-expanded',
             },
-            translateY: 0,
-            duration: 0.1,
-            // TODO: debug
-            // onToggle: (self) => {
-            //     const footer = document.getElementById('footer');
-            //     if (self.isActive) {
-            //         // Add your class when the trigger is active
-            //         footer.classList.add('!translate-y-0');
-            //     } else {
-            //         // Remove your class when the trigger is not active
-            //         footer.classList.remove('!translate-y-0');
-            //     }
-            // },
         });
 
         if (isMobile) {
+            var root = document.documentElement;
             const footerButton = document.getElementById('footer-reveal');
-            const footer = document.getElementById('footer');
-        
-            if (footerButton && footer) {
+
+            if (footerButton) {
                 footerButton.addEventListener('click', function () {
-                    footer.classList.toggle('translate-y-spacer-30');
-                    footer.classList.toggle('!translate-y-0');
+                    root.classList.toggle("footer-expanded");
                 });
             }
         }
-
 
         return () => {
             // optionally return a cleanup function that will be called when the media query no longer matches

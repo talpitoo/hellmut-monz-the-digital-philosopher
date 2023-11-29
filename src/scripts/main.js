@@ -2,10 +2,12 @@ import '../styles/main.css';
 import { Dropdown } from 'flowbite';
 import { initializeMobileMenu } from './modules/hamburger';
 import { initializeFullscreen } from './modules/fullscreen';
-// import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
-import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
 import { initializeFooterReveal } from './modules/footerReveal';
 import { initializeSwiper } from './modules/swiperInstances';
+import { initializeNewsBarSessionStorage } from './modules/newsBar';
+// NOTE: not used but kept for code reference
+// import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
+// import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
 
 // wait until DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,10 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("load", function (e) {
         initializeMobileMenu();
         initializeFullscreen();
-        // initializeNewsletterAnimation();
         initializeFooterReveal();
-        initializeNewsbarReveal();
         initializeSwiper();
+        initializeNewsBarSessionStorage();
+
+        // NOTE: not used but kept for code reference
+        // initializeNewsletterAnimation();
+        // initializeNewsbarReveal();
 
         console.debug("window loaded");
     }, false);

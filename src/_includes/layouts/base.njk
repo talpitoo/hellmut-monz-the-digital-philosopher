@@ -17,12 +17,13 @@
 
     <link rel="icon" href="/img/favicon.ico" sizes="32x32">
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <!-- 180×180 -->
     <link rel="manifest" href="/site.webmanifest">
   </head>
   <body>
-    {% include "../components/navigation.njk" %}
 
+    {% include "../components/navigation.njk" %}
     <main>
       {{ content | safe }}
 
