@@ -10,6 +10,13 @@
  @import "fonts.css";
 
  /**
+ * 3rd party plugins
+ */
+ /* @import "../../node_modules/swiper/swiper-bundle.css"; // the whole swiper CSS bundle */
+ @import "../../node_modules/swiper/swiper.css"; /* only the minimum CSS for swiper */
+ /* @import "../../node_modules/swiper/modules/navigation.css"; */
+
+ /**
   * This injects Tailwind's base styles and any base styles registered by
   * plugins, then adds custom base styles.
   */

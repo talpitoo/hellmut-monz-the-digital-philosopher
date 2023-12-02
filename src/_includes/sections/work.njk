@@ -1,49 +1,84 @@
-<section class='bg-dark text-light text-sm py-section-sm-mobile lg:py-section-sm-desktop'>
-    <div class='layout px-0 py-spacer-mobile1 lg:py-spacer-desktop1'>
-        <div class="grid w-full lg:grid-cols-6 px-spacer-mobile2 lg:px-spacer-desktop7 gap-spacer-mobile2 lg:gap-spacer-desktop2">
-            <div class="lg:col-span-6">
+{# {% include "components/upward-facing-triangles.njk" %} #}
+
+{# NOTE: this work.njk is dynamic, it is loading data from src/_data/featuredArticlesWork.json and iterates through them #}
+<section class='bg-dark text-light py-section-sm'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
                 <h2>Work</h2>
             </div>
-            <div class="lg:col-span-2">
-                <div class="h-spacer-mobile29 lg:h-spacer-desktop29 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1">
-                    {# TODO: image placeholder #}
-                    {# <figure>
-                        <img src="/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset"/>
-                        <figcaption>An elephant at sunset</figcaption>
-                    </figure> #}
-                </div>
-                <h3>The Game of the World</h3>
-                <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
-                <ul class="flex gap-3">
-                    <li class="uppercase">Book</li>
-                    <li class="uppercase">Translation</li>
-                    <li class="uppercase">Philosophy</li>
-                </ul>
-            </div>
-            <div class="lg:col-span-4">
-                <div class="h-spacer-mobile29 lg:h-spacer-desktop29 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1"></div>
-                <h3>The Key to Philosophy</h3>
-                <p>A philosophical manual for stealing the priceless short-cut to the center of the universe.</p>
-                <ul class="flex gap-3">
-                    <li class="uppercase">Book</li>
-                    <li class="uppercase">Philosophy</li>
-                    <li class="uppercase">Theft</li>
-                </ul>
-            </div>
-            {% for item in[0, 1, 2] %}
-                <div class="lg:col-span-2">
-                    <div class="h-spacer-mobile14 lg:h-spacer-desktop14 bg-success mb-spacer-mobile1 lg:mb-spacer-desktop1"></div>
-                    <h3>The Game of the World</h3>
+            <div class="monz-col-2">
+                <article>
+                    <div class="h-spacer-29 bg-success mb-spacer-1">
+                        <figure class="h-full">
+                            {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
+                            {% set pictureObject = {
+                                'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                                'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                                'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                                'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
+                            } %}
+                            {% include "components/picture-example.njk" %}
+                            {# NOTE: optional caption #}
+                            {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
+                        </figure>
+                    </div>
+                    <h3>
+                        <a href="#" class="stretched-link">The Game of the World</a>
+                    </h3>
                     <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
-                    <ul class="flex gap-3">
+                    <ul class="list-separator-dot text-muted">
                         <li class="uppercase">Book</li>
                         <li class="uppercase">Translation</li>
                         <li class="uppercase">Philosophy</li>
                     </ul>
-                </div>
+                </article>
+            </div>
+            <div class="monz-col-4">
+                <article>
+                    <div class="h-spacer-29 bg-success mb-spacer-1"></div>
+                    <h3>
+                        <a href="#" class="stretched-link">The Key to Philosophy</a>
+                    </h3>
+                    <p>A philosophical manual for stealing the priceless short-cut to the center of the universe.</p>
+                    <ul class="list-separator-dot text-muted">
+                        <li class="uppercase">Book</li>
+                        <li class="uppercase">Philosophy</li>
+                        <li class="uppercase">Theft</li>
+                    </ul>
+                </article>
+            </div>
+
+            {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
+            {% for featuredArticle in featuredArticlesWork.featuredArticles %}
+                {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
+                    <div class="monz-col-2">
+                        <article>
+                            <div class="h-spacer-14 bg-success mb-spacer-1">
+                                <figure class="h-full">
+                                    {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                                    {% set pictureObject = featuredArticle.coverPhoto %}
+                                    {% include "components/picture-example.njk" %}
+                                    {# NOTE: optional caption #}
+                                    {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
+                                </figure>
+                            </div>
+                            <h3>
+                                <a href="#" class="stretched-link">{{ featuredArticle.title }}</a>
+                            </h3>
+                            <p>{{ featuredArticle.description }}</p>
+                            <ul class="list-separator-dot text-muted">
+                                {% for tag in featuredArticle.tags %}
+                                    <li class="uppercase">{{ tag }}</li>
+                                {% endfor %}
+                            </ul>
+                        </article>
+                    </div>
+                {% endif %}
             {% endfor %}
-            <div class="lg:col-span-2 lg:col-start-3">
-                <a href="#" class="mt-spacer-mobile2 lg:mt-spacer-desktop2 link-underline bg-primary block uppercase p-spacer-mobile1 lg:p-spacer-desktop1 text-left text-spacer-mobile1 lg:text-spacer-desktop1 leading-none text-body">View more work --&gt;</a>
+
+            <div class="monz-col-2 lg:col-start-3">
+                <a href="#" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">View more work --&gt;</a>
             </div>
         </div>
     </div>

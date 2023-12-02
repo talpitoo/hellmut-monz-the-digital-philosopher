@@ -1,0 +1,26 @@
+---
+title: Search
+description: "TODO: Search"
+layout: layouts/base.njk
+permalink: /search/
+---
+
+<section class='py-section-sm'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <h1 class="text-body">{{ title }}</h1>
+        </div>
+        <form class="mt-spacer-2" id="search">
+            <div class="monz-grid">
+                <div class="monz-col-5">
+                    <label class="block">
+                        <input type="text" class="rounded-none block w-full mb-spacer-1" placeholder="Search" required aria-label="Search">
+                    </label>
+                </div>
+                <div class="monz-col-1">
+                    <button type="submit" class="bg-primary block w-full uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

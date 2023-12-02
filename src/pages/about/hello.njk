@@ -1,0 +1,76 @@
+---
+title: Hello
+description: "TODO: Hello"
+layout: layouts/base.njk
+permalink: /about/hello/
+eleventyNavigation:
+  key: Hello
+  parent: About
+  url: /about/hello/
+---
+
+<section class='py-section-sm'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                <h1 class="text-body">{{ title }}</h1>
+                <p class="lead">Hellmut Monz, PhD, can play many roles: designer, researcher, philosopher, artist, and joker.</p>
+                <p>They taught the theory and practice of digital design and media art at undergraduate and postgraduate level across the <a href="https://www.rmit.edu.au/about/our-education/academic-schools/design" class="link-underline bg-primary">Royal Melbourne Institute of Technology</a>, ranked among the World’s leading Design Universities. There, they also undertook their <a href="https://www.m-o.nz/digital_errance.html" class="link-underline bg-primary">doctoral research</a> that investigated the physical, metaphysical, and pataphysical dimensions of digitising the unconscious game of psychophysiological play.</p>
+                <p>In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta.</p>
+                <p>Sed consectetur viverra urna id porttitor. Maecenas risus lorem, sollicitudin at leo sed, consequat convallis velit. Pellentesque fermentum finibus libero, non mattis lectus sagittis mattis. Donec maximus, magna ac pharetra condimentum, lorem justo posuere lacus, et dignissim purus risus sit amet nunc. Duis ultricies mauris sed orci convallis, et auctor nisl condimentum. Nunc elementum, ipsum id auctor egestas, sem ante mattis ex, nec pharetra ex dui eu eros. Nam in accumsan tellus. Nulla tincidunt neque erat, id cursus elit iaculis et. Duis dapibus enim volutpat lorem rutrum, id tincidunt velit accumsan.</p>
+
+                {# NOTE: swiper #}
+                <div class="relative">
+                    <div class="swiper mt-spacer-2 -mx-spacer-1" id="monz-swiper">
+                        <div class="swiper-wrapper">
+                            {% for slides in[
+                                0,
+                                1,
+                                2,
+                                3,
+                                4,
+                                5
+                            ] %}
+                                <div class="swiper-slide px-spacer-1 pb-spacer-1">
+                                    <article>
+                                        <figure>
+                                            <div class="h-spacer-14">
+                                                {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
+                                                {% set pictureObject = {
+                                            'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                                            'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                                            'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                                            'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
+                                        } %}
+                                                {% include "components/picture-example.njk" %}
+                                            </div>
+                                            {# NOTE: optional caption #}
+                                            <figcaption class="text-spacer-1 pt-spacer-1"><a href="#" class="stretched-link">Slide {{ loop.index}}</a></figcaption>
+                                        </figure>
+                                    </article>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <button type="button" class="swiper-button-prev -left-spacer-1.5 lg:-left-spacer-3">
+                        <span class="sr-only">previous slide</span>
+                        <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                            <use href="/img/icons/dist/sprite.svg#icon-caret-left"></use>
+                        </svg>
+                    </button>
+                    <button type="button" class="swiper-button-next -right-spacer-1.5 lg:-right-spacer-3">
+                        <span class="sr-only">next slide</span>
+                        <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                            <use href="/img/icons/dist/sprite.svg#icon-caret-right"></use>
+                        </svg>
+                    </button>
+                </div>
+                {# NOTE: end swiper #}
+            </div>
+            <div class="monz-col-2 lg:col-start-3">
+                <a href="/" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Home --&gt;</a>
+            </div>
+        </div>
+    </div>
+</section>

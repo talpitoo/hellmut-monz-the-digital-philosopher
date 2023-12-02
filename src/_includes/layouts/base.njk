@@ -1,11 +1,14 @@
 <!doctype html>
-<html lang="en" class="overflow-x-hidden scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ title }} | MONZ: Designer + Researcher + Philosopher + Artist + Joker</title>
-    {# {% if description %}<meta name="description" content="{{ description }}">{% endif %} #}
-    <meta name="description" content="Designer + Researcher + Philosopher + Artist + Joker">
+    {% if description %}
+      <meta name="description" content="{{ description }}">
+    {% else %}
+      <meta name="description" content="Designer + Researcher + Philosopher + Artist + Joker">
+    {% endif %}
     <meta name="keywords" content="design, research, philosophy, art, jokes">
     <meta name="author" content="Hellmut Monz">
 
@@ -14,20 +17,27 @@
 
     <link rel="icon" href="/img/favicon.ico" sizes="32x32">
     <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><!-- 180×180 -->
+    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+    <!-- 180×180 -->
     <link rel="manifest" href="/site.webmanifest">
   </head>
-  <body class="overflow-x-hidden relative">
-    {% include "../components/navigation.njk" %}
+  <body>
 
+    {% include "../components/navigation.njk" %}
     <main>
-    {# TODO: brainstorm whether to use .prose <main class="prose lg:prose-lg"> #}
       {{ content | safe }}
+
+      {# NOTE: undo the footer reveal offset #}
+      <div class="bg-dark pb-spacer-33"></div>
     </main>
 
     {% include "../components/footer.njk" %}
 
-    {# NOTE: optional example in case importing in main.js does not work <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script> #}
-    <script src="/main.js"></script>
+    {# NOTE: optional example in case importing in main.js does not work 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.6/flowbite.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js" defer></script> #}
+
+    <script src="/main.js" defer></script>
   </body>
 </html>

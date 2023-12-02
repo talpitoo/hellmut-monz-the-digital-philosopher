@@ -1,65 +1,29 @@
 import '../styles/main.css';
-import 'flowbite';
-import { Dropdown, Tabs } from 'flowbite';
-// import Swiper from 'swiper/bundle'; // import Swiper bundle with all modules installed
-// import 'swiper/css/bundle'; // import styles bundle
+import { Dropdown } from 'flowbite';
+import { initializeMobileMenu } from './modules/hamburger';
+import { initializeFullscreen } from './modules/fullscreen';
+import { initializeFooterReveal } from './modules/footerReveal';
+import { initializeSwiper } from './modules/swiperInstances';
+import { initializeNewsBarSessionStorage } from './modules/newsBar';
+// NOTE: not used but kept for code reference
+// import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
+// import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
 
 // wait until DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
     console.debug("DOM loaded");
 
-    //wait until images, links, fonts, stylesheets, and js is loaded
+    // wait until images, links, fonts, stylesheets, and js is loaded
     window.addEventListener("load", function (e) {
+        initializeMobileMenu();
+        initializeFullscreen();
+        initializeFooterReveal();
+        initializeSwiper();
+        initializeNewsBarSessionStorage();
 
-        /**
-         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-         * hamburger
-         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-         */
-        var root = document.documentElement;
-        var burgerMenu = document.getElementById('burger-menu');
-        var burgerMenuClose = document.getElementById('burger-menu-close');
-        if (burgerMenu) {
-            //   var burgerMenuClose = document.getElementById('burger-menu-close');
-            burgerMenu.addEventListener('click', function () {
-                root.classList.toggle("mobile-menu-expanded");
-            });
-            burgerMenuClose.addEventListener('click', function () {
-                root.classList.toggle("mobile-menu-expanded");
-            });
-        }
-
-
-
-        /**
-         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-         * swiper instances
-         * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-         */
-        // const swiper = new Swiper("#swiper-reservations", {
-        //     slidesPerView: 1,
-        //     loop: true,
-        //     pagination: {
-        //         el: ".swiper-pagination",
-        //         clickable: true,
-        //     },
-        //     breakpoints: {
-        //         0: {
-        //             navigation: {
-        //                 enabled: false,
-        //             },
-        //         },
-        //         1024: {
-        //             navigation: {
-        //                 enabled: true,
-        //                 nextEl: "[data-swiper-button-prev]",
-        //                 prevEl: "[data-swiper-button-next]",
-        //             },
-        //         }
-        //     },
-        // });
-
-
+        // NOTE: not used but kept for code reference
+        // initializeNewsletterAnimation();
+        // initializeNewsbarReveal();
 
         console.debug("window loaded");
     }, false);

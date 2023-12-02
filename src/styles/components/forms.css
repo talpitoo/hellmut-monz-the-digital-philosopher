@@ -1,5 +1,5 @@
 @layer components {
-  [type="text"],
+  /* [type="text"],
   [type="email"],
   [type="url"],
   [type="password"],
@@ -28,17 +28,5 @@
 
   [type="radio"] {
     @apply rounded-full;
-  }
-
-  fieldset {
-    @apply flex flex-col gap-5 lg:gap-6 items-start mb-12;
-  }
-
-  legend {
-    @apply text-xl font-bold text-tertiary mb-6;
-  }
-
-  label {
-    @apply text-sm text-muted;
-  }
+  } */
 }

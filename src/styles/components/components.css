@@ -8,4 +8,37 @@
  * — from https://tailwindcss.com/docs/plugins#adding-components
  */
 @layer components {
+  article {
+    @apply pb-spacer-1 relative;
+
+    &:hover,
+    &:focus,
+    &:focus-within,
+    &:active {
+      box-shadow: var(--spacer) var(--spacer) 0 0 var(--tw-color-warning-500);
+    }
+  }
+
+  .stretched-link {
+    @apply after:absolute after:top-0 after:right-0 after:bottom-0 after:left-0 after:z-1;
+  }
+
+  .list-separator-dot {
+    @apply flex gap-3;
+
+    li + li {
+      @apply before:content-['·'] before:pr-3;
+    }
+  }
+
+  .list-greater {
+    li {
+      @apply before:content-[">"] before:mr-spacer-1/2;
+    }
+  }
+
+  .monz-icon-active {
+    @apply relative;
+    @apply after:absolute after:block after:w-full after:border-b-2 after:border-solid after:border-light after:mt-1;
+  }
 }

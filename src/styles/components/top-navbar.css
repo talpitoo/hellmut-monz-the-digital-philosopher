@@ -1,19 +1,51 @@
 @layer components {
+  .monz-hidden,
+  .monz-icon-close {
+    @apply hidden;
+  }
+
+  .newsbar-hidden {
+    .monz-newsbar {
+      @apply hidden;
+    }
+  }
+
   .mobile-menu-expanded {
     @apply overflow-hidden;
 
     body {
       @apply overflow-hidden;
     }
-  }
 
-  [data-main-menu] {
-    /* @apply z-1; */
-    @apply -z-1 -translate-y-full opacity-0 lg:transform-none lg:opacity-100;
+    .monz-newsbar {
+      @apply hidden;
+    }
 
-    .mobile-menu-expanded & {
-      /* @apply -z-1 -translate-y-full opacity-0 lg:transform-none lg:opacity-100; */
-      @apply z-1 translate-y-0 opacity-100;
+    .monz-navbar {
+      @apply text-center lg:text-left min-h-screen;
+    }
+
+    .monz-hidden,
+    .monz-icon-close {
+      @apply block;
+    }
+
+    .monz-icon-hamburger {
+      @apply hidden;
+    }
+
+    .monz-dropdown {
+      @apply lg:block lg:bg-dark lg:!top-spacer-2;
+
+      a {
+        @apply lg:text-light;
+      }
+    }
+
+    .monz-dropdown-trigger {
+      svg {
+        @apply hidden;
+      }
     }
   }
 }

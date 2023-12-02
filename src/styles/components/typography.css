@@ -5,7 +5,7 @@
   h3 + p,
   ul + p,
   p + ul {
-    @apply mt-spacer-mobile1 lg:mt-spacer-desktop1;
+    @apply mt-spacer-1;
   }
 
   h1,
@@ -19,28 +19,35 @@
 
   h1,
   .h1 {
-    @apply uppercase font-sans text-spacer-mobile3 lg:text-spacer-desktop3;
+    @apply uppercase font-sans text-spacer-3;
   }
 
   h2,
   .h2 {
-    @apply uppercase font-sans text-spacer-mobile2 lg:text-spacer-desktop2;
+    @apply uppercase font-sans text-spacer-2;
   }
 
   h3,
   .h3 {
-    @apply text-spacer-mobile1 lg:text-spacer-desktop1;
+    @apply text-spacer-1;
   }
 
-  p {
-    @apply text-spacer-mobile1 lg:text-spacer-desktop1;
+  p,
+  ul {
+    /* @apply text-spacer-1; */
+    --multiplier: .75;
+    font-size: calc(var(--multiplier) * var(--spacer));
   }
 
   p.lead {
-    @apply text-spacer-mobile2 lg:text-spacer-desktop2 leading-relaxed;
+    @apply text-spacer-2 leading-relaxed;
   }
 
   .link-underline {
     @apply no-underline hover:underline hover:underline-offset-4 decoration-2;
+  }
+
+  .link-underline-spacer {
+    @apply lg:hover:underline-offset-spacer;
   }
 }
