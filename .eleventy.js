@@ -6,6 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/fonts')
   eleventyConfig.addPassthroughCopy('src/site.webmanifest');
   eleventyConfig.addPassthroughCopy('src/browserconfig.xml');
+  eleventyConfig.addPassthroughCopy('src/robots.txt');
 
   return {
     dir: { input: 'src', output: '_site' }
