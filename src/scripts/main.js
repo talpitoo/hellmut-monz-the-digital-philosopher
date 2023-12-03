@@ -1,6 +1,7 @@
 import '../styles/main.css';
 import { Dropdown } from 'flowbite';
 import { initializeMobileMenu } from './modules/hamburger';
+import { initializeOverlayDebugGrid } from './modules/grid-debug-overlay';
 import { initializeFullscreen } from './modules/fullscreen';
 import { initializeFooterReveal } from './modules/footerReveal';
 import { initializeSwiper } from './modules/swiperInstances';
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // wait until images, links, fonts, stylesheets, and js is loaded
     window.addEventListener("load", function (e) {
         initializeMobileMenu();
+        initializeOverlayDebugGrid();
         initializeFullscreen();
         initializeFooterReveal();
         initializeSwiper();
