@@ -1,7 +1,7 @@
 import '../styles/main.css';
 import { Dropdown } from 'flowbite';
 import { initializeMobileMenu } from './modules/hamburger';
-import { initializeOverlayDebugGrid } from './modules/grid-debug-overlay';
+import { initializeOverlayDebugGrid } from './modules/gridDebugOverlay';
 import { initializeFullscreen } from './modules/fullscreen';
 import { initializeFooterReveal } from './modules/footerReveal';
 import { initializeSwiper } from './modules/swiperInstances';

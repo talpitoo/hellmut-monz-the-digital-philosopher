@@ -4506,7 +4506,7 @@ function initializeMobileMenu() {
     });
   }
 }
-;// CONCATENATED MODULE: ./src/scripts/modules/grid-debug-overlay.js
+;// CONCATENATED MODULE: ./src/scripts/modules/gridDebugOverlay.js
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * grid debug overlay when <html class="debug">
