@@ -4506,6 +4506,23 @@ function initializeMobileMenu() {
     });
   }
 }
+;// CONCATENATED MODULE: ./src/scripts/modules/gridDebugOverlay.js
+/**
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * grid debug overlay when <html class="debug">
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+function initializeOverlayDebugGrid() {
+  var root = document.documentElement;
+  // get the URL parameters
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // check if the "debug" parameter is present
+  if (urlParams.has('debug')) {
+    // add the "debug" class to the <html> tag
+    root.classList.add('debug');
+  }
+}
 ;// CONCATENATED MODULE: ./src/scripts/modules/fullscreen.js
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -23262,6 +23279,7 @@ function initializeNewsBarSessionStorage() {
 
 
 
+
 // NOTE: not used but kept for code reference
 // import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
 // import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
@@ -23273,6 +23291,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // wait until images, links, fonts, stylesheets, and js is loaded
     window.addEventListener("load", function (e) {
         initializeMobileMenu();
+        initializeOverlayDebugGrid();
         initializeFullscreen();
         initializeFooterReveal();
         initializeSwiper();

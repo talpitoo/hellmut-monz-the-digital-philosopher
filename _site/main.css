@@ -1151,14 +1151,16 @@ video {
     /* @apply bg-background text-foreground; */
     position: relative;
     font-family: Monz-1500MegaRegular, sans-serif;
-    /* NOTE: for fixed top navbar, .pt-spacer-11 was used to offset */
   }
- body::before {
+ /* NOTE: for fixed top navbar, .pt-spacer-11 was used to offset */
+ .debug body::after {
+  pointer-events: none;
   position: absolute;
   left: 0px;
   right: 0px;
   top: 0px;
   bottom: 0px;
+  z-index: 10;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -1168,15 +1170,15 @@ video {
   content: var(--tw-content);
   opacity: 0.05;
 }
- /* NOTE: not required before:max-h-[675px] */
- body::before {
-      background-image: url(../img/grid-reference-mobile.jpg);
-    }
- @media (min-width: 1024px) {
-      body::before {
-        background-image: url(../img/grid-reference-desktop.jpg);
+ /* NOTE: not required after:max-h-[675px] */
+ .debug body::after {
+        background-image: url(../img/grid-reference-mobile.jpg);
       }
-    }
+ @media (min-width: 1024px) {
+        .debug body::after {
+          background-image: url(../img/grid-reference-desktop.jpg);
+        }
+      }
  *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
