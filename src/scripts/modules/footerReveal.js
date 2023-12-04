@@ -34,11 +34,21 @@ export function initializeFooterReveal() {
             var root = document.documentElement;
             const footerButton = document.getElementById('footer-reveal');
 
+            const toggleFooterClass = () => {
+                root.classList.toggle("footer-expanded");
+            };
+
             if (footerButton) {
-                footerButton.addEventListener('click', function () {
-                    root.classList.toggle("footer-expanded");
-                });
+                footerButton.addEventListener('click', toggleFooterClass);
             }
+
+            // add click event listener to document
+            document.addEventListener('click', (event) => {
+                // check if the clicked element is not part of the footer or the footer button
+                if (!footerButton.contains(event.target) && !document.querySelector('footer').contains(event.target)) {
+                    root.classList.remove("footer-expanded");
+                }
+            });
         }
 
         return () => {

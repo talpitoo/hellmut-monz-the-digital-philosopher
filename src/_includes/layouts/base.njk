@@ -33,7 +33,9 @@
       {{ content | safe }}
 
       {# NOTE: undo the footer reveal offset #}
-      <div class="bg-dark pb-spacer-33"></div>
+      <div class="bg-dark">
+        <div class='monz-container pb-spacer-33'></div>
+      </div>
     </main>
 
     {% include "../components/footer.njk" %}

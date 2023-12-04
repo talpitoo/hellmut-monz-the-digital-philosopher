@@ -1529,9 +1529,10 @@ video {
   --tw-content: ">";
   content: var(--tw-content);
 }
- .footer-expanded footer {
-  --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+ footer:hover [data-footer-reveal],
+.footer-expanded footer [data-footer-reveal] {
+  /* NOTE: reveal the footer on hover, and by toggling the .footer-expanded on the <html> */
+  margin-bottom: 0px;
 }
  /* abstractions on top of TailwindCSS grid https://tailwindcss.com/docs/display#grid for better readability */
  .swiper-button-prev,
@@ -1703,6 +1704,9 @@ video {
  .my-spacer-3 {
   margin-top: calc(3 * var(--spacer));
   margin-bottom: calc(3 * var(--spacer));
+}
+ .-mb-spacer-30 {
+  margin-bottom: calc(calc(30 * var(--spacer)) * -1);
 }
  .-mt-spacer-1 {
   margin-top: calc(var(--spacer) * -1);
@@ -1884,10 +1888,6 @@ video {
 }
  .translate-y-full {
   --tw-translate-y: 100%;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
- .translate-y-spacer-30 {
-  --tw-translate-y: calc(30 * var(--spacer));
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
  .rotate-180 {
@@ -2287,6 +2287,11 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+ .transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
  .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -2340,10 +2345,6 @@ video {
     content: var(--tw-content);
     border-color: var(--tw-color-gray-100);
   }
-}
- .hover\:\!translate-y-0:hover {
-  --tw-translate-y: 0px !important;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
  .hover\:border-gray-300:hover {
   border-color: var(--tw-color-gray-300);
