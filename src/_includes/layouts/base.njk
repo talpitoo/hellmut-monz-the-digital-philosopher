@@ -21,10 +21,10 @@
     <!-- 180×180 -->
     <link rel="manifest" href="/site.webmanifest">
 
-    <meta property="og:image" content="/img/logo-hellmut-monz-big.png"/>
-    <meta property="twitter:image" content="/img/logo-hellmut-monz-big.png"/>
-    <meta property="og:image:width" content="800"/>
-    <meta property="og:image:height" content="338"/>
+    <meta property="og:image" content="img/og-cover-logo-hellmut-monz-big.png"/>
+    <meta property="twitter:image" content="img/og-cover-logo-hellmut-monz-big.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
   </head>
   <body>
 
@@ -33,7 +33,9 @@
       {{ content | safe }}
 
       {# NOTE: undo the footer reveal offset #}
-      <div class="bg-dark pb-spacer-33"></div>
+      <div class="bg-dark">
+        <div class='monz-container pb-spacer-33'></div>
+      </div>
     </main>
 
     {% include "../components/footer.njk" %}

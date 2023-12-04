@@ -1,5 +1,5 @@
-.footer-expanded {
-  footer {
-    @apply translate-y-0;
-  }
+footer:hover [data-footer-reveal],
+.footer-expanded footer [data-footer-reveal] {
+  /* NOTE: reveal the footer on hover, and by toggling the .footer-expanded on the <html> */
+  @apply mb-0;
 }

@@ -19,10 +19,10 @@
     <!-- 180×180 -->
     <link rel="manifest" href="/site.webmanifest">
 
-    <meta property="og:image" content="/img/logo-hellmut-monz-big.png"/>
-    <meta property="twitter:image" content="/img/logo-hellmut-monz-big.png"/>
-    <meta property="og:image:width" content="800"/>
-    <meta property="og:image:height" content="338"/>
+    <meta property="og:image" content="img/og-cover-logo-hellmut-monz-big.png"/>
+    <meta property="twitter:image" content="img/og-cover-logo-hellmut-monz-big.png"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
   </head>
   <body>
 
@@ -375,10 +375,12 @@
 </section>
 
       
-      <div class="bg-dark pb-spacer-33"></div>
+      <div class="bg-dark">
+        <div class='monz-container pb-spacer-33'></div>
+      </div>
     </main>
 
-    <footer id="footer" class="fixed left-0 right-0 bottom-0 translate-y-spacer-30 hover:!translate-y-0 z-1 transition-transform duration-300">
+    <footer id="footer" class="fixed left-0 right-0 bottom-0 z-1">
   <div class="-mt-spacer-1">
     
 <div class='monz-container'>
@@ -409,12 +411,17 @@
         </div>
     </div>
 </div>
-    <button type="button" id="footer-reveal" class="w-full bg-dark h-section-sm"><span class="sr-only">reveal the footer</span></button>
+    <div class="bg-dark">
+      <div class='monz-container'>
+        <button type="button" id="footer-reveal" class="w-full h-section-sm"><span class="sr-only">reveal the footer</span></button>
+      </div>
+    </div>
   </div>
 
-  <div class='bg-dark text-light text-center pb-section-sm'>
+  <div class='bg-dark text-light text-center'>
     <div class='monz-container'>
-      <div class="monz-grid">
+      
+      <div class="monz-grid pb-section-sm -mb-spacer-30 transition-all duration-300" data-footer-reveal>
         <div class="monz-col-2 lg:col-start-3">
           <img src="/img/logo-monz.svg" alt='Hellmut MONZ' width='515' height='125' class="w-full h-auto mb-spacer-3"/>
           <div id="newsletter-wrapper">
