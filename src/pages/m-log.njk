@@ -9,9 +9,22 @@ eleventyNavigation:
   icon: m-log
 ---
 
-<section>
-  <div class='monz-container relative'>
-    <h1>M-log</h1>
-    <p>Lorem ipsum...</p>
-  </div>
+<section class='py-section-sm bg-dark text-light'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                <h1>{{ title }}</h1>
+                <ul class="mt-spacer-2 lg:columns-3 gap-spacer-2">
+                  {# NOTE: modal toggle #}
+                  <li><button type="button" data-modal-target="modal-layout-01" data-modal-toggle="modal-layout-01" class="link-underline mb-spacer-2 bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body w-full">Modal layout 01 --&gt;</button></li>
+                  <li><a href="/" class="link-underline mb-spacer-2 bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Modal #2 --&gt;</a></li>
+                  <li><a href="/" class="link-underline mb-spacer-2 bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Modal #3 --&gt;</a></li>
+                  <li><a href="/" class="link-underline mb-spacer-2 bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Modal #4 --&gt;</a></li>
+                  <li><a href="/" class="link-underline mb-spacer-2 bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Modal #5 --&gt;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
+
+{% include "components/modals/modal-layout-01.njk" %}
