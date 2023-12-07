@@ -1690,6 +1690,9 @@ video {
  .col-span-5 {
   grid-column: span 5 / span 5;
 }
+ .col-span-6 {
+  grid-column: span 6 / span 6;
+}
  .col-span-7 {
   grid-column: span 7 / span 7;
 }
@@ -1704,6 +1707,9 @@ video {
  .my-spacer-3 {
   margin-top: calc(3 * var(--spacer));
   margin-bottom: calc(3 * var(--spacer));
+}
+ .-mb-spacer-1 {
+  margin-bottom: calc(var(--spacer) * -1);
 }
  .-mb-spacer-30 {
   margin-bottom: calc(calc(30 * var(--spacer)) * -1);
@@ -1753,6 +1759,12 @@ video {
  .mt-spacer-4 {
   margin-top: calc(4 * var(--spacer));
 }
+ .mt-spacer-5 {
+  margin-top: calc(5 * var(--spacer));
+}
+ .mt-spacer-7 {
+  margin-top: calc(7 * var(--spacer));
+}
  .block {
   display: block;
 }
@@ -1801,6 +1813,9 @@ video {
  .h-full {
   height: 100%;
 }
+ .h-screen {
+  height: 100vh;
+}
  .h-section-sm {
   height: calc(4 * var(--spacer));
 }
@@ -1816,11 +1831,26 @@ video {
  .h-spacer-2 {
   height: calc(2 * var(--spacer));
 }
+ .h-spacer-21 {
+  height: calc(21 * var(--spacer));
+}
+ .h-spacer-22 {
+  height: calc(22 * var(--spacer));
+}
+ .h-spacer-25 {
+  height: calc(25 * var(--spacer));
+}
  .h-spacer-29 {
   height: calc(29 * var(--spacer));
 }
  .h-spacer-3 {
   height: calc(3 * var(--spacer));
+}
+ .h-spacer-33 {
+  height: calc(33 * var(--spacer));
+}
+ .h-spacer-46 {
+  height: calc(46 * var(--spacer));
 }
  .max-h-full {
   max-height: 100%;
@@ -1845,6 +1875,9 @@ video {
 }
  .w-full {
   width: 100%;
+}
+ .w-screen {
+  width: 100vw;
 }
  .w-spacer-1 {
   width: var(--spacer);
@@ -1915,6 +1948,9 @@ video {
  .resize {
   resize: both;
 }
+ .break-inside-avoid-column {
+  break-inside: avoid-column;
+}
  .grid-cols-30 {
   grid-template-columns: repeat(30, minmax(0, 1fr));
 }
@@ -1950,6 +1986,9 @@ video {
 }
  .gap-0 {
   gap: 0px;
+}
+ .gap-spacer-2 {
+  gap: calc(2 * var(--spacer));
 }
  .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -2173,6 +2212,9 @@ video {
 }
  .text-center {
   text-align: center;
+}
+ .text-right {
+  text-align: right;
 }
  .font-sans {
   font-family: Monz-069HexagonaBold, serif;
@@ -2494,6 +2536,9 @@ video {
   .lg\:right-spacer-1 {
     right: var(--spacer);
   }
+  .lg\:top-spacer-3 {
+    top: calc(3 * var(--spacer));
+  }
   .lg\:order-1 {
     order: 1;
   }
@@ -2525,6 +2570,9 @@ video {
   .lg\:mb-0 {
     margin-bottom: 0px;
   }
+  .lg\:mr-spacer-2 {
+    margin-right: calc(2 * var(--spacer));
+  }
   .lg\:mt-0 {
     margin-top: 0px;
   }
@@ -2545,6 +2593,9 @@ video {
   }
   .lg\:w-spacer-12 {
     width: calc(12 * var(--spacer));
+  }
+  .lg\:columns-3 {
+    columns: 3;
   }
   .lg\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
