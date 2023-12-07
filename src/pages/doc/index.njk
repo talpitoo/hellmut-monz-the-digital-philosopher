@@ -23,72 +23,28 @@ eleventyNavigation:
     <div class="monz-grid">
       <div class="monz-col-6 pt-spacer-3">
         <h1 class="mb-spacer-3">{{ title }}</h1>
-        <p class="lead">Hellmut Monz doc ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-        <h2 class="mt-spacer-5 mb-spacer-3">2001-05</h2>
-        <ul class="lg:columns-3 gap-spacer-2">
-          {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
-          {% for featuredArticle in featuredArticlesWork.featuredArticles %}
-            {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
-              <li>
-                <article class="break-inside-avoid-column">
-                  {# TODO: class for Tailwind JIT compiler: .h-spacer-14 .h-spacer-21 .h-spacer-22 .h-spacer-25 .h-spacer-33 #}
-                  <div class="h-spacer-{{featuredArticle.coverPhoto.height}} bg-success mb-spacer-1">
-                    <figure class="h-full">
-                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                      {% set pictureObject = featuredArticle.coverPhoto %}
-                      {% include "components/picture-example.njk" %}
-                      {# NOTE: optional caption #}
-                      {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                    </figure>
-                  </div>
-                  <h3>
-                    {# NOTE: modal toggle #}
-                    <button type="button" class="stretched-link" data-modal-target="modal-layout-01" data-modal-toggle="modal-layout-01">{{ featuredArticle.title }}</button>
-                  </h3>
-                  <p>{{ featuredArticle.description }}</p>
-                  <ul class="list-separator-dot text-muted">
-                    {% for tag in featuredArticle.tags %}
-                      <li class="uppercase">{{ tag }}</li>
-                    {% endfor %}
-                  </ul>
-                </article>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+        <p class="lead">Hellmut Monz <button type="button" data-modal-target="modal-layout-01" data-modal-toggle="modal-layout-01" class="link-underline text-primary">open modal</button> doc ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
 
-        <h2 class="mt-spacer-5 mb-spacer-3">2005-12</h2>
-        <ul class="lg:columns-3 gap-spacer-2">
-          {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
-          {% for featuredArticle in featuredArticlesWork.featuredArticles %}
-            {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
-              <li>
-                <article class="break-inside-avoid-column">
-                  {# TODO: class for Tailwind JIT compiler: .h-spacer-14 .h-spacer-21 .h-spacer-22 .h-spacer-25 .h-spacer-33 #}
-                  <div class="h-spacer-{{featuredArticle.coverPhoto.height}} bg-success mb-spacer-1">
-                    <figure class="h-full">
-                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                      {% set pictureObject = featuredArticle.coverPhoto %}
-                      {% include "components/picture-example.njk" %}
-                      {# NOTE: optional caption #}
-                      {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                    </figure>
-                  </div>
-                  <h3>
-                    {# NOTE: modal toggle #}
-                    <button type="button" class="stretched-link" data-modal-target="modal-layout-01" data-modal-toggle="modal-layout-01">{{ featuredArticle.title }}</button>
-                  </h3>
-                  <p>{{ featuredArticle.description }}</p>
-                  <ul class="list-separator-dot text-muted">
-                    {% for tag in featuredArticle.tags %}
-                      <li class="uppercase">{{ tag }}</li>
-                    {% endfor %}
-                  </ul>
-                </article>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+        <h2 class="mt-spacer-5 mb-spacer-3">2022</h2>
+        {# NOTE: the content comes from collections.year2022 which is annotated by `tags: ["year2022", ...` #}
+        {% set posts = collections.year2022 | reverse %}
+        {% include "components/category.njk" %}
+
+        <h2 class="mt-spacer-5 mb-spacer-3">2017-21</h2>
+        {# NOTE: the content comes from collections.year2017to2021 which is annotated by `tags: ["year2017to2021", ...` #}
+        {% set posts = collections.year2017to2021 | reverse %}
+        {% include "components/category.njk" %}
+
+        <h2 class="mt-spacer-5 mb-spacer-3">2013-17</h2>
+        {# NOTE: the content comes from collections.year2013to2017 which is annotated by `tags: ["year2013to2017", ...` #}
+        {% set posts = collections.year2013to2017 | reverse %}
+        {% include "components/category.njk" %}
+
+        <h2 class="mt-spacer-5 mb-spacer-3">Pre 2001</h2>
+        {# NOTE: the content comes from collections.pre2001 which is annotated by `tags: ["pre2001", ...` #}
+        {% set posts = collections.pre2001 | reverse %}
+        {% include "components/category.njk" %}
+
       </div>
     </div>
 

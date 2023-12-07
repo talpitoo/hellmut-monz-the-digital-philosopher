@@ -16,9 +16,11 @@ eleventyNavigation:
         </div>
 
         <div class="monz-grid">
-            {# NOTE: the content comes from collections.books which is annotated by `tags: ["books", ...` #}
-            {% set posts = collections.books | reverse %}
-            {% include "components/category.njk" %}
+            <div class="monz-col-6 pt-spacer-3">
+                {# NOTE: the content comes from collections.books which is annotated by `tags: ["books", ...` #}
+                {% set posts = collections.books | reverse %}
+                {% include "components/category.njk" %}
+            </div>
         </div>
     </div>
 </section>

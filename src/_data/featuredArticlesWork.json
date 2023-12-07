@@ -9,7 +9,7 @@
                 "webP2x": "/img/pexels-daniel-cid-17505905-640x448@2x.webp",
                 "jpg": "/img/pexels-daniel-cid-17505905-640x448.jpg",
                 "jpg2x": "/img/pexels-daniel-cid-17505905-640x448@2x.jpg",
-                "height": "14"
+                "height": "small"
             },
             "tags": ["books", "translation", "philosophy"]
         },
@@ -22,7 +22,7 @@
                 "webP2x": "/img/pexels-oleksandr-tiupa-192136-640x427@2x.webp",
                 "jpg": "/img/pexels-oleksandr-tiupa-192136-640x427.jpg",
                 "jpg2x": "/img/pexels-oleksandr-tiupa-192136-640x427@2x.jpg",
-                "height": "22"
+                "height": "medium"
             },
             "tags": ["books", "podcast", "philosophy"]
         },
@@ -35,7 +35,7 @@
                 "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
                 "jpg": "/img/pexels-rdne-stock-project-8474487-640x424.jpg",
                 "jpg2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
-                "height": "14"
+                "height": "small"
             },
             "tags": ["books", "translation", "philosophy"]
         },
@@ -48,7 +48,7 @@
                 "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
                 "jpg": "/img/pexels-rdne-stock-project-8474487-640x424.jpg",
                 "jpg2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
-                "height": "33"
+                "height": "large"
             },
             "tags": ["books", "translation", "philosophy"]
         },
@@ -61,7 +61,7 @@
                 "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
                 "jpg": "/img/pexels-rdne-stock-project-8474487-640x424.jpg",
                 "jpg2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
-                "height": "25"
+                "height": "medium"
             },
             "tags": ["books", "translation", "philosophy"]
         },
@@ -74,7 +74,7 @@
                 "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
                 "jpg": "/img/pexels-rdne-stock-project-8474487-640x424.jpg",
                 "jpg2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
-                "height": "21"
+                "height": "medium"
             },
             "tags": ["books", "translation", "philosophy"]
         }
