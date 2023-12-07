@@ -9,8 +9,6 @@ eleventyNavigation:
   url: /work/books/
 ---
 
-{# {% include 'category.njk' %}  #}
-
 <section class='py-section-sm'>
     <div class='monz-container'>
         <div class="monz-grid">
@@ -18,33 +16,9 @@ eleventyNavigation:
         </div>
 
         <div class="monz-grid">
-            {# NOTE: the content comes from `tags: ["books", "work"]` #}
-            {% for post in collections.books | reverse %}
-                {% if post.data.title is defined and post.data.title !== '' %}
-                    <div class="monz-col-2">
-                        <article>
-                            <div class="h-spacer-14 bg-success mb-spacer-1">
-                                <figure class="h-full">
-                                    {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                                    {% set pictureObject = post.data.coverPhoto %}
-                                    {% include "components/picture-example.njk" %}
-                                    {# NOTE: optional caption #}
-                                    {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                                </figure>
-                            </div>
-                            <h3>
-                                <a href="#" class="stretched-link">{{ post.data.title }}</a>
-                            </h3>
-                            <p>{{ post.data.description }}</p>
-                            <ul class="list-separator-dot text-muted">
-                                {% for tag in post.data.tags %}
-                                    <li class="uppercase">{{ tag }}</li>
-                                {% endfor %}
-                            </ul>
-                        </article>
-                    </div>
-                {% endif %}
-            {% endfor %}
+            {# NOTE: the content comes from collections.books which is annotated by `tags: ["books", ...` #}
+            {% set posts = collections.books | reverse %}
+            {% include "components/category.njk" %}
         </div>
     </div>
 </section>
