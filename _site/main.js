@@ -4531,17 +4531,20 @@ function initializeOverlayDebugGrid() {
  */
 function initializeFullscreen() {
     var root = document.documentElement;
-    var toggleFullscreen = document.getElementById('btn-fullscreen');
-    if (toggleFullscreen) {
-        toggleFullscreen.addEventListener('click', function () {
-            root.requestFullscreen().catch(err => {
-                console.error(`Error attempting to enable full screen: ${err.message}`);
+    var toggleFullscreenButtons = document.querySelectorAll('[data-btn-fullscreen]');
+
+    if (toggleFullscreenButtons.length > 0) {
+        toggleFullscreenButtons.forEach(function (button) {
+            button.addEventListener('click', function () {
+                root.requestFullscreen().catch(err => {
+                    console.error(`Error attempting to enable full screen: ${err.message}`);
+                });
             });
         });
     }
+
     // NOTE: in case we have a button: document.exitFullscreen();
 }
-
 ;// CONCATENATED MODULE: ./node_modules/gsap/gsap-core.js
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
