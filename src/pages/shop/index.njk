@@ -1,17 +1,80 @@
 ---
 title: Shop
+date: 2022-01-11
+description: TODO
+coverPhoto: {
+                "webP": "/TODO/img/pexels-rdne-stock-project-8474487-640x424.webp",
+                "webP2x": "/TODO/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
+                "jpg": "/TODO/img/pexels-rdne-stock-project-8474487-640x424.jpg",
+                "jpg2x": "/TODO/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
+                "height": "small"
+            }
 layout: layouts/base.njk
 permalink: /shop/
-description: TODO
 eleventyNavigation:
   key: Shop
   order: 2
   icon: shop
 ---
 
-<section>
-  <div class='monz-container relative'>
-    <h1>Shop</h1>
-    <p>Lorem ipsum...</p>
+<section class='pb-section-sm bg-dark text-light'>
+  <figure class="mb-spacer-3">
+    <div class="h-spacer-46 bg-error">
+      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+      {% set pictureObject = coverPhoto %}
+      {% include "components/picture-example.njk" %}
+    </div>
+    {# NOTE: no caption here #}
+    {# <div class='monz-container'>
+      <div class="monz-grid">
+        <div class="monz-col-6">
+          <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
+        </div>
+      </div>
+    </div> #}
+  </figure>
+
+  <div class='monz-container'>
+    <div class="monz-grid">
+      <div class="monz-col-6">
+        <h1 class="mb-spacer-3">{{ title }}</h1>
+
+        {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
+        <ul class="lg:columns-3 gap-spacer-2">
+          {% for featuredArticle in featuredArticlesWork.featuredArticles %}
+            {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
+              <li>
+                <article class="break-inside-avoid-column">
+                  <div class="h-spacer-14 bg-error mb-spacer-1">
+                    <figure class="h-full">
+                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                      {% set pictureObject = featuredArticle.coverPhoto %}
+                      {% include "components/picture-example.njk" %}
+                      {# NOTE: optional caption #}
+                      {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
+                    </figure>
+                  </div>
+                  <h3>
+                    <a href="#" class="stretched-link">{{ featuredArticle.title }}</a>
+                  </h3>
+                  <p>{{ featuredArticle.description }}</p>
+                  <ul class="list-separator-dot text-muted">
+                    {% for tag in featuredArticle.tags %}
+                      <li class="uppercase">{{ tag }}</li>
+                    {% endfor %}
+                  </ul>
+                </article>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="monz-grid mt-spacer-7">
+      <div class="monz-col-2 lg:col-start-3">
+        {% include "components/pagination.njk" %}
+      </div>
+    </div>
   </div>
 </section>
