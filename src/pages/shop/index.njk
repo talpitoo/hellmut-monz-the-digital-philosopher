@@ -10,6 +10,7 @@ coverPhoto: {
                 "height": "small"
             }
 layout: layouts/base.njk
+figureBackgroundColor: bg-error
 permalink: /shop/
 eleventyNavigation:
   key: Shop
@@ -38,35 +39,9 @@ eleventyNavigation:
       <div class="monz-col-6">
         <h1 class="mb-spacer-3">{{ title }}</h1>
 
-        {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
-        <ul class="lg:columns-3 gap-spacer-2">
-          {% for featuredArticle in featuredArticlesWork.featuredArticles %}
-            {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
-              <li class="mb-spacer-2">
-                <article class="break-inside-avoid-column">
-                  <div class="h-spacer-14 bg-error mb-spacer-1">
-                    <figure class="h-full">
-                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                      {% set pictureObject = featuredArticle.coverPhoto %}
-                      {% include "components/picture-example.njk" %}
-                      {# NOTE: optional caption #}
-                      {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                    </figure>
-                  </div>
-                  <h3>
-                    <a href="#" class="stretched-link">{{ featuredArticle.title }}</a>
-                  </h3>
-                  <p>{{ featuredArticle.description }}</p>
-                  <ul class="list-separator-dot text-muted">
-                    {% for category in featuredArticle.categories %}
-                      <li class="uppercase">{{ category }}</li>
-                    {% endfor %}
-                  </ul>
-                </article>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+        {# NOTE: the content comes from collections.shop which is annotated by `tags: ["shop", ...` #}
+        {% set posts = collections.shop | reverse %}
+        {% include "components/article-list.njk" %}
       </div>
     </div>
 

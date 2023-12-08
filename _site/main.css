@@ -1,3 +1,6 @@
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/main.css ***!
+  \*********************************************************************************************************************************************/
 /**
  * Color CSS variables.
  */
@@ -1160,7 +1163,7 @@ video {
   right: 0px;
   top: 0px;
   bottom: 0px;
-  z-index: 10;
+  z-index: 50;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -1846,6 +1849,12 @@ video {
 }
  .h-spacer-46 {
   height: calc(46 * var(--spacer));
+}
+ .\!h-spacer-29 {
+  height: calc(29 * var(--spacer)) !important;
+}
+ .\!h-spacer-14 {
+  height: calc(14 * var(--spacer)) !important;
 }
  .max-h-full {
   max-height: 100%;
@@ -2594,6 +2603,9 @@ video {
   }
   .lg\:columns-3 {
     columns: 3;
+  }
+  .lg\:columns-2 {
+    columns: 2;
   }
   .lg\:grid-cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));

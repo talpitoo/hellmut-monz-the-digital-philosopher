@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
+            <loc>/doc/pre-2001/teaching-03/</loc>
+            <lastmod>1998-01-09T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/pre-2001/teaching-04/</loc>
+            <lastmod>1999-03-27T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/pre-2001/teaching-05/</loc>
+            <lastmod>1999-03-27T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/doc/pre-2001/teaching-01/</loc>
             <lastmod>2000-01-07T00:00:00.000Z</lastmod>
         </url>
@@ -79,6 +94,21 @@
         <url>
             <loc>/doc/2022/teaching-101/</loc>
             <lastmod>2022-03-17T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2022/teaching-137/</loc>
+            <lastmod>2022-04-28T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2022/teaching-138/</loc>
+            <lastmod>2022-04-28T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2022/teaching-203/</loc>
+            <lastmod>2022-04-28T00:00:00.000Z</lastmod>
         </url>
     
         <url>

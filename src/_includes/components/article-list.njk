@@ -1,11 +1,11 @@
 {% if posts.length > 0 %}
-    <ul class="lg:columns-3 gap-spacer-2">
+    <ul class="{% if numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 2 %}lg:columns-2{% else %}lg:columns-3{% endif %} gap-spacer-2">
         {% for post in posts %}
             {% if post.data.title is defined and post.data.title !== '' %}
                 {# TODO: <div class="monz-col-2"> #}
                 <li class="mb-spacer-2">
                     <article class="break-inside-avoid-column">
-                        <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% else %}h-spacer-14{% endif %} bg-success mb-spacer-1">
+                        <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% else %}h-spacer-14{% endif %} {{ figureHeight }} {% if figureBackgroundColor is defined and figureBackgroundColor !== '' %}{{ figureBackgroundColor }}{% else %}bg-light{% endif %} mb-spacer-1">
                             {# NOTE: keeping for the default syntax <div class="h-spacer-{{ post.data.coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
                             <figure class="h-full">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -24,6 +24,7 @@
                                 <li class="uppercase">{{ category }}</li>
                             {% endfor %}
                         </ul>
+                        <p class="h3">{{ post.data.price }}</p>
                     </article>
                 </li>
             {% endif %}
