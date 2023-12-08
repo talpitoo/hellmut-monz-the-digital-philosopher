@@ -77,6 +77,32 @@
                 "height": "medium"
             },
             "tags": ["books", "translation", "philosophy"]
+        },
+        {
+            "title": "The Lorem Ipsum of The Reality",
+            "date": "2019-03-11",
+            "description": "A lorem ipsum book.",
+            "coverPhoto": {
+                "webP": "/TODO/img/pexels-rdne-stock-project-8474487-640x424.webp",
+                "webP2x": "/TODO/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
+                "jpg": "/TODO/img/pexels-rdne-stock-project-8474487-640x424.jpg",
+                "jpg2x": "/TODO/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
+                "height": "medium"
+            },
+            "tags": ["books", "translation", "philosophy"]
+        },
+        {
+            "title": "The Lorem Ipsum of The Reality",
+            "date": "2019-03-11",
+            "description": "A lorem ipsum book.",
+            "coverPhoto": {
+                "webP": "/TODO/img/pexels-rdne-stock-project-8474487-640x424.webp",
+                "webP2x": "/TODO/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
+                "jpg": "/TODO/img/pexels-rdne-stock-project-8474487-640x424.jpg",
+                "jpg2x": "/TODO/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
+                "height": "medium"
+            },
+            "tags": ["books", "translation", "philosophy"]
         }
     ]
 }
