@@ -5,7 +5,6 @@
                 {# TODO: <div class="monz-col-2"> #}
                 <li>
                     <article class="break-inside-avoid-column">
-                        {# TODO: class for Tailwind JIT compiler: .h-spacer-14 .h-spacer-21 .h-spacer-22 .h-spacer-25 .h-spacer-33 #}
                         <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% else %}h-spacer-14{% endif %} bg-success mb-spacer-1">
                             {# NOTE: keeping for the default syntax <div class="h-spacer-{{ post.data.coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
                             <figure class="h-full">
