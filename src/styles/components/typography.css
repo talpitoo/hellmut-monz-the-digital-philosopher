@@ -33,7 +33,8 @@
   }
 
   p,
-  ul {
+  ul,
+  figcaption {
     /* @apply text-spacer-1; */
     --multiplier: .75;
     font-size: calc(var(--multiplier) * var(--spacer));

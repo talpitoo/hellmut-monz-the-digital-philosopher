@@ -1479,7 +1479,8 @@ video {
   font-size: var(--spacer);
 }
  p,
-  ul {
+  ul,
+  figcaption {
     /* @apply text-spacer-1; */
     --multiplier: .75;
     font-size: calc(var(--multiplier) * var(--spacer));
@@ -1833,12 +1834,6 @@ video {
 }
  .h-spacer-21 {
   height: calc(21 * var(--spacer));
-}
- .h-spacer-22 {
-  height: calc(22 * var(--spacer));
-}
- .h-spacer-25 {
-  height: calc(25 * var(--spacer));
 }
  .h-spacer-29 {
   height: calc(29 * var(--spacer));
@@ -2250,6 +2245,9 @@ video {
 }
  .leading-9 {
   line-height: 2.25rem;
+}
+ .leading-loose {
+  line-height: 2;
 }
  .leading-none {
   line-height: 1;
