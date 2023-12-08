@@ -8,74 +8,34 @@
                 <h2>Work</h2>
             </div>
             <div class="monz-col-2">
-                <article class="break-inside-avoid-column">
-                    <div class="h-spacer-29 bg-success mb-spacer-1">
-                        <figure class="h-full">
-                            {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
-                            {% set pictureObject = {
-                                'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
-                                'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
-                                'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
-                                'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
-                            } %}
-                            {% include "components/picture-example.njk" %}
-                            {# NOTE: optional caption #}
-                            {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                        </figure>
-                    </div>
-                    <h3>
-                        <a href="#" class="stretched-link">The Game of the World</a>
-                    </h3>
-                    <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
-                    <ul class="list-separator-dot text-muted">
-                        <li class="uppercase">Book</li>
-                        <li class="uppercase">Translation</li>
-                        <li class="uppercase">Philosophy</li>
-                    </ul>
-                </article>
+                {# NOTE: the content comes from collections.work which is annotated by `tags: ["work", ...` #}
+                {# NOTE: get post at index 1 #}
+                {% set posts = collections.work.slice(1, 2) %}
+                {% set figureBackgroundColor = "bg-success" %}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {% set figureHeight = "!h-spacer-29" %}
+                {% set numberOfColumns = 1 %}
+                {% include "components/article-list.njk" %}
             </div>
             <div class="monz-col-4">
-                <article class="break-inside-avoid-column">
-                    <div class="h-spacer-29 bg-success mb-spacer-1"></div>
-                    <h3>
-                        <a href="#" class="stretched-link">The Key to Philosophy</a>
-                    </h3>
-                    <p>A philosophical manual for stealing the priceless short-cut to the center of the universe.</p>
-                    <ul class="list-separator-dot text-muted">
-                        <li class="uppercase">Book</li>
-                        <li class="uppercase">Philosophy</li>
-                        <li class="uppercase">Theft</li>
-                    </ul>
-                </article>
+                {# NOTE: the content comes from collections.work which is annotated by `tags: ["work", ...` #}
+                {# NOTE: get post at index 2 #}
+                {% set posts = collections.work.slice(2, 3) %}
+                {% set figureBackgroundColor = "bg-success" %}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {% set figureHeight = "!h-spacer-29" %}
+                {% set numberOfColumns = 1 %}
+                {% include "components/article-list.njk" %}
             </div>
-
-            {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
-            {% for featuredArticle in featuredArticlesWork.featuredArticles.slice(0, 3) %}
-                {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
-                    <div class="monz-col-2">
-                        <article class="break-inside-avoid-column">
-                            <div class="h-spacer-14 bg-success mb-spacer-1">
-                                <figure class="h-full">
-                                    {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                                    {% set pictureObject = featuredArticle.coverPhoto %}
-                                    {% include "components/picture-example.njk" %}
-                                    {# NOTE: optional caption #}
-                                    {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                                </figure>
-                            </div>
-                            <h3>
-                                <a href="#" class="stretched-link">{{ featuredArticle.title }}</a>
-                            </h3>
-                            <p>{{ featuredArticle.description }}</p>
-                            <ul class="list-separator-dot text-muted">
-                                {% for category in featuredArticle.categories %}
-                                    <li class="uppercase">{{ category }}</li>
-                                {% endfor %}
-                            </ul>
-                        </article>
-                    </div>
-                {% endif %}
-            {% endfor %}
+            <div class="monz-col-6">
+                {# NOTE: the content comes from collections.work which is annotated by `tags: ["work", ...` #}
+                {% set posts = collections.work.slice(3, 6) %}
+                {% set figureBackgroundColor = "bg-success" %}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {% set figureHeight = "!h-spacer-14" %}
+                {% set numberOfColumns = 3 %}
+                {% include "components/article-list.njk" %}
+            </div>
 
             <div class="monz-col-2 lg:col-start-3">
                 <a href="/work" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">View more work --&gt;</a>

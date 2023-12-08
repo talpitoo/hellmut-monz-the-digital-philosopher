@@ -1,5 +1,5 @@
 {% if posts.length > 0 %}
-    <ul class="{% if numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 2 %}lg:columns-2{% else %}lg:columns-3{% endif %} gap-spacer-2">
+    <ul class="{% if numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 2 %}lg:columns-2{% elif numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 1 %}lg:columns-1{% else %}lg:columns-3{% endif %} gap-spacer-2">
         {% for post in posts %}
             {% if post.data.title is defined and post.data.title !== '' %}
                 {# TODO: <div class="monz-col-2"> #}
@@ -31,5 +31,5 @@
         {% endfor %}
     </ul>
 {% else %}
-    <p>No posts found.</p>
+    <p class="text-spacer-1 leading-loose">No posts found.</p>
 {% endif %}
