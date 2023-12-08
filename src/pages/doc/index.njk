@@ -3,10 +3,10 @@ title: Doc
 layout: layouts/base.njk
 permalink: /doc/
 description: TODO
+figureBackgroundColor: bg-info
 eleventyNavigation:
   key: Doc
   order: 3
-  icon: doc
 ---
 
 <section class='pb-section-sm bg-dark text-light'>
@@ -28,22 +28,22 @@ eleventyNavigation:
         <h2 class="mt-spacer-5 mb-spacer-3">2022</h2>
         {# NOTE: the content comes from collections.year2022 which is annotated by `tags: ["year2022", ...` #}
         {% set posts = collections.year2022 | reverse %}
-        {% include "components/category.njk" %}
+        {% include "components/article-list.njk" %}
 
         <h2 class="mt-spacer-5 mb-spacer-3">2017-21</h2>
         {# NOTE: the content comes from collections.year2017to2021 which is annotated by `tags: ["year2017to2021", ...` #}
         {% set posts = collections.year2017to2021 | reverse %}
-        {% include "components/category.njk" %}
+        {% include "components/article-list.njk" %}
 
         <h2 class="mt-spacer-5 mb-spacer-3">2013-17</h2>
         {# NOTE: the content comes from collections.year2013to2017 which is annotated by `tags: ["year2013to2017", ...` #}
         {% set posts = collections.year2013to2017 | reverse %}
-        {% include "components/category.njk" %}
+        {% include "components/article-list.njk" %}
 
         <h2 class="mt-spacer-5 mb-spacer-3">Pre 2001</h2>
         {# NOTE: the content comes from collections.pre2001 which is annotated by `tags: ["pre2001", ...` #}
         {% set posts = collections.pre2001 | reverse %}
-        {% include "components/category.njk" %}
+        {% include "components/article-list.njk" %}
 
       </div>
     </div>

@@ -5,20 +5,15 @@
                 <h2>Shop</h2>
             </div>
             <div class="monz-col-6">
-                <article class="pb-0 mb-spacer-1">
-                    <a href="#" class="stretched-link">
-                        <div class="h-spacer-29 bg-info">
-                            {# TODO: image placeholder #}
-                            {# <figure>
-                                <img src="/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset"/>
-                                <figcaption>An elephant at sunset</figcaption>
-                            </figure> #}
-                        </div>
-                    </a>
-                </article>
+                {# NOTE: the content comes from collections.shop which is annotated by `tags: ["shop", ...` #}
+                {% set posts = collections.shop.slice(0, 3) %}
+                {% set figureBackgroundColor = "bg-error" %}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {% set figureHeight = "!h-spacer-14" %}
+                {% include "components/article-list.njk" %}
             </div>
             <div class="monz-col-2 lg:col-start-3">
-                <a href="#" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Visit shop --&gt;</a>
+                <a href="/shop" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">Visit shop --&gt;</a>
             </div>
         </div>
     </div>

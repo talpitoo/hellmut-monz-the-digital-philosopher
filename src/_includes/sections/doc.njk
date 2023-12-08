@@ -4,42 +4,18 @@
             <div class="monz-col-6">
                 <h2>Doc</h2>
             </div>
-            <div class="monz-col-3">
-                <article class="break-inside-avoid-column">
-                    <div class="h-spacer-29 bg-error mb-spacer-1">
-                        {# TODO: image placeholder #}
-                        {# <figure>
-                            <img src="/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset"/>
-                            <figcaption>An elephant at sunset</figcaption>
-                        </figure> #}
-                    </div>
-                    <h3>
-                        <a href="#" class="stretched-link">Unlock Free Thinking: The Key Philosopher Course</a>
-                    </h3>
-                    <p>The first English translation of the french philosopher Axelos Kostas' magnum opus</p>
-                    <ul class="list-separator-dot text-muted">
-                        <li class="uppercase">Book</li>
-                        <li class="uppercase">Translation</li>
-                        <li class="uppercase">Philosophy</li>
-                    </ul>
-                </article>
+            <div class="monz-col-6">
+                {# NOTE: the content comes from collections.shop which is annotated by `tags: ["shop", ...` #}
+                {% set posts = collections.doc.slice(0, 2) %}
+                {% set figureBackgroundColor = "bg-info" %}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {% set figureHeight = "!h-spacer-29" %}
+                {% set numberOfColumns = 2 %}
+                {% include "components/article-list.njk" %}
             </div>
-            <div class="monz-col-3">
-                <article class="break-inside-avoid-column">
-                    <div class="h-spacer-29 bg-error mb-spacer-1"></div>
-                    <h3>
-                        <a href="#" class="stretched-link">The Key to Philosophy</a>
-                    </h3>
-                    <p>A philosophical manual for stealing the priceless short-cut to the center of the universe.</p>
-                    <ul class="list-separator-dot text-muted">
-                        <li class="uppercase">Book</li>
-                        <li class="uppercase">Philosophy</li>
-                        <li class="uppercase">Theft</li>
-                    </ul>
-                </article>
-            </div>
+            
             <div class="monz-col-2 lg:col-start-3">
-                <a href="#" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">View more posts --&gt;</a>
+                <a href="/doc" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">View more posts --&gt;</a>
             </div>
         </div>
     </div>

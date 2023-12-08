@@ -2,13 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
         <url>
-            <loc>/doc/pre-2001/doc-01/</loc>
-            <lastmod>2000-01-11T00:00:00.000Z</lastmod>
+            <loc>/doc/pre-2001/teaching-03/</loc>
+            <lastmod>1998-01-09T00:00:00.000Z</lastmod>
         </url>
     
         <url>
-            <loc>/doc/pre-2001/doc-02/</loc>
+            <loc>/doc/pre-2001/teaching-04/</loc>
+            <lastmod>1999-03-27T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/pre-2001/teaching-05/</loc>
+            <lastmod>1999-03-27T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/pre-2001/teaching-01/</loc>
+            <lastmod>2000-01-07T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/pre-2001/teaching-02/</loc>
             <lastmod>2000-02-11T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2017-21/teaching-47/</loc>
+            <lastmod>2018-05-01T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/work/books/book-03/</loc>
+            <lastmod>2019-03-09T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/work/books/book-05/</loc>
+            <lastmod>2019-03-09T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/work/books/book-06/</loc>
+            <lastmod>2019-03-09T00:00:00.000Z</lastmod>
         </url>
     
         <url>
@@ -22,17 +57,27 @@
         </url>
     
         <url>
+            <loc>/work/books/book-04/</loc>
+            <lastmod>2019-03-11T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/work/movies/movie-01/</loc>
+            <lastmod>2019-03-11T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/work/movies/movie-02/</loc>
+            <lastmod>2019-03-11T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/work/books/book-07/</loc>
+            <lastmod>2019-03-23T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
             <loc>/about/the-story/</loc>
-            <lastmod>2022-01-11T00:00:00.000Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/doc/2022/doc-47/</loc>
-            <lastmod>2022-01-11T00:00:00.000Z</lastmod>
-        </url>
-    
-        <url>
-            <loc>/doc/2022/doc-101/</loc>
             <lastmod>2022-01-11T00:00:00.000Z</lastmod>
         </url>
     
@@ -44,6 +89,26 @@
         <url>
             <loc>/work/</loc>
             <lastmod>2022-01-11T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2022/teaching-101/</loc>
+            <lastmod>2022-03-17T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2022/teaching-137/</loc>
+            <lastmod>2022-04-28T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2022/teaching-138/</loc>
+            <lastmod>2022-04-28T00:00:00.000Z</lastmod>
+        </url>
+    
+        <url>
+            <loc>/doc/2022/teaching-203/</loc>
+            <lastmod>2022-04-28T00:00:00.000Z</lastmod>
         </url>
     
         <url>

@@ -1,26 +1,12 @@
 ---
 title: Books
 description: "TODO: Books"
-layout: layouts/base.njk
+layout: layouts/category.njk
 permalink: /work/books/
+category: books
+figureBackgroundColor: bg-success
 eleventyNavigation:
   key: Books
   parent: Work
   url: /work/books/
 ---
-
-<section class='py-section-sm'>
-    <div class='monz-container'>
-        <div class="monz-grid">
-            <h1 class="text-body">{{ title }}</h1>
-        </div>
-
-        <div class="monz-grid">
-            <div class="monz-col-6 pt-spacer-3">
-                {# NOTE: the content comes from collections.books which is annotated by `tags: ["books", ...` #}
-                {% set posts = collections.books | reverse %}
-                {% include "components/category.njk" %}
-            </div>
-        </div>
-    </div>
-</section>
