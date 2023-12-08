@@ -11,10 +11,10 @@ coverPhoto: {
             }
 layout: layouts/base.njk
 permalink: /work/
+category: work
 eleventyNavigation:
   key: Work
   order: 1
-  icon: work
 ---
 
 <section class='pb-section-sm bg-dark text-light'>
@@ -40,35 +40,9 @@ eleventyNavigation:
         <h1 class="mb-spacer-3">{{ title }}</h1>
         <p class="lead mb-spacer-3">Hellmut Monz creates work lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim</p>
 
-        {# NOTE: the content comes from src/_data/featuredArticlesWork.json #}
-        <ul class="lg:columns-3 gap-spacer-2">
-          {% for featuredArticle in featuredArticlesWork.featuredArticles %}
-            {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
-              <li>
-                <article class="break-inside-avoid-column">
-                  <div class="h-spacer-14 bg-success mb-spacer-1">
-                    <figure class="h-full">
-                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                      {% set pictureObject = featuredArticle.coverPhoto %}
-                      {% include "components/picture-example.njk" %}
-                      {# NOTE: optional caption #}
-                      {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                    </figure>
-                  </div>
-                  <h3>
-                    <a href="#" class="stretched-link">{{ featuredArticle.title }}</a>
-                  </h3>
-                  <p>{{ featuredArticle.description }}</p>
-                  <ul class="list-separator-dot text-muted">
-                    {% for tag in featuredArticle.tags %}
-                      <li class="uppercase">{{ tag }}</li>
-                    {% endfor %}
-                  </ul>
-                </article>
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+        {# NOTE: the content comes from collections.year2022 which is annotated by `tags: ["year2022", ...` #}
+        {% set posts = collections.work | reverse %}
+        {% include "components/article-list.njk" %}
       </div>
     </div>
 

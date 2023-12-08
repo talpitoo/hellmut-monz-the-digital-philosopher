@@ -1,26 +1,11 @@
 ---
-title: Pre 2001
-description: "TODO: Pre 2001"
-layout: layouts/base.njk
+title: pre-2001
+description: "TODO: pre-2001"
+layout: layouts/category.njk
 permalink: /doc/pre-2001/
+category: pre2001
 eleventyNavigation:
-  key: Pre 2001
+  key: pre-2001
   parent: Doc
   url: /doc/pre-2001/
 ---
-
-<section class='py-section-sm'>
-    <div class='monz-container'>
-        <div class="monz-grid">
-            <h1 class="text-body">{{ title }}</h1>
-        </div>
-
-        <div class="monz-grid">
-            <div class="monz-col-6 pt-spacer-3">
-                {# NOTE: the content comes from collections.pre2001 which is annotated by `tags: ["pre2001", ...` #}
-                {% set posts = collections.pre2001 | reverse %}
-                {% include "components/category.njk" %}
-            </div>
-        </div>
-    </div>
-</section>

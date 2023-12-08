@@ -68,8 +68,8 @@
                             </h3>
                             <p>{{ featuredArticle.description }}</p>
                             <ul class="list-separator-dot text-muted">
-                                {% for tag in featuredArticle.tags %}
-                                    <li class="uppercase">{{ tag }}</li>
+                                {% for category in featuredArticle.categories %}
+                                    <li class="uppercase">{{ category }}</li>
                                 {% endfor %}
                             </ul>
                         </article>
@@ -78,7 +78,7 @@
             {% endfor %}
 
             <div class="monz-col-2 lg:col-start-3">
-                <a href="#" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">View more work --&gt;</a>
+                <a href="/work" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">View more work --&gt;</a>
             </div>
         </div>
     </div>

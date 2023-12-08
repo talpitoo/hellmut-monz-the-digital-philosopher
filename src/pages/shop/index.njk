@@ -14,7 +14,6 @@ permalink: /shop/
 eleventyNavigation:
   key: Shop
   order: 2
-  icon: shop
 ---
 
 <section class='pb-section-sm bg-dark text-light'>
@@ -43,7 +42,7 @@ eleventyNavigation:
         <ul class="lg:columns-3 gap-spacer-2">
           {% for featuredArticle in featuredArticlesWork.featuredArticles %}
             {% if featuredArticle.title is defined and featuredArticle.title !== '' %}
-              <li>
+              <li class="mb-spacer-2">
                 <article class="break-inside-avoid-column">
                   <div class="h-spacer-14 bg-error mb-spacer-1">
                     <figure class="h-full">
@@ -59,8 +58,8 @@ eleventyNavigation:
                   </h3>
                   <p>{{ featuredArticle.description }}</p>
                   <ul class="list-separator-dot text-muted">
-                    {% for tag in featuredArticle.tags %}
-                      <li class="uppercase">{{ tag }}</li>
+                    {% for category in featuredArticle.categories %}
+                      <li class="uppercase">{{ category }}</li>
                     {% endfor %}
                   </ul>
                 </article>

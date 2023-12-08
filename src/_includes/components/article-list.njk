@@ -3,7 +3,7 @@
         {% for post in posts %}
             {% if post.data.title is defined and post.data.title !== '' %}
                 {# TODO: <div class="monz-col-2"> #}
-                <li>
+                <li class="mb-spacer-2">
                     <article class="break-inside-avoid-column">
                         <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% else %}h-spacer-14{% endif %} bg-success mb-spacer-1">
                             {# NOTE: keeping for the default syntax <div class="h-spacer-{{ post.data.coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
@@ -20,8 +20,8 @@
                         </h3>
                         <p>{{ post.data.description }}</p>
                         <ul class="list-separator-dot text-muted">
-                            {% for tag in post.data.tags %}
-                                <li class="uppercase">{{ tag }}</li>
+                            {% for category in post.data.categories %}
+                                <li class="uppercase">{{ category }}</li>
                             {% endfor %}
                         </ul>
                     </article>
