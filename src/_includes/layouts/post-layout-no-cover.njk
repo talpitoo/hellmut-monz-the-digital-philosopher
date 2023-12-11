@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth newsbar-hidden">
+  <head>
+    {% include "../components/meta.njk" %}
+  </head>
+  <body>
+
+    {% include "../components/navigation.njk" %}
+    <main>
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-4">
+              <h1 class="font-serif normal-case">{{ title }}</h1>
+              
+              {{ content | safe }}
+
+              <ul class="list-separator-dot text-muted text-spacer-1 leading-loose">
+                {% for category in categories %}
+                  <li class="uppercase">{{ category }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>

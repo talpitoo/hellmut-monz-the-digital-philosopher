@@ -1,30 +1,7 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title }} | MONZ: Designer + Researcher + Philosopher + Artist + Joker</title>
-    {% if description %}
-      <meta name="description" content="{{ description }}">
-    {% else %}
-      <meta name="description" content="Designer + Researcher + Philosopher + Artist + Joker">
-    {% endif %}
-    <meta name="keywords" content="design, research, philosophy, art, jokes">
-    <meta name="author" content="Hellmut Monz">
-
-    <link rel="stylesheet" type="text/css" href="/main.css"/>
-    {# NOTE: in case further load speed optimization is required <link rel="stylesheet" media='print' onload="this.media='all'" href="/css/vendor/swiper-bundle.min.css" > #}
-
-    <link rel="icon" href="/img/favicon.ico" sizes="32x32">
-    <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
-    <!-- 180×180 -->
-    <link rel="manifest" href="/site.webmanifest">
-
-    <meta property="og:image" content="/img/og-cover-logo-hellmut-monz-big.png"/>
-    <meta property="twitter:image" content="/img/og-cover-logo-hellmut-monz-big.png"/>
-    <meta property="og:image:width" content="1200"/>
-    <meta property="og:image:height" content="630"/>
+    {% include "../components/meta.njk" %}
   </head>
   <body>
 
