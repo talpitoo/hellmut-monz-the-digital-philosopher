@@ -1,7 +1,7 @@
 ---
 title: The story
 date: 2022-01-11
-description: "TODO: The story"
+excerpt: "TODO: The story"
 coverPhoto: {
                 "webP": "/img/pexels-rdne-stock-project-8474487-640x424.webp",
                 "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
@@ -27,13 +27,22 @@ eleventyNavigation:
         </div>
     </div>
 
+    {# NOTE: full width/edge-to-edge cover photo markup "components/cover-photo-edge-to-edge-example.njk" #}
     <figure class="mb-spacer-3">
-        <div class="h-spacer-46 bg-light mb-spacer-1">
-            {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-            {% set pictureObject = coverPhoto %}
-            {% include "components/picture-example.njk" %}
+        <div class="bg-success relative">
+            <div class="absolute top-0 bottom-0 left-0 right-0">
+                {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                {% set pictureObject = coverPhoto %}
+                {% include "components/picture-example.njk" %}
+            </div>
+
+            <div class='monz-container'>
+                <div class="h-spacer-46"></div>
+            </div>
         </div>
-        <div class='monz-container'>
+
+        {# NOTE: optional caption #}
+        <div class='monz-container mt-spacer-1'>
             <div class="monz-grid">
                 <div class="monz-col-6">
                     <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
@@ -51,7 +60,7 @@ eleventyNavigation:
             </div>
             <div class="monz-col-2">
                 <article class="break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-layout-01" data-modal-toggle="modal-layout-01" class="w-full text-left">
+                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
                         <figure>
                             <div class="h-spacer-14 bg-light mb-spacer-1">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -64,7 +73,7 @@ eleventyNavigation:
                 </article>
 
                 <article class="break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-layout-01" data-modal-toggle="modal-layout-01" class="w-full text-left">
+                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
                         <figure>
                             <div class="h-spacer-14 bg-light mb-spacer-1">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -89,7 +98,7 @@ eleventyNavigation:
             </div>
             <div class="monz-col-3">
                 <article class="break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-layout-01" data-modal-toggle="modal-layout-01" class="w-full text-left">
+                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
                         <figure>
                             <div class="h-spacer-21 bg-light mb-spacer-1">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}

@@ -1150,6 +1150,8 @@ video {
  body {
     /* @apply bg-background text-foreground; */
     position: relative;
+    min-height: 100vh;
+    background-color: var(--tw-color-gray-800);
     font-family: Monz-1500MegaRegular, sans-serif;
   }
  /* NOTE: for fixed top navbar, .pt-spacer-11 was used to offset */
@@ -1745,6 +1747,9 @@ video {
  .mr-spacer-2 {
   margin-right: calc(2 * var(--spacer));
 }
+ .mt-0 {
+  margin-top: 0px;
+}
  .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1789,6 +1794,9 @@ video {
 }
  .hidden {
   display: none;
+}
+ .aspect-video {
+  aspect-ratio: 16 / 9;
 }
  .\!h-spacer-14 {
   height: calc(14 * var(--spacer)) !important;
@@ -2054,6 +2062,15 @@ video {
  .border-muted {
   border-color: var(--tw-color-gray-400);
 }
+ .\!bg-error {
+  background-color: var(--tw-color-error-500) !important;
+}
+ .\!bg-info {
+  background-color: var(--tw-color-info-500) !important;
+}
+ .\!bg-success {
+  background-color: var(--tw-color-success-500) !important;
+}
  .bg-\[\#E9F3EA\] {
   --tw-bg-opacity: 1;
   background-color: rgb(233 243 234 / var(--tw-bg-opacity));
@@ -2217,6 +2234,9 @@ video {
  .font-sans {
   font-family: Monz-069HexagonaBold, serif;
 }
+ .font-serif {
+  font-family: Monz-1500MegaRegular, sans-serif;
+}
  .text-\[0px\] {
   font-size: 0px;
 }
@@ -2242,6 +2262,9 @@ video {
 }
  .uppercase {
   text-transform: uppercase;
+}
+ .normal-case {
+  text-transform: none;
 }
  .leading-6 {
   line-height: 1.5rem;

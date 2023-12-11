@@ -10,7 +10,7 @@ coverPhoto: {
                 "height": "small"
             }
 layout: layouts/base.njk
-figureBackgroundColor: bg-error
+coverPhoto.figureBackgroundColor: bg-error
 permalink: /shop/
 eleventyNavigation:
   key: Shop
@@ -18,20 +18,28 @@ eleventyNavigation:
 ---
 
 <section class='pb-section-sm bg-dark text-light'>
+  {# NOTE: full width/edge-to-edge cover photo markup "components/cover-photo-edge-to-edge-example.njk" #}
   <figure class="mb-spacer-3">
-    <div class="h-spacer-46 bg-error">
-      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-      {% set pictureObject = coverPhoto %}
-      {% include "components/picture-example.njk" %}
-    </div>
-    {# NOTE: no caption here #}
-    {# <div class='monz-container'>
-      <div class="monz-grid">
-        <div class="monz-col-6">
-          <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
-        </div>
+    <div class="bg-error relative">
+      <div class="absolute top-0 bottom-0 left-0 right-0">
+        {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+        {% set pictureObject = coverPhoto %}
+        {% include "components/picture-example.njk" %}
       </div>
-    </div> #}
+
+      <div class='monz-container'>
+        <div class="h-spacer-46"></div>
+      </div>
+    </div>
+
+    {# NOTE: optional caption #}
+    {# <div class='monz-container mt-spacer-1'>
+            <div class="monz-grid">
+                <div class="monz-col-6">
+                    <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
+                </div>
+            </div>
+        </div> #}
   </figure>
 
   <div class='monz-container'>

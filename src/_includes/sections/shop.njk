@@ -7,9 +7,9 @@
             <div class="monz-col-6">
                 {# NOTE: the content comes from collections.shop which is annotated by `tags: ["shop", ...` #}
                 {% set posts = collections.shop.slice(0, 3) %}
-                {% set figureBackgroundColor = "bg-error" %}
-                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts, same for `figureBackgroundColor` #}
                 {% set figureHeight = "!h-spacer-14" %}
+                {% set figureBackgroundColor = "!bg-error" %}
                 {% include "components/article-list.njk" %}
             </div>
             <div class="monz-col-2 lg:col-start-3">

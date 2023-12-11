@@ -1,0 +1,22 @@
+<figure class="mb-spacer-3">
+    <div class="bg-success relative">
+        <div class="absolute top-0 bottom-0 left-0 right-0">
+            {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+            {% set pictureObject = coverPhoto %}
+            {% include "components/picture-example.njk" %}
+        </div>
+
+        <div class='monz-container'>
+            <div class="h-spacer-46"></div>
+        </div>
+    </div>
+
+    {# NOTE: optional caption #}
+    <div class='monz-container mt-spacer-1'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
+            </div>
+        </div>
+    </div>
+</figure>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth newsbar-hidden">
+  <head>
+    {% include "../components/meta.njk" %}
+  </head>
+  <body>
+
+    {% include "../components/navigation.njk" %}
+    <main>
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-5">
+              {# NOTE: every page requires a <h1>, even if it is visually hidden with <h1 clas="sr-only"> for accessibility/SEO reasons #}
+              <h1 class="sr-only">{{ title }}</h1>
+
+              <figure class="mb-spacer-3">
+                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                  {% set pictureObject = coverPhoto %}
+                  {% include "components/picture-example.njk" %}
+                </div>
+
+                {# NOTE: optional caption #}
+                {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                {% endif %}
+              </figure>
+
+              <ul class="list-separator-dot text-muted text-spacer-1 leading-loose">
+                {% for category in categories %}
+                  <li class="uppercase">{{ category }}</li>
+                {% endfor %}
+              </ul>
+
+              {# {{ content | safe }} #}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>

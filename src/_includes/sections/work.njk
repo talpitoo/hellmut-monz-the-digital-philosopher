@@ -11,9 +11,9 @@
                 {# NOTE: the content comes from collections.work which is annotated by `tags: ["work", ...` #}
                 {# NOTE: get post at index 1 #}
                 {% set posts = collections.work.slice(1, 2) %}
-                {% set figureBackgroundColor = "bg-success" %}
-                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts, same for `figureBackgroundColor` #}
                 {% set figureHeight = "!h-spacer-29" %}
+                {% set figureBackgroundColor = "!bg-success" %}
                 {% set numberOfColumns = 1 %}
                 {% include "components/article-list.njk" %}
             </div>
@@ -21,18 +21,18 @@
                 {# NOTE: the content comes from collections.work which is annotated by `tags: ["work", ...` #}
                 {# NOTE: get post at index 2 #}
                 {% set posts = collections.work.slice(2, 3) %}
-                {% set figureBackgroundColor = "bg-success" %}
-                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts, same for `figureBackgroundColor` #}
                 {% set figureHeight = "!h-spacer-29" %}
+                {% set figureBackgroundColor = "!bg-success" %}
                 {% set numberOfColumns = 1 %}
                 {% include "components/article-list.njk" %}
             </div>
             <div class="monz-col-6">
                 {# NOTE: the content comes from collections.work which is annotated by `tags: ["work", ...` #}
                 {% set posts = collections.work.slice(3, 6) %}
-                {% set figureBackgroundColor = "bg-success" %}
-                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts #}
+                {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts, same for `figureBackgroundColor` #}
                 {% set figureHeight = "!h-spacer-14" %}
+                {% set figureBackgroundColor = "!bg-success" %}
                 {% set numberOfColumns = 3 %}
                 {% include "components/article-list.njk" %}
             </div>
