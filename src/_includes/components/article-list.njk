@@ -5,16 +5,19 @@
                 {# TODO: <div class="monz-col-2"> #}
                 <li class="mb-spacer-2">
                     <article class="break-inside-avoid-column">
-                        <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% else %}h-spacer-14{% endif %} {{ figureHeight }} {% if figureBackgroundColor is defined and figureBackgroundColor !== '' %}{{ figureBackgroundColor }}{% else %}bg-light{% endif %} mb-spacer-1">
+                        <figure>
                             {# NOTE: keeping for the default syntax <div class="h-spacer-{{ post.data.coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                            <figure class="h-full">
+                            <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% else %}h-spacer-14{% endif %} {{ figureHeight }} {% if post.data.coverPhoto.figureBackgroundColor is defined and post.data.coverPhoto.figureBackgroundColor !== '' %}{{ post.data.coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }} mb-spacer-1">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                                 {% set pictureObject = post.data.coverPhoto %}
                                 {% include "components/picture-example.njk" %}
-                                {# NOTE: optional caption #}
-                                {# <figcaption>Back View of Astronauts Holding Hands</figcaption> #}
-                            </figure>
-                        </div>
+                            </div>
+
+                            {# NOTE: optional caption #}
+                            {# {% if post.data.coverPhoto.figcaption is defined and post.data.coverPhoto.figcaption !== '' %}
+                                <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
+                            {% endif %} #}
+                        </figure>
                         <h3>
                             <a href="{{ post.data.permalink }}" class="stretched-link">{{ post.data.title }}</a>
                         </h3>
