@@ -1,138 +1,148 @@
-{# NOTE: optional news stripe #}
-{% include "components/news.njk" %}
+{# NOTE: and additional sticky wrapper for `project` pages where the news bar is always visible #}
+{% if newsbarVisible is defined and newsbarVisible == true %}
+  <div class="sticky top-0 z-10">
+  {% endif %}
 
-<header class="sticky top-0 z-10">
-  <div class='monz-navbar bg-dark text-light'>
-    <div class='monz-container'>
-      <div class="monz-grid uppercase items-center justify-center relative gap-0 lg:gap-spacer-2">
-        <div class="flex">
-          <a
+  {# NOTE: optional news stripe #}
+  {% include "components/news.njk" %}
+
+  <header class="sticky top-0 z-10">
+    <div class='monz-navbar bg-dark text-light'>
+      <div class='monz-container'>
+        <div class="monz-grid uppercase items-center justify-center relative gap-0 lg:gap-spacer-2">
+          <div class="flex">
+            <a
           href='/' class="mx-auto lg:mx-0"
         >
-            <img src="/img/logo-m.svg" alt='Hellmut MONZ logo' width='130' height='48' class="w-auto h-spacer-2 my-spacer-3"/>
-          </a>
-        </div>
+              <img src="/img/logo-m.svg" alt='Hellmut MONZ logo' width='130' height='48' class="w-auto h-spacer-2 my-spacer-3"/>
+            </a>
+          </div>
 
-        {% set navPages = collections.all | eleventyNavigation %}
-        {% for entry in navPages %}
-          {% if entry.includeSelf != false %}
-            <div class="monz-hidden lg:block lg:relative">
-              <div class="">
-                {# NOTE: adaptive markup mobile/desktop #}
-                <a href="{{ entry.url }}" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="hidden lg:inline-flex monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
-                  {{ entry.title }}
-                  <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
-                    <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
-                  </svg>
-                </a>
+          {% set navPages = collections.all | eleventyNavigation %}
+          {% for entry in navPages %}
+            {% if entry.includeSelf != false %}
+              <div class="monz-hidden lg:block lg:relative">
+                <div class="">
+                  {# NOTE: adaptive markup mobile/desktop #}
+                  <a href="{{ entry.url }}" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="hidden lg:inline-flex monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
+                    {{ entry.title }}
+                    <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
+                      <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                    </svg>
+                  </a>
 
-                <button type="button" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="lg:hidden monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans inline-flex items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
-                  {{ entry.title }}
-                  <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
-                    <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
-                  </svg>
-                </button>
-              </div>
-
-              {# NOTE: dropdown menu #}
-              {% if entry.children.length %}
-                <div id="dropdown{{ entry.title }}" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-full lg:w-spacer-12">
-                  <ul class="p-spacer-1 text-spacer-1 leading-none" aria-labelledby="dropdown{{ entry.title }}Button">
-                    {# NOTE: adaptive markup for mobile dropdwns: on mobile we need an additional <li> child since the parent is used for the dropdown in the lack of hover state #}
-                    <li class="lg:hidden">
-                      <a href="{{ entry.url }}" class="block lg:text-body link-underline mb-spacer-1">{{ entry.title }}</a>
-                    </li>
-                    {% for child in entry.children %}
-                      <li>
-                        <a href="{{ child.url }}" class="block lg:text-body link-underline mb-spacer-1 {{'underline underline-offset-4 decoration-2' if child.url in page.url}}">{{ child.title }}</a>
-                      </li>
-                    {% endfor %}
-                  </ul>
+                  <button type="button" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="lg:hidden monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans inline-flex items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
+                    {{ entry.title }}
+                    <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
+                      <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                    </svg>
+                  </button>
                 </div>
-              {% endif %}
-            </div>
-          {% endif %}
-        {% endfor %}
 
-        {# NOTE: the 'Site' dropdown is a custom positioned addition #}
-        <div class="hidden lg:monz-hidden lg:absolute left-spacer-21 top-spacer-21">
-          <button id="dropdownSiteButton" data-dropdown-toggle="dropdownSite" class="monz-dropdown-trigger link-underline text-top-navbar uppercase font-sans inline-flex items-center text-light" type="button">
+                {# NOTE: dropdown menu #}
+                {% if entry.children.length %}
+                  <div id="dropdown{{ entry.title }}" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-full lg:w-spacer-12">
+                    <ul class="p-spacer-1 text-spacer-1 leading-none" aria-labelledby="dropdown{{ entry.title }}Button">
+                      {# NOTE: adaptive markup for mobile dropdwns: on mobile we need an additional <li> child since the parent is used for the dropdown in the lack of hover state #}
+                      <li class="lg:hidden">
+                        <a href="{{ entry.url }}" class="block lg:text-body link-underline mb-spacer-1">{{ entry.title }}</a>
+                      </li>
+                      {% for child in entry.children %}
+                        <li>
+                          <a href="{{ child.url }}" class="block lg:text-body link-underline mb-spacer-1 {{'underline underline-offset-4 decoration-2' if child.url in page.url}}">{{ child.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+
+          {# NOTE: the 'Site' dropdown is a custom positioned addition #}
+          <div class="hidden lg:monz-hidden lg:absolute left-spacer-21 top-spacer-21">
+            <button id="dropdownSiteButton" data-dropdown-toggle="dropdownSite" class="monz-dropdown-trigger link-underline text-top-navbar uppercase font-sans inline-flex items-center text-light" type="button">
             Site
             <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
-              <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
-            </svg>
-          </button>
-          <div id="dropdownSite" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-full lg:w-spacer-12">
-            <ul class="p-spacer-1 text-spacer-1 leading-none" aria-labelledby="dropdownSiteButton">
-              <li>
-                <a href="/search" class="block lg:text-body link-underline mb-spacer-1 {{'underline underline-offset-4 decoration-2' if "search" in page.url}}">Search</a>
-              </li>
-              <li>
-                <a href="/cart" class="block lg:text-body link-underline mb-spacer-1 {{'underline underline-offset-4 decoration-2' if "cart" in page.url}}">Shopping cart</a>
-              </li>
-              <li>
-                <a href="/terms-conditions" class="block lg:text-body link-underline mb-spacer-1 whitespace-nowrap">Terms & conditions</a>
-              </li>
-            </ul>
+                <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+              </svg>
+            </button>
+            <div id="dropdownSite" class="monz-dropdown !static !transform-none lg:!inset-auto lg:!top-spacer-5 lg:!absolute z-10 hidden lg:bg-gray-100 w-full lg:w-spacer-12">
+              <ul class="p-spacer-1 text-spacer-1 leading-none" aria-labelledby="dropdownSiteButton">
+                <li>
+                  <a href="/search" class="block lg:text-body link-underline mb-spacer-1 {{'underline underline-offset-4 decoration-2' if "search" in page.url}}">Search</a>
+                </li>
+                <li>
+                  <a href="/cart" class="block lg:text-body link-underline mb-spacer-1 {{'underline underline-offset-4 decoration-2' if "cart" in page.url}}">Shopping cart</a>
+                </li>
+                <li>
+                  <a href="/terms-conditions" class="block lg:text-body link-underline mb-spacer-1 whitespace-nowrap">Terms & conditions</a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div class="justify-end lg:gap-spacer-2 flex flex-col lg:flex-row right-0">
+          <div class="justify-end lg:gap-spacer-2 flex flex-col lg:flex-row right-0">
 
-          <a
+            <a
           href='/search'
           aria-label='menu'
           class="monz-hidden lg:block mt-spacer-4 lg:mt-0 {{'underline underline-offset-4 decoration-2 lg:monz-icon-active' if "search" in page.url}}"
         >
-            <svg class="w-spacer-2 h-spacer-2 hidden lg:block" aria-hidden="true" width="16" height="16">
-              <use href="/img/icons/dist/sprite.svg#icon-search"></use>
-            </svg>
-            <span class="lg:sr-only font-sans uppercase text-top-navbar">Search</span>
-          </a>
+              <svg class="w-spacer-2 h-spacer-2 hidden lg:block" aria-hidden="true" width="16" height="16">
+                <use href="/img/icons/dist/sprite.svg#icon-search"></use>
+              </svg>
+              <span class="lg:sr-only font-sans uppercase text-top-navbar">Search</span>
+            </a>
 
-          <a
+            <a
           href='/cart'
           aria-label='menu'
           class="monz-hidden lg:block relative {{'underline underline-offset-4 decoration-2 lg:monz-icon-active' if "cart" in page.url}}"
         >
-            <svg class="w-spacer-3 h-spacer-3 -mt-spacer-1 hidden lg:block" aria-hidden="true" width="16" height="16">
-              <use href="/img/icons/dist/sprite.svg#icon-cart"></use>
-            </svg>
-            <span class="lg:sr-only font-sans uppercase text-top-navbar">Cart</span>
-            <span class="hidden lg:flex absolute items-center justify-center top-0 bottom-0 left-0 right-0 font-sans text-center text-spacer-1">0</span>
-          </a>
+              <svg class="w-spacer-3 h-spacer-3 -mt-spacer-1 hidden lg:block" aria-hidden="true" width="16" height="16">
+                <use href="/img/icons/dist/sprite.svg#icon-cart"></use>
+              </svg>
+              <span class="lg:sr-only font-sans uppercase text-top-navbar">Cart</span>
+              <span class="hidden lg:flex absolute items-center justify-center top-0 bottom-0 left-0 right-0 font-sans text-center text-spacer-1">0</span>
+            </a>
 
-          <button
+            <button
           type='button'
           aria-label='full screen'
           data-btn-fullscreen
           class="hidden lg:block"
         >
-            <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true" width="16" height="16">
-              <use href="/img/icons/dist/sprite.svg#icon-fullscreen"></use>
-            </svg>
-            <span class="sr-only">Full screen</span>
-          </button>
+              <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true" width="16" height="16">
+                <use href="/img/icons/dist/sprite.svg#icon-fullscreen"></use>
+              </svg>
+              <span class="sr-only">Full screen</span>
+            </button>
 
-          <button
+            <button
           type='button'
           aria-label='menu'
           id="burger-menu"
           class="absolute right-0 top-spacer-3 mr-spacer-2 lg:right-spacer-1"
         >
-            <svg class="w-spacer-2 h-spacer-2 text-light monz-icon-hamburger" aria-hidden="true" width="16" height="16">
-              <use href="/img/icons/dist/sprite.svg#icon-hamburger"></use>
-            </svg>
-            <svg class="w-spacer-2 h-spacer-2 text-light monz-icon-close" aria-hidden="true" width="16" height="16">
-              <use href="/img/icons/dist/sprite.svg#icon-close"></use>
-            </svg>
-            <span class="sr-only">Menu</span>
-          </button>
+              <svg class="w-spacer-2 h-spacer-2 text-light monz-icon-hamburger" aria-hidden="true" width="16" height="16">
+                <use href="/img/icons/dist/sprite.svg#icon-hamburger"></use>
+              </svg>
+              <svg class="w-spacer-2 h-spacer-2 text-light monz-icon-close" aria-hidden="true" width="16" height="16">
+                <use href="/img/icons/dist/sprite.svg#icon-close"></use>
+              </svg>
+              <span class="sr-only">Menu</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  {# NOTE: downward facing triangles #}
-  {% include "components/downward-facing-triangles.njk" %}
-</header>
+    {# NOTE: downward facing triangles #}
+    {% include "components/downward-facing-triangles.njk" %}
+  </header>
+
+  {# NOTE: and additional sticky wrapper for `project` pages where the news bar is always visible #}
+  {% if newsbarVisible is defined and newsbarVisible == true %}
+  </div>
+{% endif %}

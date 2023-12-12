@@ -1,0 +1,338 @@
+{# NOTE: and additional sticky wrapper for `project` pages where the news bar is always visible #}
+{% set newsbarVisible = true %}
+{% set newsbarLinkText = "Read" %}
+{% set newsbarLinkHref = "#read" %}
+
+<!doctype html>
+<html lang="en" class="scroll-smooth newsbar-visible">
+  <head>
+    {% include "../components/meta.njk" %}
+  </head>
+  <body>
+
+    {% include "../components/navigation.njk" %}
+    <main>
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-6">
+              <p class="h2">About</p>
+            </div>
+            <div class="monz-col-3">
+              <figure>
+                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                  {% set pictureObject = coverPhoto %}
+                  {% include "components/picture-example.njk" %}
+                </div>
+
+                {# NOTE/TODO: optional caption but below the swiper, individually #}
+                {# {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                {% endif %} #}
+              </figure>
+
+              <div class="px-spacer-3 py-spacer-1 bg-light">
+                {# NOTE: swiper #}
+                <div class="relative">
+                  <div class="swiper -mx-spacer-1" id="monz-swiper">
+                    <div class="swiper-wrapper">
+                      {% for slides in[
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                      ] %}
+                        <div class="swiper-slide px-spacer-1">
+                          <figure>
+                            <div class="h-spacer-14">
+                              {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
+                              {% set pictureObject = {
+                                            'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                                            'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                                            'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                                            'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
+                                        } %}
+                              {% include "components/picture-example.njk" %}
+                            </div>
+                            {# NOTE/TODO: optional caption #}
+                            {# <figcaption class="text-spacer-1 pt-spacer-1">
+                                <a href="#" class="stretched-link">Slide {{ loop.index}}</a>
+                              </figcaption> #}
+                          </figure>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+
+                  <button type="button" class="swiper-button-prev -left-spacer-1.5 lg:-left-spacer-3 mt-0">
+                    <span class="sr-only">previous slide</span>
+                    <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                      <use href="/img/icons/dist/sprite.svg#icon-caret-left"></use>
+                    </svg>
+                  </button>
+                  <button type="button" class="swiper-button-next -right-spacer-1.5 lg:-right-spacer-3 mt-0">
+                    <span class="sr-only">next slide</span>
+                    <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                      <use href="/img/icons/dist/sprite.svg#icon-caret-right"></use>
+                    </svg>
+                  </button>
+                </div>
+                {# NOTE: end swiper #}
+              </div>
+            </div>
+            <div class="monz-col-3">
+              <h1 class="font-serif">{{ title }}</h1>
+              <p class="lead mb-spacer-3 mt-0">{{ excerpt }}</p>
+              <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mb-spacer-2">
+                <a href="{{ newsbarLinkHref }}" class="link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Read --&gt;</a>
+              </div>
+
+              {% block abstract %}
+                {# NOTE: placeholder for Abstract #}
+              {% endblock %}
+
+              <dl class="text-spacer-1 leading-loose mt-spacer-4">
+                <dt class="clear-left float-left pr-spacer-1/2">Language:</dt>
+                <dd>{{ bookDetailsLanguage }}</dd>
+                <dt class="clear-left float-left pr-spacer-1/2">Pages:</dt>
+                <dd>{{ bookDetailsPages }}</dd>
+                <dt class="clear-left float-left pr-spacer-1/2">ISBN:</dt>
+                <dd>{{ bookDetailsISBN }}</dd>
+                <dt class="clear-left float-left pr-spacer-1/2">DOI:</dt>
+                <dd>{{ bookDetailsDOI }}</dd>
+              </dl>
+            </div>
+            <div class="monz-col-6">
+              <h2 class="font-serif normal-case mb-spacer-3 mt-spacer-2">Reviews</h2>
+
+              {% for review in bookDetailsReviews %}
+                <blockquote class="mb-spacer-3">
+                  <p class="text-spacer-1 leading-loose">{{ review.text }}</p>
+                  <cite class="text-spacer-1 leading-loose pl-spacer-4">{{ review.source }}</cite>
+                </blockquote>
+              {% endfor %}
+            </div>
+            <div class="monz-col-4">
+              {% block researchStatement %}
+                {# NOTE: placeholder for Research Statement #}
+              {% endblock %}
+            </div>
+            <div class="monz-col-2">
+              {# TODO: 2nd cover photo #}
+              <figure class="mb-spacer-3">
+                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                  {% set pictureObject = coverPhoto %}
+                  {% include "components/picture-example.njk" %}
+                </div>
+
+                {# NOTE: optional caption #}
+                {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                {% endif %}
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-6">
+              <h2 id="read" class="monz-anchor-offset">Read</h2>
+            </div>
+            <div class="monz-col-3">
+              {# TODO: 3rd cover photo #}
+              <figure class="mb-spacer-3">
+                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                  {% set pictureObject = coverPhoto %}
+                  {% include "components/picture-example.njk" %}
+                </div>
+
+                {# NOTE: optional caption #}
+                {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                {% endif %}
+              </figure>
+
+              <h3 class="h2 font-serif normal-case">Print Edition</h3>
+              <p class="text-spacer-1 leading-loose mt-0">
+                Purchase a print edition via AMAZON
+              </p>
+              {# NOTE: the price will be shown if exists/defined in the post's meta data #}
+              {% if price is defined and price !== '' %}
+                <p class="text-spacer-1 leading-loose">{{ price }}</p>
+              {% endif %}
+              <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mt-spacer-2">
+                <a href="#" class="col-span-2 link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Get print edition --&gt;</a>
+              </div>
+            </div>
+            <div class="monz-col-3">
+              {# TODO: 4th cover photo #}
+              <figure class="mb-spacer-3">
+                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                  {% set pictureObject = coverPhoto %}
+                  {% include "components/picture-example.njk" %}
+                </div>
+
+                {# NOTE: optional caption #}
+                {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                {% endif %}
+              </figure>
+
+              <h3 class="h2 font-serif normal-case">Digital Edition</h3>
+              <p class="text-spacer-1 leading-loose mt-0">
+                Read the digital version via download.
+              </p>
+              <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mt-spacer-1">
+                <div class="lg:col-span-2">
+                  {# TODO: digital edition price #}
+                  <p class="text-spacer-1 leading-loose">$17.00</p>
+                </div>
+                <div class="lg:col-span-1">
+                  <p class="text-spacer-1 leading-loose">Quantity:</p>
+                </div>
+              </div>
+              <form id="purchase-digital-edition">
+                <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mt-spacer-2 items-start">
+                  <button type="submit" class="lg:col-span-2 link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Purchase digital edition --&gt;</button>
+
+                  <label class="lg:col-span-1">
+                    <input type="number" class="rounded-none block w-full mb-spacer-1 text-body" placeholder="Quantity" required aria-label="Quantity">
+                  </label>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-6">
+              <h2>Media</h2>
+              {# TODO: swiper media #}
+              {# NOTE: swiper #}
+              <div class="relative">
+                <div class="swiper mt-spacer-2 -mx-spacer-1" id="monz-swiper-media">
+                  <div class="swiper-wrapper">
+                    {% for slides in[
+                      0,
+                      1,
+                      2,
+                      3,
+                      4,
+                      5
+                    ] %}
+                      <div class="swiper-slide px-spacer-1 pb-spacer-1">
+                        <article class="break-inside-avoid-column">
+                          <figure>
+                            <div class="h-spacer-14">
+                              {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
+                              {% set pictureObject = {
+                                            'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                                            'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                                            'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                                            'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
+                                        } %}
+                              {% include "components/picture-example.njk" %}
+                            </div>
+                            {# NOTE: optional caption #}
+                            <figcaption class="text-spacer-1 pt-spacer-1">
+                              <a href="#" class="stretched-link">Slide {{ loop.index}}</a>
+                            </figcaption>
+                          </figure>
+                        </article>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+
+                <button type="button" class="text-light swiper-button-prev -left-spacer-1.5 lg:-left-spacer-3">
+                  <span class="sr-only">previous slide</span>
+                  <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                    <use href="/img/icons/dist/sprite.svg#icon-caret-left"></use>
+                  </svg>
+                </button>
+                <button type="button" class="text-light swiper-button-next -right-spacer-1.5 lg:-right-spacer-3">
+                  <span class="sr-only">next slide</span>
+                  <svg class="w-spacer-1 h-spacer-1" aria-hidden="true">
+                    <use href="/img/icons/dist/sprite.svg#icon-caret-right"></use>
+                  </svg>
+                </button>
+              </div>
+              {# NOTE: end swiper #}
+              <h3 class="h2 font-serif normal-case">Book Cover</h3>
+              <p class="text-spacer-1 leading-loose">
+                <a href="#" class="link-underline text-primary">Download Web Quality</a><br/>
+                <a href="#" class="link-underline text-primary">Download Print Quality</a>
+              </p>
+
+              <h3 class="h2 font-serif normal-case mt-spacer-2">Author Images</h3>
+              <p class="text-spacer-1 leading-loose">
+                <a href="#" class="link-underline text-primary">Download Web Quality</a><br/>
+                <a href="#" class="link-underline text-primary">Download Print Quality</a>
+              </p>
+
+              <h3 class="h2 font-serif normal-case mt-spacer-2">Contact Author</h3>
+              <p class="text-spacer-1 leading-loose">Find the <a href="/about" class="link-underline text-primary">author’s bio here</a>.<br/>
+              For media inquieries, please contact via <a href="mailto:hellmut@m-o.nz?Subject=Hello!" class="link-underline text-primary">hellmut [at] m-o [period] nz</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-6">
+              <h2>Author</h2>
+            </div>
+            <div class="monz-col-2">
+              <figure class="mb-spacer-3">
+                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                  {% set pictureObject = coverPhoto %}
+                  {% include "components/picture-example.njk" %}
+                </div>
+
+                {# NOTE: optional caption #}
+                {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                {% endif %}
+              </figure>
+            </div>
+            <div class="monz-col-4">
+              <p class="text-spacer-1 leading-loose">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor <a href="#" class="link-underline text-primary">incididunt</a> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in <a href="#" class="link-underline text-primary">reprehenderit</a> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut <a href="#" class="link-underline text-primary">aliquip</a> ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {# NOTE: no {{ content | safe }} due the individual blocks/slots #}
+
+      {# NOTE: undo the footer reveal offset #}
+      <div class="bg-dark">
+        <div class='monz-container pb-spacer-33'></div>
+      </div>
+    </main>
+
+    {% include "../components/footer.njk" %}
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>
