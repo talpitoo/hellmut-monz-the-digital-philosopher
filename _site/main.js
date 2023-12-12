@@ -13883,9 +13883,10 @@ function initializeFooterReveal() {
         gsapWithCSS.to('footer', {
             scrollTrigger: {
                 trigger: "html",
-                start: "bottom bottom+=1", // start the animation when the bottom of the trigger element reaches the bottom of the viewport
+                start: "bottom-=111 bottom", // start the animation when the bottom of the trigger element reaches the bottom of the viewport, TODO: experiment with the value
                 toggleActions: "play reverse play reverse", // play the animation forward when entering the trigger, and in reverse when leaving
                 toggleClass: 'footer-expanded',
+                // markers: true // NOTE: for debugging
             },
         });
 
@@ -23234,6 +23235,28 @@ function initializeSwiper() {
     var exampleSwiper = document.getElementById('monz-swiper');
     if (exampleSwiper) {
         const swiper = new Swiper(exampleSwiper, {
+            modules: [Navigation],
+            slidesPerView: 1,
+            // spaceBetween: 20,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 3,
+                }
+            },
+        })
+    }
+
+
+
+    // TODO: fine-tune the individual swiper IDs and their initialization
+    var monzSwiperMedia = document.getElementById('monz-swiper-media');
+    if (monzSwiperMedia) {
+        const swiper = new Swiper(monzSwiperMedia, {
             modules: [Navigation],
             slidesPerView: 1,
             // spaceBetween: 20,

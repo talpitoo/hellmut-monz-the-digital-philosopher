@@ -2,7 +2,7 @@
     <div class='monz-container'>
         <div class="monz-grid">
             <p class="leading-none">
-                <a href="#" class="link-underline font-bold text-body uppercase">Check out this news!</a>
+                <a href="{{ newsbarLinkHref | default('#') }}" class="link-underline font-bold text-body uppercase">{{ newsbarLinkText | default('Check out this news!') }}</a>
             </p>
         </div>
     </div>

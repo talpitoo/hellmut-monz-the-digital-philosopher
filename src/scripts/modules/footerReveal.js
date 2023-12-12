@@ -24,9 +24,10 @@ export function initializeFooterReveal() {
         gsap.to('footer', {
             scrollTrigger: {
                 trigger: "html",
-                start: "bottom bottom+=1", // start the animation when the bottom of the trigger element reaches the bottom of the viewport
+                start: "bottom-=111 bottom", // start the animation when the bottom of the trigger element reaches the bottom of the viewport, TODO: experiment with the value
                 toggleActions: "play reverse play reverse", // play the animation forward when entering the trigger, and in reverse when leaving
                 toggleClass: 'footer-expanded',
+                // markers: true // NOTE: for debugging
             },
         });
 

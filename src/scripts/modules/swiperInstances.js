@@ -29,4 +29,26 @@ export function initializeSwiper() {
             },
         })
     }
+
+
+
+    // TODO: fine-tune the individual swiper IDs and their initialization
+    var monzSwiperMedia = document.getElementById('monz-swiper-media');
+    if (monzSwiperMedia) {
+        const swiper = new Swiper(monzSwiperMedia, {
+            modules: [Navigation],
+            slidesPerView: 1,
+            // spaceBetween: 20,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                1024: {
+                    slidesPerView: 3,
+                }
+            },
+        })
+    }
 }

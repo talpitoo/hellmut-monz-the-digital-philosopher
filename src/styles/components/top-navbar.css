@@ -10,6 +10,12 @@
     }
   }
 
+  .newsbar-visible {
+    .monz-newsbar {
+      @apply block;
+    }
+  }
+
   .mobile-menu-expanded {
     @apply overflow-hidden;
 
@@ -47,5 +53,9 @@
         @apply hidden;
       }
     }
+  }
+
+  .monz-anchor-offset {
+    @apply before:-mt-spacer-11 before:h-spacer-11 before:block before:invisible;
   }
 }
