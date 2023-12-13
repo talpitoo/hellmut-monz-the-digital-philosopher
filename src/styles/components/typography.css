@@ -13,8 +13,11 @@
   h3,
   h4,
   h5,
-  h6 {
-    @apply font-bold text-light;
+  h6,
+  .h1,
+  .h2,
+  .h3 {
+    @apply font-bold;
   }
 
   h1,
@@ -24,24 +27,24 @@
 
   h2,
   .h2 {
-    @apply uppercase font-sans text-spacer-2;
+    @apply uppercase font-sans text-lg;
   }
 
   h3,
   .h3 {
-    @apply text-spacer-1;
+    @apply text-base;
+  }
+
+  figcaption {
+    @apply text-sm;
   }
 
   p,
   ul,
-  figcaption {
-    /* @apply text-spacer-1; */
-    --multiplier: .75;
-    font-size: calc(var(--multiplier) * var(--spacer));
-  }
-
-  p.lead {
-    @apply text-spacer-2 leading-relaxed;
+  ol,
+  dl,
+  cite {
+    @apply text-base leading-loose;
   }
 
   .link-underline {

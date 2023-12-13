@@ -1,5 +1,5 @@
 {% if posts.length > 0 %}
-    <ul class="{% if numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 2 %}lg:columns-2{% elif numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 1 %}lg:columns-1{% else %}lg:columns-3{% endif %} gap-spacer-2">
+    <ul class="{% if numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 2 %}lg:columns-2{% elif numberOfColumns is defined and numberOfColumns !== '' and numberOfColumns == 1 %}lg:columns-1{% else %}lg:columns-3{% endif %} gap-x-spacer-2">
         {% for post in posts %}
             {% if post.data.title is defined and post.data.title !== '' %}
                 {# TODO: note to self for later if we want to change the CSS columns <div class="monz-col-2"> #}
@@ -29,9 +29,9 @@
                             {% endif %} #}
                         </figure>
 
-                        {# NOTE: <h3>+<p> or just <p class="text-spacer-1 leading-loose"> if titleHidden==true #}
+                        {# NOTE: <h3>+<p class="text-sm"> or just <p> if titleHidden==true #}
                         {% if post.data.titleHidden is defined and post.data.titleHidden == true %}
-                            <p class="text-spacer-1 leading-loose">
+                            <p>
                                 <a href="{{ post.data.permalink }}" class="stretched-link">{{ post.data.excerpt }}</a>
                             </p>
                         {% else %}
@@ -39,17 +39,17 @@
                                 <h3>
                                     <a href="{{ post.data.permalink }}" class="stretched-link">{{ post.data.title }}</a>
                                 </h3>
-                                <p>{{ post.data.excerpt }}</p>
+                                <p class="text-sm">{{ post.data.excerpt }}</p>
                             {% else %}
                                 <h3 class="h2 font-serif normal-case">
                                     <a href="{{ post.data.permalink }}" class="stretched-link">{{ post.data.title }}</a>
                                 </h3>
-                                <p class="text-spacer-1 leading-loose">{{ post.data.excerpt }}</p>
+                                <p>{{ post.data.excerpt }}</p>
                             {% endif %}
                         {% endif %}
 
                         {# NOTE: categories, the last <li> being the date #}
-                        <ul class="list-separator-dot text-muted whitespace-nowrap">
+                        <ul class="text-sm list-separator-dot text-muted whitespace-nowrap">
                             {% for category in post.data.categories %}
                                 <li class="uppercase">{{ category }}</li>
                             {% endfor %}
@@ -66,5 +66,5 @@
         {% endfor %}
     </ul>
 {% else %}
-    <p class="text-spacer-1 leading-loose">No posts found.</p>
+    <p>No posts found.</p>
 {% endif %}

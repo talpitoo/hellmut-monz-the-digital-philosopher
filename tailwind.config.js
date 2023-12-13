@@ -76,7 +76,7 @@ module.exports = {
       fontFamily: {
         'serif': ['Monz-1500MegaRegular', 'sans-serif'],
         'sans': ['Monz-069HexagonaBold', 'serif'],
-      },
+      },  
       spacing: {
         'section': 'calc(11 * var(--spacer))',
         'section-sm': 'calc(4 * var(--spacer))',
@@ -110,6 +110,9 @@ module.exports = {
         'spacer-1': 'var(--spacer)',
         'spacer-2': 'calc(2 * var(--spacer))',
         'spacer-3': 'calc(3 * var(--spacer))',
+        sm: 'calc(.75 * var(--spacer))',
+        base: 'var(--spacer)',
+        lg: 'calc(2 * var(--spacer))',
       },  
       maxWidth: {
         'screen-3xl': '1920px',

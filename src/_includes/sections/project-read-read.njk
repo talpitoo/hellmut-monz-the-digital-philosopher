@@ -1,0 +1,76 @@
+<section class='py-section-sm bg-dark text-light'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                <h2 id="read" class="monz-anchor-offset mb-spacer-2">Read</h2>
+            </div>
+            <div class="monz-col-3 mb-spacer-2 lg:mb-0">
+                {# TODO: 3rd cover photo #}
+                <figure class="mb-spacer-3">
+                    {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                    <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                        {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                        {% set pictureObject = coverPhoto %}
+                        {% include "components/picture-example.njk" %}
+                    </div>
+
+                    {# NOTE: optional caption #}
+                    {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                        <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                    {% endif %}
+                </figure>
+
+                <h3 class="h2 font-serif normal-case">Print Edition</h3>
+                <p class="mt-0">
+                Purchase a print edition via AMAZON
+              </p>
+                {# NOTE: the price will be shown if exists/defined in the post's meta data #}
+                {% if price is defined and price !== '' %}
+                    <p>{{ price }}</p>
+                {% endif %}
+                <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mt-spacer-2">
+                    <a href="#" class="col-span-2 link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Get print edition --&gt;</a>
+                </div>
+            </div>
+            <div class="monz-col-3">
+                {# TODO: 4th cover photo #}
+                <figure class="mb-spacer-3">
+                    {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
+                    <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                        {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                        {% set pictureObject = coverPhoto %}
+                        {% include "components/picture-example.njk" %}
+                    </div>
+
+                    {# NOTE: optional caption #}
+                    {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                        <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                    {% endif %}
+                </figure>
+
+                <h3 class="h2 font-serif normal-case">Digital Edition</h3>
+                <p class="mt-0">
+                Read the digital version via download.
+              </p>
+                <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mt-spacer-1">
+                    <div class="lg:col-span-2">
+                        {# TODO: digital edition price #}
+                        <p>$17.00</p>
+                    </div>
+                    <div class="lg:col-span-1">
+                        <p>Quantity:</p>
+                    </div>
+                </div>
+                <form id="purchase-digital-edition">
+                    <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mt-spacer-2 items-start">
+                        <label class="lg:col-span-1 lg:order-2">
+                            <input type="number" class="rounded-none block w-full mb-spacer-1 text-body" placeholder="Quantity" required aria-label="Quantity">
+                        </label>
+
+                        <button type="submit" class="lg:col-span-2 lg:order-1 link-underline block w-full bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Purchase digital edition --&gt;</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

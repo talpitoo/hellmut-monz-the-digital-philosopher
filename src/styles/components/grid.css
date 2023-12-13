@@ -18,7 +18,7 @@
   }
 
   .monz-grid {
-    @apply grid w-full grid-cols-1 lg:grid-cols-6 px-spacer-2 lg:px-spacer-7 gap-spacer-2;
+    @apply grid w-full grid-cols-1 lg:grid-cols-6 px-spacer-2 lg:px-spacer-7 gap-x-spacer-2;
   }
 
   .monz-col-1 {
