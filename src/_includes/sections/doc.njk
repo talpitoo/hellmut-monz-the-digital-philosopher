@@ -2,9 +2,8 @@
     <div class='monz-container'>
         <div class="monz-grid">
             <div class="monz-col-6">
-                <h2>Doc</h2>
-            </div>
-            <div class="monz-col-6">
+                <h2 class="mb-spacer-2">Doc</h2>
+                
                 {# NOTE: the content comes from collections.shop which is annotated by `tags: ["shop", ...` #}
                 {% set posts = collections.doc.slice(0, 2) %}
                 {# NOTE: individual posts have different cover photo heights but `figureHeight` overrides it for all posts, same for `figureBackgroundColor` #}

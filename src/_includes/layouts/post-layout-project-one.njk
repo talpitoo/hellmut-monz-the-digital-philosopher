@@ -16,7 +16,7 @@
         <div class='monz-container'>
           <div class="monz-grid">
             <div class="monz-col-6">
-              <p class="h2">About</p>
+              <p class="h2 mb-spacer-2">About</p>
             </div>
             <div class="monz-col-3">
               <figure>
@@ -33,7 +33,7 @@
                 {% endif %} #}
               </figure>
 
-              <div class="px-spacer-3 py-spacer-1 bg-light">
+              <div class="px-spacer-3 py-spacer-1 bg-light mb-spacer-3 lg:mb-0">
                 {# NOTE: swiper #}
                 <div class="relative">
                   <div class="swiper -mx-spacer-1" id="monz-swiper">
@@ -87,7 +87,7 @@
             <div class="monz-col-3">
               <h1 class="font-serif">{{ title }}</h1>
               <p class="lead mb-spacer-3 mt-0">{{ excerpt }}</p>
-              <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mb-spacer-2">
+              <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mb-spacer-2">
                 <a href="{{ newsbarLinkHref }}" class="link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Read --&gt;</a>
               </div>
 
@@ -116,7 +116,7 @@
                 </blockquote>
               {% endfor %}
             </div>
-            <div class="monz-col-4">
+            <div class="monz-col-4 mb-spacer-2 lg:mb-0">
               {% block researchStatement %}
                 {# NOTE: placeholder for Research Statement #}
               {% endblock %}
@@ -125,7 +125,7 @@
               {# TODO: 2nd cover photo #}
               <figure class="mb-spacer-3">
                 {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                <div class="h-spacer-33 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                   {% set pictureObject = coverPhoto %}
                   {% include "components/picture-example.njk" %}
@@ -145,13 +145,13 @@
         <div class='monz-container'>
           <div class="monz-grid">
             <div class="monz-col-6">
-              <h2 id="read" class="monz-anchor-offset">Read</h2>
+              <h2 id="read" class="monz-anchor-offset mb-spacer-2">Read</h2>
             </div>
-            <div class="monz-col-3">
+            <div class="monz-col-3 mb-spacer-2 lg:mb-0">
               {# TODO: 3rd cover photo #}
               <figure class="mb-spacer-3">
                 {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                   {% set pictureObject = coverPhoto %}
                   {% include "components/picture-example.njk" %}
@@ -171,7 +171,7 @@
               {% if price is defined and price !== '' %}
                 <p class="text-spacer-1 leading-loose">{{ price }}</p>
               {% endif %}
-              <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mt-spacer-2">
+              <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mt-spacer-2">
                 <a href="#" class="col-span-2 link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Get print edition --&gt;</a>
               </div>
             </div>
@@ -179,7 +179,7 @@
               {# TODO: 4th cover photo #}
               <figure class="mb-spacer-3">
                 {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                   {% set pictureObject = coverPhoto %}
                   {% include "components/picture-example.njk" %}
@@ -195,7 +195,7 @@
               <p class="text-spacer-1 leading-loose mt-0">
                 Read the digital version via download.
               </p>
-              <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mt-spacer-1">
+              <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mt-spacer-1">
                 <div class="lg:col-span-2">
                   {# TODO: digital edition price #}
                   <p class="text-spacer-1 leading-loose">$17.00</p>
@@ -205,12 +205,12 @@
                 </div>
               </div>
               <form id="purchase-digital-edition">
-                <div class="lg:grid lg:grid-cols-3 lg:gap-spacer-2 mt-spacer-2 items-start">
-                  <button type="submit" class="lg:col-span-2 link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Purchase digital edition --&gt;</button>
-
-                  <label class="lg:col-span-1">
+                <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mt-spacer-2 items-start">
+                  <label class="lg:col-span-1 lg:order-2">
                     <input type="number" class="rounded-none block w-full mb-spacer-1 text-body" placeholder="Quantity" required aria-label="Quantity">
                   </label>
+
+                  <button type="submit" class="lg:col-span-2 lg:order-1 link-underline block w-full bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Purchase digital edition --&gt;</button>
                 </form>
               </div>
             </div>
@@ -222,11 +222,11 @@
         <div class='monz-container'>
           <div class="monz-grid">
             <div class="monz-col-6">
-              <h2>Media</h2>
+              <h2 class="mb-spacer-2">Media</h2>
               {# TODO: swiper media #}
               {# NOTE: swiper #}
               <div class="relative">
-                <div class="swiper mt-spacer-2 -mx-spacer-1" id="monz-swiper-media">
+                <div class="swiper -mx-spacer-1" id="monz-swiper-media">
                   <div class="swiper-wrapper">
                     {% for slides in[
                       0,
@@ -239,7 +239,7 @@
                       <div class="swiper-slide px-spacer-1 pb-spacer-1">
                         <article class="break-inside-avoid-column">
                           <figure>
-                            <div class="h-spacer-14">
+                            <div class="h-spacer-33">
                               {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
                               {% set pictureObject = {
                                             'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
@@ -299,12 +299,12 @@
         <div class='monz-container'>
           <div class="monz-grid">
             <div class="monz-col-6">
-              <h2>Author</h2>
+              <h2 class="mb-spacer-2">Author</h2>
             </div>
             <div class="monz-col-2">
               <figure class="mb-spacer-3">
                 {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                <div class="h-spacer-29 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                   {% set pictureObject = coverPhoto %}
                   {% include "components/picture-example.njk" %}
