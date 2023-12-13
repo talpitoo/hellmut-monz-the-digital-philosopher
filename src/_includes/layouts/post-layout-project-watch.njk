@@ -19,6 +19,11 @@
               <figure class="mb-spacer-3">
                 <div class="{% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {% include "components/video-example.njk" %}
+
+                  {# NOTE: optional decorative upward facing triangles #}
+                  <div class="-mt-spacer-1">
+                    {% include "components/upward-facing-triangles.njk" %}
+                  </div>
                 </div>
 
                 {# NOTE: optional caption #}
@@ -26,6 +31,7 @@
                   <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
                 {% endif %}
               </figure>
+
               <p class="h2 mb-spacer-2">About</p>
             </div>
             <div class="monz-col-2">
