@@ -12,11 +12,15 @@ coverPhoto: {
                 "figcaption": But what is a Fourier series? From heat flow to drawing with circles
             }
 coverVideo: https://www.youtube-nocookie.com/embed/r6sGWTCMz2k?si=DI0OK3Ee9riTKDHT
-layout: layouts/post-layout-video.njk
 permalink: /work/movies/movie-01/
 tags: ["work", "movies"]
 categories: ["movies", "video", "category 3"]
 ---
+
+{# NOTE: the slug itself can be anything, doesn't have to include `book-03` neither `project-read` permalink: /work/books/book-03-project-read-arbitrary-title/ #}
+
+{# NOTE: the layout should be extended this way in order for the blocks/slots to work #}
+{% extends 'layouts/post-layout-project-watch.njk' %}
 
 <section class='py-section-sm'>
     <div class='monz-container'>
