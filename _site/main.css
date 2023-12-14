@@ -1990,6 +1990,9 @@ video {
  .resize {
   resize: both;
 }
+ .list-disc {
+  list-style-type: disc;
+}
  .break-inside-avoid-column {
   break-inside: avoid-column;
 }
@@ -2666,6 +2669,9 @@ video {
   }
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .lg\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
   .lg\:grid-cols-96 {
     grid-template-columns: repeat(96, minmax(0, 1fr));

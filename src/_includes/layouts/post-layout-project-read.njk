@@ -95,16 +95,14 @@
                 {# NOTE: placeholder for Abstract #}
               {% endblock %}
 
-              <dl class="mt-spacer-4">
-                <dt class="clear-left float-left pr-spacer-1/2">Language:</dt>
-                <dd>{{ bookDetailsLanguage }}</dd>
-                <dt class="clear-left float-left pr-spacer-1/2">Pages:</dt>
-                <dd>{{ bookDetailsPages }}</dd>
-                <dt class="clear-left float-left pr-spacer-1/2">ISBN:</dt>
-                <dd>{{ bookDetailsISBN }}</dd>
-                <dt class="clear-left float-left pr-spacer-1/2">DOI:</dt>
-                <dd>{{ bookDetailsDOI }}</dd>
-              </dl>
+              {% if projectDetails %}
+                <dl class="mt-spacer-4">
+                  {% for key, value in projectDetails %}
+                    <dt class="clear-left float-left pr-spacer-1/2">{{ key }}:</dt>
+                    <dd>{{ value }}</dd>
+                  {% endfor %}
+                </dl>
+              {% endif %}
             </div>
             <div class="monz-col-6">
               <h2 class="font-serif normal-case mb-spacer-3 mt-spacer-2">Reviews</h2>
@@ -141,11 +139,11 @@
         </div>
       </section>
 
-      {% include "../sections/project-read-read.njk" %}
+      {% include "../sections/project-read.njk" %}
 
-      {% include "../sections/project-read-media.njk" %}
+      {% include "../sections/project-media.njk" %}
 
-      {% include "../sections/project-read-author.njk" %}
+      {% include "../sections/project-author.njk" %}
 
       {# NOTE: no {{ content | safe }} due the individual blocks/slots #}
 

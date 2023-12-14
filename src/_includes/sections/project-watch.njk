@@ -1,0 +1,25 @@
+<section class='py-section-sm bg-dark text-light'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                <h2 id="watch" class="monz-anchor-offset mb-spacer-2">Watch movie</h2>
+
+                <figure>
+                    <div class="{% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                        {% include "components/video-example.njk" %}
+
+                        {# NOTE: optional decorative upward facing triangles #}
+                        <div class="-mt-spacer-1">
+                            {% include "components/upward-facing-triangles.njk" %}
+                        </div>
+                    </div>
+
+                    {# NOTE: optional caption #}
+                    {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
+                        <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
+                    {% endif %}
+                </figure>
+            </div>
+        </div>
+    </div>
+</section>
