@@ -1,7 +1,8 @@
 <div class='monz-newsbar bg-primary text-dark py-spacer-1'>
     <div class='monz-container'>
         <div class="monz-grid">
-            <p class="text-sm leading-none">
+            {# NOTE: add/remove .animate-marquee for animation, tweak it in /tailwind.config.js #}
+            <p class="text-sm leading-none animate-marquee">
                 <a href="{{ newsbarLinkHref | default('#') }}" class="link-underline font-bold text-body uppercase">{{ newsbarLinkText | default('Check out this news!') }}</a>
             </p>
         </div>

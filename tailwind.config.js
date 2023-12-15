@@ -148,11 +148,16 @@ module.exports = {
           '50%': { transform: 'scale(.25)' },
           '100%': { transform: 'scale(1)' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
       },
       animation: {
         'fade-in': 'fadeIn .3s forwards',
         'slide-down': 'slideDown .3s forwards',
         'enlarge': 'enlarge .3s forwards',
+        'marquee': 'marquee 15s linear infinite',
       },
     },
     screens: {
