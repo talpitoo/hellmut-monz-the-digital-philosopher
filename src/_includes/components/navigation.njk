@@ -35,12 +35,23 @@
                     {% endif %}
                   </a>
 
+                  {% if entry.children.length %}
+                  {# NOTE: if there are child pages, show it as a dropdown... #}
                   <button type="button" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="lg:hidden monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans inline-flex items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
                     {{ entry.title }}
                     <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
                       <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
                     </svg>
                   </button>
+                  {% else %}
+                  {# NOTE: ...otherwise show a simple link #}
+                  <a href="{{ entry.url }}" class="lg:hidden monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans inline-flex items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
+                    {{ entry.title }}
+                    <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
+                      <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                    </svg>
+                  </a>
+                  {% endif %}
                 </div>
 
                 {# NOTE: dropdown menu #}

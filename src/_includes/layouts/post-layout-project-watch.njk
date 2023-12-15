@@ -2,6 +2,7 @@
 {% set newsbarVisible = true %}
 {% set newsbarLinkText = "Watch" %}
 {% set newsbarLinkHref = "#watch" %}
+{% set authorTitle = "Director" %}
 
 <!doctype html>
 <html lang="en" class="scroll-smooth newsbar-visible">
@@ -177,7 +178,47 @@
 
       {% include "../sections/project-watch.njk" %}
 
-      {% include "../sections/project-media.njk" %}
+      <section class='py-section-sm bg-dark text-light'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                <h2 class="mb-spacer-2">Media</h2>
+
+                <div class="mb-spacer-2">
+                    {% set slidesHeight = 'h-spacer-14' %}
+                    {% set slidesData = [
+                  {
+                    'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                    'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                    'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                    'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg',
+                    'caption': 'Slide 1'
+                  }, {
+                    'webP': '/img/pexels-oleksandr-tiupa-192136-640x427.webp',
+                    'webP2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.webp',
+                    'jpg': '/img/pexels-oleksandr-tiupa-192136-640x427.jpg',
+                    'jpg2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.jpg',
+                    'caption': 'Slide 2'
+                  }, {
+                    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+                    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+                    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+                    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+                    'caption': 'Slide 3'
+                  }, {
+                    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+                    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+                    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+                    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+                    'caption': 'Slide 4'
+                  }
+                ] %}
+                    {% include "components/swiper.njk" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
       {% include "../sections/project-author.njk" %}
 
