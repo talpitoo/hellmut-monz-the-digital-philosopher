@@ -91,6 +91,9 @@
     </main>
 
     {% include "../components/footer.njk" %}
+    
+    {# NOTE: modals at the very end so their z-index is above everything else #}
+    {% include "components/modals/modal-layout-columns-2-4.njk" %}
 
     <script src="/main.js" defer></script>
   </body>

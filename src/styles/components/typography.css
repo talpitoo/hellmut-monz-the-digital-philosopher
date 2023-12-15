@@ -4,7 +4,9 @@
   h2 + p,
   h3 + p,
   ul + p,
-  p + ul {
+  p + ul,
+  p + code,
+  code + p {
     @apply mt-spacer-1;
   }
 
@@ -43,7 +45,8 @@
   ul,
   ol,
   dl,
-  cite {
+  cite,
+  code {
     @apply text-base leading-loose;
   }
 

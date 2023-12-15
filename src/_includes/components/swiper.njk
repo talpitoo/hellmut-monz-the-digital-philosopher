@@ -18,9 +18,13 @@
 
                             {# NOTE: optional caption #}
                             {% if slide.caption is defined and slide.caption !== '' %}
-                            <figcaption class="text-spacer-1 pt-spacer-1">
-                                <a href="#" class="stretched-link">{{ slide.caption }}</a>
-                            </figcaption>
+                                <figcaption class="text-spacer-1 pt-spacer-1">
+                                    {# NOTE: <a href... vs. <button vs. no link at all #}
+                                    {# <a href="#" class="stretched-link">{{ slide.caption }}</a> #}
+
+                                    {# NOTE: if you want to open a modal, make sure that the template/layout imports `"components/modals/modal-layout-columns-2-4.njk"` at the bottom #}
+                                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="stretched-link">{{ slide.caption }}</button>
+                                </figcaption>
                             {% endif %}
                         </figure>
                     </div>

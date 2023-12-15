@@ -5,10 +5,10 @@ layout: layouts/base.njk
 permalink: /search/
 ---
 
-<section class='py-section-sm'>
+<section class='py-section-sm bg-dark text-light'>
     <div class='monz-container'>
         <div class="monz-grid">
-            <h1 class="text-body">{{ title }}</h1>
+            <h1 class="h2">{{ title }}</h1>
         </div>
         <form class="mt-spacer-2" id="search">
             <div class="monz-grid">
@@ -22,5 +22,13 @@ permalink: /search/
                 </div>
             </div>
         </form>
+        <div class="monz-grid">
+            <div class="monz-col-6 mt-spacer-4">
+                {# NOTE: dummy data for dummy search layout #}
+                {# NOTE: the content comes from collections.work which is annotated by `tags: ["work", ...` #}
+                {% set posts = collections.work | reverse %}
+                {% include "components/article-list.njk" %}
+            </div>
+        </div>
     </div>
 </section>

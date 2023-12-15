@@ -26,9 +26,13 @@
                   {# NOTE: adaptive markup mobile/desktop #}
                   <a href="{{ entry.url }}" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="hidden lg:inline-flex monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
                     {{ entry.title }}
-                    <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
-                      <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
-                    </svg>
+
+                    {% if entry.children.length %}
+                      {# NOTE: only show the dropdown caret if there are subpages #}
+                      <svg class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1" aria-hidden="true" width="16" height="16">
+                        <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                      </svg>
+                    {% endif %}
                   </a>
 
                   <button type="button" id="dropdown{{ entry.title }}Button" data-dropdown-toggle="dropdown{{ entry.title }}" data-dropdown-trigger="hover" class="lg:hidden monz-dropdown-trigger link-underline lg:link-underline-spacer text-top-navbar uppercase font-sans inline-flex items-center text-light {{'underline lg:underline-offset-spacer decoration-2' if entry.url in page.url}}">
