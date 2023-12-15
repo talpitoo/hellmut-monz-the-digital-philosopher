@@ -19,70 +19,7 @@
               <p class="h2 mb-spacer-2">About</p>
             </div>
             <div class="monz-col-3">
-              <figure>
-                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
-                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                  {% set pictureObject = coverPhoto %}
-                  {% include "components/picture-example.njk" %}
-                </div>
-
-                {# NOTE/TODO: optional caption but below the swiper, individually #}
-                {# {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
-                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
-                {% endif %} #}
-              </figure>
-
-              <div class="px-spacer-3 py-spacer-1 bg-light mb-spacer-3 lg:mb-0">
-                {# NOTE: swiper #}
-                <div class="relative">
-                  <div class="swiper -mx-spacer-1" id="monz-swiper">
-                    <div class="swiper-wrapper">
-                      {% for slides in[
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                      ] %}
-                        <div class="swiper-slide px-spacer-1">
-                          <figure>
-                            <div class="h-spacer-14">
-                              {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
-                              {% set pictureObject = {
-                                            'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
-                                            'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
-                                            'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
-                                            'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg'
-                                        } %}
-                              {% include "components/picture-example.njk" %}
-                            </div>
-                            {# NOTE/TODO: optional caption #}
-                            {# <figcaption class="text-spacer-1 pt-spacer-1">
-                                <a href="#" class="stretched-link">Slide {{ loop.index}}</a>
-                              </figcaption> #}
-                          </figure>
-                        </div>
-                      {% endfor %}
-                    </div>
-                  </div>
-
-                  <button type="button" class="swiper-button-prev -left-spacer-1.5 lg:-left-spacer-3 mt-0">
-                    <span class="sr-only">previous slide</span>
-                    <svg class="w-spacer-1 h-spacer-1" aria-hidden="true" width="16" height="16">
-                      <use href="/img/icons/dist/sprite.svg#icon-caret-left"></use>
-                    </svg>
-                  </button>
-                  <button type="button" class="swiper-button-next -right-spacer-1.5 lg:-right-spacer-3 mt-0">
-                    <span class="sr-only">next slide</span>
-                    <svg class="w-spacer-1 h-spacer-1" aria-hidden="true" width="16" height="16">
-                      <use href="/img/icons/dist/sprite.svg#icon-caret-right"></use>
-                    </svg>
-                  </button>
-                </div>
-                {# NOTE: end swiper #}
-              </div>
+              {% include "components/swiper-gallery.njk" %}
             </div>
             <div class="monz-col-3">
               <h1 class="font-serif">{{ title }}</h1>
