@@ -8,7 +8,7 @@
  * — from https://tailwindcss.com/docs/plugins#adding-components
  */
 @layer components {
-  article {
+  .monz-tile {
     @apply pb-spacer-1 relative;
 
     &:hover,

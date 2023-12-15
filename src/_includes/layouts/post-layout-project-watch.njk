@@ -35,7 +35,7 @@
               <p class="h2 mb-spacer-2">About</p>
             </div>
             <div class="monz-col-2">
-              <figure>
+              <figure class="mb-spacer-3 lg:mb-0">
                 {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
                 <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -52,65 +52,134 @@
             <div class="monz-col-4">
               <h1 class="font-serif">{{ title }}</h1>
               <p class="text-lg leading-relaxed mb-spacer-3 mt-0">{{ excerpt }}</p>
-              <div class="lg:grid lg:grid-cols-3 lg:gap-x-spacer-2 mb-spacer-2">
-                <a href="{{ newsbarLinkHref }}" class="link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Read --&gt;</a>
+              <div class="lg:grid lg:grid-cols-4 lg:gap-x-spacer-2 mb-spacer-2">
+                <a href="{{ newsbarLinkHref }}" class="link-underline block bg-primary uppercase p-spacer-1 text-left text-spacer-1 text-body leading-none">Watch --&gt;</a>
               </div>
 
               {% block abstract %}
                 {# NOTE: placeholder for Abstract #}
               {% endblock %}
 
-              <dl class="mt-spacer-4">
-                <dt class="clear-left float-left pr-spacer-1/2">Language:</dt>
-                <dd>{{ bookDetailsLanguage }}</dd>
-                <dt class="clear-left float-left pr-spacer-1/2">Pages:</dt>
-                <dd>{{ bookDetailsPages }}</dd>
-                <dt class="clear-left float-left pr-spacer-1/2">ISBN:</dt>
-                <dd>{{ bookDetailsISBN }}</dd>
-                <dt class="clear-left float-left pr-spacer-1/2">DOI:</dt>
-                <dd>{{ bookDetailsDOI }}</dd>
-              </dl>
+              {% if projectDetails %}
+                <dl class="mt-spacer-4">
+                  {% for key, value in projectDetails %}
+                    <dt class="clear-left float-left pr-spacer-1/2">{{ key }}:</dt>
+                    <dd>{{ value }}</dd>
+                  {% endfor %}
+                </dl>
+              {% endif %}
             </div>
+
             <div class="monz-col-6">
               <h2 class="font-serif normal-case mb-spacer-3 mt-spacer-2">Reviews</h2>
-
-              {% for review in bookDetailsReviews %}
-                <blockquote class="mb-spacer-3">
-                  <p>{{ review.text }}</p>
-                  <cite class="pl-spacer-4">{{ review.source }}</cite>
-                </blockquote>
-              {% endfor %}
             </div>
-            <div class="monz-col-4 mb-spacer-2 lg:mb-0">
-              {% block researchStatement %}
-                {# NOTE: placeholder for Research Statement #}
-              {% endblock %}
+            <div class="monz-col-4 mb-spacer-2">
+              <h3>Critique by Sebastian Höglinger, translated by Lisa Rosenblatt:</h3>
+              <p>“Caught in the wake of an animated pipe system, The Construction of ANSTALT3000 leads down to the limbo of wrong-headed hyper-fiction and even further to the borders of imagination, taken literally – quasi into a latently obscene in-between world defined by counter- and meta-logics. Sounds dodgy? Well, it is: dodgy and frantically clever.</p>
+              <p>In fragile, billowing, animated scenes, hybrid creatures featuring rather awkward forms confront themselves and their audience with at times bizarrely humorous word, text, and body mutations. God is fabricated as a little digital heap of misery – for the sole purpose of refuting his existence – surroundings and beings deform with a consistent, level timing and in their structure recall both popular gaming scenes and the skit style of early film comedies.</p>
+              <p>Munz´s only seemingly naïve asylum and its inhabitants, highly complex in their consistent concentration, tell of the process in the title; construction and throwing over: of meanings, spaces, and no least, conventions of communication in the 'digital era'. They thereby have an unmistakable affinity to David O´Reilly´s grandly overflowing cinematic and imaginative worlds. By means of parody (and to serve it), an – at times error affirming – pendant is offered to the commercial-tidy-aesthetics of conventional 3D animation. A universe that pleasurably continues to give birth to itself from its own intrinsic logic and which Munz ends at the physical fusion with already introduced characters – a refreshing symbol of constructed non-perfection, similar to a 'boss' in classical arcade console adventures."</p>
             </div>
             <div class="monz-col-2">
-              {# TODO: 2nd cover photo #}
-              <figure class="mb-spacer-3">
-                {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                <div class="h-spacer-33 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
-                  {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
-                  {% set pictureObject = coverPhoto %}
-                  {% include "components/picture-example.njk" %}
-                </div>
+              <div class="monz-tile break-inside-avoid-column mb-spacer-2">
+                <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
+                  <figure>
+                    <div class="h-spacer-14 bg-light mb-spacer-1">
+                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                      {% set pictureObject = coverPhoto %}
+                      {% include "components/picture-example.njk" %}
+                    </div>
+                    <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
+                  </figure>
+                </button>
+              </div>
 
-                {# NOTE: optional caption #}
-                {% if coverPhoto.figcaption is defined and coverPhoto.figcaption !== '' %}
-                  <figcaption class="mt-spacer-1">{{ coverPhoto.figcaption }}</figcaption>
-                {% endif %}
-              </figure>
+              <div class="monz-tile break-inside-avoid-column mb-spacer-2">
+                <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
+                  <figure>
+                    <div class="h-spacer-14 bg-light mb-spacer-1">
+                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                      {% set pictureObject = coverPhoto %}
+                      {% include "components/picture-example.njk" %}
+                    </div>
+                    <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
+                  </figure>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {# NOTE: full width/edge-to-edge cover photo markup "components/cover-photo-edge-to-edge-example.njk" #}
+        <figure class="mb-spacer-3">
+          <div class="bg-success relative">
+            <div class="absolute top-0 bottom-0 left-0 right-0">
+              {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+              {% set pictureObject = coverPhoto %}
+              {% include "components/picture-example.njk" %}
+            </div>
+
+            <div class='monz-container'>
+              <div class="h-spacer-46"></div>
+            </div>
+          </div>
+
+          {# NOTE: optional caption #}
+          <div class='monz-container mt-spacer-1'>
+            <div class="monz-grid">
+              <div class="monz-col-6">
+                <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
+              </div>
+            </div>
+          </div>
+        </figure>
+
+        <div class="monz-container">
+          <div class="monz-grid">
+            <div class="monz-col-3 mb-spacer-2">
+              <h3>Critique by Andrea Lavagnini:</h3>
+              <p>"'I imagined the imagination of the limit of imagination more or less limitless. But it turned out to be the opposite.' A psychotrance gallop in neurolinguistics, between psychedelic illustrations of Roscher’s monsters and laws of computer programming, between the aesthetic of David O’Reily and the psychoanalytic game, The Construction of ANSTALT3000 is the most ambitious, complex and incomprehensible animated short film that the public will have had the chance to see."</p>
+            </div>
+            <div class="monz-col-3">
+              <div class="monz-tile break-inside-avoid-column mb-spacer-2">
+                <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
+                  <figure>
+                    <div class="h-spacer-21 bg-light mb-spacer-1">
+                      {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
+                      {% set pictureObject = coverPhoto %}
+                      {% include "components/picture-example.njk" %}
+                    </div>
+                    <figcaption>Fig. 1.1: Image Caption of this image that says something (Copyright © Eman Ali, 2022)</figcaption>
+                  </figure>
+                </button>
+              </div>
+            </div>
+
+            <div class="monz-col-6">
+              <h2 class="font-serif normal-case mb-spacer-3 mt-spacer-2">Screenings</h2>
+              <ul class="list-disc">
+                <li>The Wrong New Digital Art Biennale, Online 2016</li>
+                <li>Ars Electronica, Austria 2015</li>
+                <li>WRO Media Art Biennale, Poland 2015</li>
+                <li>Milano Film Festival, Italy 2014</li>
+                <li>South by Southwest, USA 2014</li>
+                <li>ASIFA, Austria 2014</li>
+                <li>Kasseler Dok Fest, Germany 2014</li>
+                <li>Antimatter, Canada 2014</li>
+                <li>Animateka, Slovenia 2014</li>
+                <li>Diagonale, Austria 2013</li>
+                <li>Glitch Festival, Ireland 2013</li>
+                <li>Pictoplasma, Germany 2013</li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {# {% include "../sections/project-read-read.njk" %} #}
+      {% include "../sections/project-watch.njk" %}
 
-      {% include "../sections/project-read-media.njk" %}
+      {% include "../sections/project-media.njk" %}
 
-      {% include "../sections/project-read-author.njk" %}
+      {% include "../sections/project-author.njk" %}
 
       {# NOTE: no {{ content | safe }} due the individual blocks/slots #}
 
@@ -121,6 +190,9 @@
     </main>
 
     {% include "../components/footer.njk" %}
+
+    {# NOTE: modals at the very end so their z-index is above everything else #}
+    {% include "components/modals/modal-layout-columns-2-4.njk" %}
 
     <script src="/main.js" defer></script>
   </body>

@@ -23232,46 +23232,44 @@ function EffectCards(_ref) {
 // import 'swiper/css/navigation';
 
 function initializeSwiper() {
-    var exampleSwiper = document.getElementById('monz-swiper');
-    if (exampleSwiper) {
-        const swiper = new Swiper(exampleSwiper, {
+    const monzSwipers = document.querySelectorAll('[data-monz-swiper]');
+
+    function updateActiveImage(swiper) {
+        const activeSlide = swiper.slides[swiper.activeIndex];
+        const picture = activeSlide.querySelector('picture');
+        if (picture) {
+            const clonedPicture = picture.cloneNode(true);
+            const targetFigure = document.querySelector('#monz-swiper-gallery-active-image');
+            targetFigure.innerHTML = '';
+            targetFigure.appendChild(clonedPicture);
+        }
+    }
+
+    monzSwipers.forEach(function (swiperElement) {
+        const swiperContainer = swiperElement.parentElement;
+        const nextButton = swiperContainer.querySelector('.swiper-button-next');
+        const prevButton = swiperContainer.querySelector('.swiper-button-prev');
+
+        const swiper = new Swiper(swiperElement, {
             modules: [Navigation],
             slidesPerView: 1,
-            // spaceBetween: 20,
             loop: true,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: nextButton,
+                prevEl: prevButton,
             },
             breakpoints: {
                 1024: {
                     slidesPerView: 3,
                 }
             },
-        })
-    }
-
-
-
-    // TODO: fine-tune the individual swiper IDs and their initialization
-    var monzSwiperMedia = document.getElementById('monz-swiper-media');
-    if (monzSwiperMedia) {
-        const swiper = new Swiper(monzSwiperMedia, {
-            modules: [Navigation],
-            slidesPerView: 1,
-            // spaceBetween: 20,
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                1024: {
-                    slidesPerView: 3,
+            on: {
+                slideChange: function () {
+                    updateActiveImage(this);
                 }
-            },
-        })
-    }
+            }
+        });
+    });
 }
 
 ;// CONCATENATED MODULE: ./src/scripts/modules/newsBar.js

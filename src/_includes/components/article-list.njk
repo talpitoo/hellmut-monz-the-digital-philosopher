@@ -4,7 +4,7 @@
             {% if post.data.title is defined and post.data.title !== '' %}
                 {# TODO: note to self for later if we want to change the CSS columns <div class="monz-col-2"> #}
                 <li class="mb-spacer-2">
-                    <article class="break-inside-avoid-column">
+                    <div class="monz-tile break-inside-avoid-column">
                         <figure class="mb-spacer-1">
                             {% if post.data.coverVideo is defined and post.data.coverVideo !== '' %}
                                 <div class="{% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
@@ -60,7 +60,7 @@
                         {% if post.data.price is defined and post.data.price !== '' %}
                             <p class="h3">{{ post.data.price }}</p>
                         {% endif %}
-                    </article>
+                    </div>
                 </li>
             {% endif %}
         {% endfor %}
