@@ -1,5 +1,5 @@
-footer:hover [data-footer-reveal],
 .footer-expanded footer [data-footer-reveal] {
   /* NOTE: reveal the footer on hover, and by toggling the .footer-expanded on the <html> */
+  /* NOTE disabled hovering for now footer:hover [data-footer-reveal], */
   @apply mb-0;
 }

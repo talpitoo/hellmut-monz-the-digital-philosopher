@@ -31,7 +31,7 @@ export function initializeModalGallery() {
 
     // activate the first item
     if (figures[0]) {
-      modalGalleryActive.appendChild(figures[0]);
+      modalGalleryActive.appendChild(figures[0].cloneNode(true));
     }
 
     // counter
