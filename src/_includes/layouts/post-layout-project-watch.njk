@@ -82,7 +82,7 @@
             </div>
             <div class="monz-col-2">
               <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                <button type="button" data-monz-modal-trigger class="w-full text-left">
                   <figure data-monz-show-in-modal="true">
                     <div class="h-spacer-14 bg-light mb-spacer-1">
                       {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -95,7 +95,8 @@
               </div>
 
               <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                <button type="button" class="w-full text-left" data-monz-modal-trigger>
+                  {# NOTE: use data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" for automatic show/hide via markup#}
                   <figure data-monz-show-in-modal="true">
                     <div class="h-spacer-14 bg-light mb-spacer-1">
                       {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -111,7 +112,7 @@
         </div>
 
         {# NOTE: full width/edge-to-edge cover photo markup "components/cover-photo-edge-to-edge-example.njk" #}
-        <figure class="monz-figure-edge-to-edge mb-spacer-3" data-monz-show-in-modal="true">
+        <figure class="mb-spacer-3" data-monz-show-in-modal="true">
           <div class="bg-success relative">
             <div class="absolute top-0 bottom-0 left-0 right-0">
               {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -142,7 +143,7 @@
             </div>
             <div class="monz-col-3">
               <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                <button type="button" data-monz-modal-trigger class="w-full text-left">
                   <figure data-monz-show-in-modal="true">
                     <div class="h-spacer-21 bg-light mb-spacer-1">
                       {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}

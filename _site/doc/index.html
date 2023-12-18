@@ -395,7 +395,7 @@
     <div class="monz-grid">
       <div class="monz-col-6">
         <h1 class="h2 mb-spacer-3">Doc</h1>
-        <p class="text-lg leading-relaxed">Hellmut Monz <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="link-underline text-primary">open modal</button> doc ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
+        <p class="text-lg leading-relaxed">Hellmut Monz <button type="button" data-monz-modal-trigger class="link-underline text-primary">open modal</button> doc ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
 
         <h2 class="mt-spacer-5 mb-spacer-3">2022</h2>
         
@@ -1352,7 +1352,7 @@
                 <div class='monz-container'>
                     <div class="monz-grid">
                         <div class="col-span-6 justify-between flex pt-spacer-3 pb-spacer-2">
-                            <p class="text-top-navbar uppercase font-sans">
+                            <p class="text-top-navbar leading-none uppercase font-sans">
                                 <span id="modal-gallery-current">1</span>/<span id="modal-gallery-total">8</span>
                             </p>
                             <button
@@ -1372,8 +1372,9 @@
                                 aria-label='menu'
                                 id="burger-menu"
                                 class="lg:absolute lg:top-spacer-3 lg:mr-spacer-2 lg:right-spacer-1"
-                                data-modal-hide="modal-gallery"
+                                data-monz-modal-hide
                                 >
+                                
                                 <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
                                     <use href="/img/icons/dist/sprite.svg#icon-close"></use>
                                 </svg>

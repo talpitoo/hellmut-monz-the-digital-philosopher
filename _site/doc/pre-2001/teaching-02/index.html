@@ -488,7 +488,7 @@
             </div>
             <div class="monz-col-2">
               <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                <button type="button" data-monz-modal-trigger class="w-full text-left">
                   <figure data-monz-show-in-modal="true">
                     <div class="h-spacer-14 bg-light mb-spacer-1">
                       
@@ -517,7 +517,8 @@
               </div>
 
               <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                <button type="button" class="w-full text-left" data-monz-modal-trigger>
+                  
                   <figure data-monz-show-in-modal="true">
                     <div class="h-spacer-14 bg-light mb-spacer-1">
                       
@@ -549,7 +550,7 @@
         </div>
 
         
-        <figure class="monz-figure-edge-to-edge mb-spacer-3" data-monz-show-in-modal="true">
+        <figure class="mb-spacer-3" data-monz-show-in-modal="true">
           <div class="bg-success relative">
             <div class="absolute top-0 bottom-0 left-0 right-0">
               
@@ -596,7 +597,7 @@
             </div>
             <div class="monz-col-3">
               <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                <button type="button" data-monz-modal-trigger class="w-full text-left">
                   <figure data-monz-show-in-modal="true">
                     <div class="h-spacer-21 bg-light mb-spacer-1">
                       
@@ -748,7 +749,7 @@
                                     
 
                                     
-                                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="stretched-link">Slide 1</button>
+                                    <button type="button" data-monz-modal-trigger class="stretched-link">Slide 1</button>
                                 </figcaption>
                             
                         </figure>
@@ -787,7 +788,7 @@
                                     
 
                                     
-                                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="stretched-link">Slide 2</button>
+                                    <button type="button" data-monz-modal-trigger class="stretched-link">Slide 2</button>
                                 </figcaption>
                             
                         </figure>
@@ -826,7 +827,7 @@
                                     
 
                                     
-                                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="stretched-link">Slide 3</button>
+                                    <button type="button" data-monz-modal-trigger class="stretched-link">Slide 3</button>
                                 </figcaption>
                             
                         </figure>
@@ -865,7 +866,7 @@
                                     
 
                                     
-                                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="stretched-link">Slide 4</button>
+                                    <button type="button" data-monz-modal-trigger class="stretched-link">Slide 4</button>
                                 </figcaption>
                             
                         </figure>
@@ -1027,7 +1028,7 @@
                 <div class='monz-container'>
                     <div class="monz-grid">
                         <div class="col-span-6 justify-between flex pt-spacer-3 pb-spacer-2">
-                            <p class="text-top-navbar uppercase font-sans">
+                            <p class="text-top-navbar leading-none uppercase font-sans">
                                 <span id="modal-gallery-current">1</span>/<span id="modal-gallery-total">8</span>
                             </p>
                             <button
@@ -1047,8 +1048,9 @@
                                 aria-label='menu'
                                 id="burger-menu"
                                 class="lg:absolute lg:top-spacer-3 lg:mr-spacer-2 lg:right-spacer-1"
-                                data-modal-hide="modal-gallery"
+                                data-monz-modal-hide
                                 >
+                                
                                 <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
                                     <use href="/img/icons/dist/sprite.svg#icon-close"></use>
                                 </svg>
