@@ -3,6 +3,7 @@ import { Dropdown } from 'flowbite';
 import { initializeMobileMenu } from './modules/hamburger';
 import { initializeOverlayDebugGrid } from './modules/gridDebugOverlay';
 import { initializeFullscreen } from './modules/fullscreen';
+import { initializeModalGallery } from './modules/modalGallery';
 import { initializeFooterReveal } from './modules/footerReveal';
 import { initializeSwiper } from './modules/swiperInstances';
 import { initializeNewsBarSessionStorage } from './modules/newsBar';
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeMobileMenu();
         initializeOverlayDebugGrid();
         initializeFullscreen();
+        initializeModalGallery();
         initializeFooterReveal();
         initializeSwiper();
         initializeNewsBarSessionStorage();

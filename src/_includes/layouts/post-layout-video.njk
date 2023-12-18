@@ -14,7 +14,7 @@
               {# NOTE: every page requires a <h1>, even if it is visually hidden with <h1 clas="sr-only"> for accessibility/SEO reasons #}
               <h1 class="sr-only">{{ title }}</h1>
 
-              <figure class="mb-spacer-3">
+              <figure class="mb-spacer-3" data-monz-show-in-modal="false">
                 <div class="{% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {% include "components/video-example.njk" %}
                 </div>
@@ -37,6 +37,9 @@
         </div>
       </section>
     </main>
+
+    {# NOTE: modals at the very end so their z-index is above everything else #}
+    {% include "components/modals/modal-gallery.njk" %}
 
     <script src="/main.js" defer></script>
   </body>

@@ -1,0 +1,7 @@
+@layer components {
+  #modal-gallery-list {
+    figure {
+      @apply mb-0;
+    }
+  }
+}

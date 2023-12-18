@@ -4,7 +4,7 @@
             {% for slide in slidesData %}
                 <div class="swiper-slide px-spacer-1 pb-spacer-1">
                     <div class="monz-tile break-inside-avoid-column">
-                        <figure>
+                        <figure data-monz-show-in-modal="{{ showInModal }}">
                             <div class="{{ slidesHeight }}">
                                 {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
                                 {% set pictureObject = {
@@ -22,8 +22,8 @@
                                     {# NOTE: <a href... vs. <button vs. no link at all #}
                                     {# <a href="#" class="stretched-link">{{ slide.caption }}</a> #}
 
-                                    {# NOTE: if you want to open a modal, make sure that the template/layout imports `"components/modals/modal-layout-columns-2-4.njk"` at the bottom #}
-                                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="stretched-link">{{ slide.caption }}</button>
+                                    {# NOTE: if you want to open a modal, make sure that the template/layout imports `"components/modals/modal-gallery.njk"` at the bottom #}
+                                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="stretched-link">{{ slide.caption }}</button>
                                 </figcaption>
                             {% endif %}
                         </figure>

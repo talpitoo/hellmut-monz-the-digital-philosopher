@@ -361,7 +361,7 @@
               
               <h1 class="sr-only">Teaching 49</h1>
 
-              <figure class="mb-spacer-3">
+              <figure class="mb-spacer-3" data-monz-show-in-modal="true">
                 
                 <div class="h-spacer-46 bg-info ">
                   
@@ -405,6 +405,67 @@
         </div>
       </section>
     </main>
+
+    
+    
+<div id="modal-gallery" tabindex="-1" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-screen h-screen overflow-hidden bg-dark text-light">
+    <div class="relative w-screen h-screen">
+        
+        <div class="flex flex-col h-full">
+            
+            <nav class="fixed top-0 left-0 right-0">
+                <div class='monz-container'>
+                    <div class="monz-grid">
+                        <div class="col-span-6 justify-between flex pt-spacer-3 pb-spacer-2">
+                            <p class="text-top-navbar uppercase font-sans">
+                                1/8
+                            </p>
+                            <button
+                                type='button'
+                                aria-label='full screen'
+                                data-btn-fullscreen
+                                class="hidden lg:block"
+                                >
+                                <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
+                                    <use href="/img/icons/dist/sprite.svg#icon-fullscreen"></use>
+                                </svg>
+                                <span class="sr-only">Full screen</span>
+                            </button>
+
+                            <button
+                                type='button'
+                                aria-label='menu'
+                                id="burger-menu"
+                                class="lg:absolute lg:top-spacer-3 lg:mr-spacer-2 lg:right-spacer-1"
+                                data-modal-hide="modal-gallery"
+                                >
+                                <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
+                                    <use href="/img/icons/dist/sprite.svg#icon-close"></use>
+                                </svg>
+                                <span class="sr-only">Close modal</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            
+            <div class="grow overflow-y-auto mt-spacer-7 pb-spacer-2">
+                <div class='monz-container'>
+                    <div class="monz-grid">
+                        <div class="monz-col-6">
+                            <div class="h-spacer-29 bg-success mb-spacer-2">
+                                TODO
+                            </div>
+
+                            <ul class="lg:columns-3 gap-x-spacer-2" id="modal-gallery-list">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="/main.js" defer></script>
   </body>

@@ -28,7 +28,7 @@ eleventyNavigation:
     </div>
 
     {# NOTE: full width/edge-to-edge cover photo markup "components/cover-photo-edge-to-edge-example.njk" #}
-    <figure class="mb-spacer-3">
+    <figure class="mb-spacer-3" data-monz-show-in-modal="true">
         <div class="bg-success relative">
             <div class="absolute top-0 bottom-0 left-0 right-0">
                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -60,8 +60,8 @@ eleventyNavigation:
             </div>
             <div class="monz-col-2">
                 <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
-                        <figure>
+                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                        <figure data-monz-show-in-modal="true">
                             <div class="h-spacer-14 bg-light mb-spacer-1">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                                 {% set pictureObject = post.data.coverPhoto %}
@@ -73,8 +73,8 @@ eleventyNavigation:
                 </div>
 
                 <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
-                        <figure>
+                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                        <figure data-monz-show-in-modal="true">
                             <div class="h-spacer-14 bg-light mb-spacer-1">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                                 {% set pictureObject = post.data.coverPhoto %}
@@ -98,8 +98,8 @@ eleventyNavigation:
             </div>
             <div class="monz-col-3">
                 <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-layout-columns-2-4" data-modal-toggle="modal-layout-columns-2-4" class="w-full text-left">
-                        <figure>
+                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                        <figure data-monz-show-in-modal="true">
                             <div class="h-spacer-21 bg-light mb-spacer-1">
                                 {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                                 {% set pictureObject = post.data.coverPhoto %}
