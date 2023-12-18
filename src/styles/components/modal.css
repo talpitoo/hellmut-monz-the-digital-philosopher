@@ -1,0 +1,38 @@
+@layer components {
+  #modal-gallery-active {
+    [class^="h-spacer-"] {
+      @apply h-auto;
+    }
+  }
+
+  #modal-gallery-active,
+  #modal-gallery-list {
+    figure {
+      @apply mb-0 pointer-events-none;
+
+      button {
+        @apply pointer-events-none;
+      }
+    }
+
+    /* NOTE: custom style overrides for edge-to-edge images because they have different markup */
+    .monz-figure-edge-to-edge {
+      .absolute {
+        @apply static mb-spacer-1;
+      }
+
+      .absolute + .monz-container {
+        @apply hidden;
+      }
+
+      .monz-container.mt-spacer-1 {
+        container-type: unset;
+        @apply block;
+
+        .monz-grid {
+          @apply block p-0;
+        }
+      }
+    }
+  }
+}

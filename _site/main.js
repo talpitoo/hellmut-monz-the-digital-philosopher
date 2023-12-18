@@ -4545,6 +4545,42 @@ function initializeFullscreen() {
 
     // NOTE: in case we have a button: document.exitFullscreen();
 }
+;// CONCATENATED MODULE: ./src/scripts/modules/modalGallery.js
+/**
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * populate the modal gallery
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+function initializeModalGallery() {
+    // var root = document.documentElement;
+    const modalGalleryActive = document.getElementById('modal-gallery-active');
+    const modalGalleryList = document.getElementById('modal-gallery-list');
+    const modalGalleryCounterCurrent = document.getElementById('modal-gallery-current');
+    const modalGalleryCounterTotal = document.getElementById('modal-gallery-total');
+
+    // find all figure elements with data-monz-show-in-modal="true"
+    const figures = document.querySelectorAll('figure[data-monz-show-in-modal="true"]');
+
+    if (modalGalleryList && figures) {
+        // clone and append each figure to the modal list
+        figures.forEach((figure) => {
+            const li = document.createElement('li');
+            li.className = 'mb-spacer-2';
+            li.innerHTML = `
+          <div class="monz-tile break-inside-avoid-column">
+            ${figure.outerHTML}
+          </div>
+        `;
+            modalGalleryList.appendChild(li);
+        });
+
+        // activate the first item
+        modalGalleryActive.appendChild(figures[0]);
+
+        // counter
+        modalGalleryCounterTotal.innerHTML = figures.length;
+    }
+}
 ;// CONCATENATED MODULE: ./node_modules/gsap/gsap-core.js
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -23240,8 +23276,10 @@ function initializeSwiper() {
         if (picture) {
             const clonedPicture = picture.cloneNode(true);
             const targetFigure = document.querySelector('#monz-swiper-gallery-active-image');
-            targetFigure.innerHTML = '';
-            targetFigure.appendChild(clonedPicture);
+            if (targetFigure) {
+                targetFigure.innerHTML = '';
+                targetFigure.appendChild(clonedPicture);
+            }
         }
     }
 
@@ -23314,6 +23352,7 @@ function initializeNewsBarSessionStorage() {
 
 
 
+
 // NOTE: not used but kept for code reference
 // import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
 // import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
@@ -23327,6 +23366,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeMobileMenu();
         initializeOverlayDebugGrid();
         initializeFullscreen();
+        initializeModalGallery();
         initializeFooterReveal();
         initializeSwiper();
         initializeNewsBarSessionStorage();

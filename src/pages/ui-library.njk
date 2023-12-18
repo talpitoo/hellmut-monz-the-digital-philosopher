@@ -110,7 +110,7 @@ eleventyExcludeFromCollections: true
                 {% endraw %}
             </div>
             <div class="monz-col-2">
-                <figure class="mb-spacer-3">
+                <figure class="mb-spacer-3" data-monz-show-in-modal="true">
                     {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
                     <div class="h-spacer-21 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                         {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}

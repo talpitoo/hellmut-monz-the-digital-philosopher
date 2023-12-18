@@ -37,7 +37,8 @@
     @apply text-base;
   }
 
-  figcaption {
+  figcaption,
+  figcaption button {
     @apply text-sm;
   }
 

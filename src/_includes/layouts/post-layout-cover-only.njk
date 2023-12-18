@@ -14,7 +14,7 @@
               {# NOTE: every page requires a <h1>, even if it is visually hidden with <h1 clas="sr-only"> for accessibility/SEO reasons #}
               <h1 class="sr-only">{{ title }}</h1>
 
-              <figure class="mb-spacer-3">
+              <figure class="mb-spacer-3" data-monz-show-in-modal="true">
                 {# NOTE: keeping for the default syntax <div class="h-spacer-{{ coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
                 <div class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                   {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
@@ -40,6 +40,9 @@
         </div>
       </section>
     </main>
+
+    {# NOTE: modals at the very end so their z-index is above everything else #}
+    {% include "components/modals/modal-gallery.njk" %}
 
     <script src="/main.js" defer></script>
   </body>

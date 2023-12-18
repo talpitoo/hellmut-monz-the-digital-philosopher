@@ -1,5 +1,5 @@
 <div class="relative overflow-hidden pb-spacer-3">
-    <figure>
+    <figure data-monz-show-in-modal="false">
         <div id="monz-swiper-gallery-active-image" class="h-spacer-46 {% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
             {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
             {# NOTE: the initial picture should match the swiper's first slide #}
@@ -51,7 +51,7 @@
                 <div class="swiper-wrapper">
                     {% for slide in slidesData %}
                         <div class="swiper-slide p-spacer-1">
-                            <figure>
+                            <figure data-monz-show-in-modal="false">
                                 <div class="{{ slidesHeight | default('h-spacer-14') }}">
                                     {# NOTE: example of setting an individual pictureObject before including components/picture-example.njk #}
                                     {% set pictureObject = {
