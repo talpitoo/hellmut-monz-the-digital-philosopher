@@ -19,8 +19,10 @@ export function initializeSwiper() {
         if (picture) {
             const clonedPicture = picture.cloneNode(true);
             const targetFigure = document.querySelector('#monz-swiper-gallery-active-image');
-            targetFigure.innerHTML = '';
-            targetFigure.appendChild(clonedPicture);
+            if (targetFigure) {
+                targetFigure.innerHTML = '';
+                targetFigure.appendChild(clonedPicture);
+            }
         }
     }
 

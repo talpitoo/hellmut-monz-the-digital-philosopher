@@ -1,6 +1,3 @@
-/*!*********************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/postcss-loader/dist/cjs.js!./src/styles/main.css ***!
-  \*********************************************************************************************************************************************/
 /**
  * Color CSS variables.
  */
@@ -1158,6 +1155,15 @@ video {
     font-family: Monz-1500MegaRegular, sans-serif;
   }
  /* NOTE: for fixed top navbar, .pt-spacer-11 was used to offset */
+ #modal-gallery-active .monz-figure-edge-to-edge .debug body::after, #modal-gallery-list .monz-figure-edge-to-edge .debug body::after {
+        content: var(--tw-content);
+        position: static;
+        margin-bottom: var(--spacer);
+      }
+ #modal-gallery-active .monz-figure-edge-to-edge .debug body + .monz-container::after, #modal-gallery-list .monz-figure-edge-to-edge .debug body + .monz-container::after {
+        content: var(--tw-content);
+        display: none;
+      }
  .debug body::after {
   pointer-events: none;
   position: absolute;
@@ -1411,8 +1417,31 @@ video {
     grid-column: span 6 / span 6;
   }
 }
- #modal-gallery-list figure {
+ #modal-gallery-active [class^="h-spacer-"] {
+  height: auto;
+}
+ #modal-gallery-active figure, #modal-gallery-list figure {
+  pointer-events: none;
   margin-bottom: 0px;
+}
+ #modal-gallery-active figure button, #modal-gallery-list figure button {
+  pointer-events: none;
+}
+ /* NOTE: custom style overrides for edge-to-edge images because they have different markup */
+ #modal-gallery-active .monz-figure-edge-to-edge .absolute, #modal-gallery-list .monz-figure-edge-to-edge .absolute {
+  position: static;
+  margin-bottom: var(--spacer);
+}
+ #modal-gallery-active .monz-figure-edge-to-edge .absolute + .monz-container, #modal-gallery-list .monz-figure-edge-to-edge .absolute + .monz-container {
+  display: none;
+}
+ #modal-gallery-active .monz-figure-edge-to-edge .monz-container.mt-spacer-1, #modal-gallery-list .monz-figure-edge-to-edge .monz-container.mt-spacer-1 {
+        container-type: unset;
+        display: block;
+      }
+ #modal-gallery-active .monz-figure-edge-to-edge .monz-container.mt-spacer-1 .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge .monz-container.mt-spacer-1 .monz-grid {
+  display: block;
+  padding: 0px;
 }
  .monz-hidden,
   .monz-icon-close {
@@ -1474,6 +1503,42 @@ video {
   display: block;
   content: var(--tw-content);
   height: calc(11 * var(--spacer));
+}
+ #modal-gallery-active .monz-figure-edge-to-edge p.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge p.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
+  h1.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge 
+  h1.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
+  h2.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge 
+  h2.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
+  h3.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge 
+  h3.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
+  ul.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge 
+  ul.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
+  p.monz-container + ul, #modal-gallery-list .monz-figure-edge-to-edge 
+  p.monz-container + ul,#modal-gallery-active .monz-figure-edge-to-edge 
+  p.monz-container + code, #modal-gallery-list .monz-figure-edge-to-edge 
+  p.monz-container + code,#modal-gallery-active .monz-figure-edge-to-edge 
+  code.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge 
+  code.monz-container + p {
+        container-type: unset;
+        display: block;
+      }
+ #modal-gallery-active .monz-figure-edge-to-edge p.monz-container + p .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge p.monz-container + p .monz-grid,#modal-gallery-active .monz-figure-edge-to-edge 
+  h1.monz-container + p .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge 
+  h1.monz-container + p .monz-grid,#modal-gallery-active .monz-figure-edge-to-edge 
+  h2.monz-container + p .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge 
+  h2.monz-container + p .monz-grid,#modal-gallery-active .monz-figure-edge-to-edge 
+  h3.monz-container + p .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge 
+  h3.monz-container + p .monz-grid,#modal-gallery-active .monz-figure-edge-to-edge 
+  ul.monz-container + p .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge 
+  ul.monz-container + p .monz-grid,#modal-gallery-active .monz-figure-edge-to-edge 
+  p.monz-container + ul .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge 
+  p.monz-container + ul .monz-grid,#modal-gallery-active .monz-figure-edge-to-edge 
+  p.monz-container + code .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge 
+  p.monz-container + code .monz-grid,#modal-gallery-active .monz-figure-edge-to-edge 
+  code.monz-container + p .monz-grid, #modal-gallery-list .monz-figure-edge-to-edge 
+  code.monz-container + p .monz-grid {
+  display: block;
+  padding: 0px;
 }
  p + p,
   h1 + p,
@@ -1543,6 +1608,15 @@ video {
     .monz-tile:active {
       box-shadow: var(--spacer) var(--spacer) 0 0 var(--tw-color-warning-500);
     }
+ #modal-gallery-active .monz-figure-edge-to-edge .stretched-link::after, #modal-gallery-list .monz-figure-edge-to-edge .stretched-link::after {
+        content: var(--tw-content);
+        position: static;
+        margin-bottom: var(--spacer);
+      }
+ #modal-gallery-active .monz-figure-edge-to-edge .stretched-link + .monz-container::after, #modal-gallery-list .monz-figure-edge-to-edge .stretched-link + .monz-container::after {
+        content: var(--tw-content);
+        display: none;
+      }
  .stretched-link::after {
   position: absolute;
   top: 0px;
@@ -1572,6 +1646,17 @@ video {
   margin-bottom: 0px;
 }
  /* abstractions on top of TailwindCSS grid https://tailwindcss.com/docs/display#grid for better readability */
+ #modal-gallery-active .monz-figure-edge-to-edge .swiper-button-prev, #modal-gallery-list .monz-figure-edge-to-edge .swiper-button-prev,#modal-gallery-active .monz-figure-edge-to-edge 
+.swiper-button-next, #modal-gallery-list .monz-figure-edge-to-edge 
+.swiper-button-next {
+  position: static;
+  margin-bottom: var(--spacer);
+}
+ #modal-gallery-active .monz-figure-edge-to-edge .swiper-button-prev + .monz-container, #modal-gallery-list .monz-figure-edge-to-edge .swiper-button-prev + .monz-container,#modal-gallery-active .monz-figure-edge-to-edge 
+.swiper-button-next + .monz-container, #modal-gallery-list .monz-figure-edge-to-edge 
+.swiper-button-next + .monz-container {
+  display: none;
+}
  .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
@@ -1589,6 +1674,15 @@ video {
   .swiper-button-next::after {
   display: none;
 }
+ #modal-gallery-active .monz-figure-edge-to-edge .monz-swiper-gallery::before, #modal-gallery-list .monz-figure-edge-to-edge .monz-swiper-gallery::before {
+        content: var(--tw-content);
+        position: static;
+        margin-bottom: var(--spacer);
+      }
+ #modal-gallery-active .monz-figure-edge-to-edge .monz-swiper-gallery + .monz-container::before, #modal-gallery-list .monz-figure-edge-to-edge .monz-swiper-gallery + .monz-container::before {
+        content: var(--tw-content);
+        display: none;
+      }
  .monz-swiper-gallery::before {
   position: absolute;
   top: 0px;
@@ -1600,6 +1694,15 @@ video {
   content: var(--tw-content);
   background-color: var(--tw-color-gray-600);
 }
+ #modal-gallery-active .monz-figure-edge-to-edge .monz-swiper-gallery::after, #modal-gallery-list .monz-figure-edge-to-edge .monz-swiper-gallery::after {
+        content: var(--tw-content);
+        position: static;
+        margin-bottom: var(--spacer);
+      }
+ #modal-gallery-active .monz-figure-edge-to-edge .monz-swiper-gallery + .monz-container::after, #modal-gallery-list .monz-figure-edge-to-edge .monz-swiper-gallery + .monz-container::after {
+        content: var(--tw-content);
+        display: none;
+      }
  .monz-swiper-gallery::after {
   position: absolute;
   top: 0px;
@@ -2471,6 +2574,38 @@ video {
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
  @media (min-width: 1024px) {
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:\!absolute, #modal-gallery-list .monz-figure-edge-to-edge .lg\:\!absolute {
+    position: static;
+    margin-bottom: var(--spacer);
+  }
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:absolute, #modal-gallery-list .monz-figure-edge-to-edge .lg\:absolute {
+    position: static;
+    margin-bottom: var(--spacer);
+  }
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:\!absolute, #modal-gallery-list .monz-figure-edge-to-edge .lg\:\!absolute {
+    position: static;
+    margin-bottom: var(--spacer);
+  }
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:absolute, #modal-gallery-list .monz-figure-edge-to-edge .lg\:absolute {
+    position: static;
+    margin-bottom: var(--spacer);
+  }
+
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:\!absolute + .monz-container, #modal-gallery-list .monz-figure-edge-to-edge .lg\:\!absolute + .monz-container {
+    display: none;
+  }
+
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:absolute + .monz-container, #modal-gallery-list .monz-figure-edge-to-edge .lg\:absolute + .monz-container {
+    display: none;
+  }
+
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:\!absolute + .monz-container, #modal-gallery-list .monz-figure-edge-to-edge .lg\:\!absolute + .monz-container {
+    display: none;
+  }
+
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:absolute + .monz-container, #modal-gallery-list .monz-figure-edge-to-edge .lg\:absolute + .monz-container {
+    display: none;
+  }
   .lg\:monz-hidden {
     display: none;
   }
@@ -2488,6 +2623,16 @@ video {
   .lg\:monz-icon-active {
     position: relative;
   }
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:monz-icon-active::after, #modal-gallery-list .monz-figure-edge-to-edge .lg\:monz-icon-active::after {
+        content: var(--tw-content);
+        position: static;
+        margin-bottom: var(--spacer);
+      }
+
+      #modal-gallery-active .monz-figure-edge-to-edge .lg\:monz-icon-active + .monz-container::after, #modal-gallery-list .monz-figure-edge-to-edge .lg\:monz-icon-active + .monz-container::after {
+        content: var(--tw-content);
+        display: none;
+      }
 
   .lg\:monz-icon-active::after {
     position: absolute;
