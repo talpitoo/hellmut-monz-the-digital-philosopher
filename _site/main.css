@@ -1605,8 +1605,12 @@ video {
  .monz-tile:hover,
     .monz-tile:focus,
     .monz-tile:focus-within,
-    .monz-tile:active {
+    .monz-tile:active,
+    .monz-tile.active {
       box-shadow: var(--spacer) var(--spacer) 0 0 var(--tw-color-warning-500);
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
     }
  #modal-gallery-active .monz-figure-edge-to-edge .stretched-link::after, #modal-gallery-list .monz-figure-edge-to-edge .stretched-link::after {
         content: var(--tw-content);
@@ -1640,9 +1644,9 @@ video {
   --tw-content: ">";
   content: var(--tw-content);
 }
- footer:hover [data-footer-reveal],
-.footer-expanded footer [data-footer-reveal] {
+ .footer-expanded footer [data-footer-reveal] {
   /* NOTE: reveal the footer on hover, and by toggling the .footer-expanded on the <html> */
+  /* NOTE disabled hovering for now footer:hover [data-footer-reveal], */
   margin-bottom: 0px;
 }
  /* abstractions on top of TailwindCSS grid https://tailwindcss.com/docs/display#grid for better readability */
@@ -2375,6 +2379,10 @@ video {
  .py-spacer-1 {
   padding-top: var(--spacer);
   padding-bottom: var(--spacer);
+}
+ .py-spacer-2 {
+  padding-top: calc(2 * var(--spacer));
+  padding-bottom: calc(2 * var(--spacer));
 }
  .pb-section-sm {
   padding-bottom: calc(4 * var(--spacer));

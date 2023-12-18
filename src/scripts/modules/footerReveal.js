@@ -31,26 +31,27 @@ export function initializeFooterReveal() {
             },
         });
 
-        if (isMobile) {
-            var root = document.documentElement;
-            const footerButton = document.getElementById('footer-reveal');
+        // NOTE: it was decided not to use hover on desktop and click on mobile
+        // if (isMobile) {
+        //     var root = document.documentElement;
+        //     const footerButton = document.getElementById('footer-reveal');
 
-            const toggleFooterClass = () => {
-                root.classList.toggle("footer-expanded");
-            };
+        //     const toggleFooterClass = () => {
+        //         root.classList.toggle("footer-expanded");
+        //     };
 
-            if (footerButton) {
-                footerButton.addEventListener('click', toggleFooterClass);
-            }
+        //     if (footerButton) {
+        //         footerButton.addEventListener('click', toggleFooterClass);
+        //     }
 
-            // add click event listener to document
-            document.addEventListener('click', (event) => {
-                // check if the clicked element is not part of the footer or the footer button
-                if (!footerButton.contains(event.target) && !document.querySelector('footer').contains(event.target)) {
-                    root.classList.remove("footer-expanded");
-                }
-            });
-        }
+        //     // add click event listener to document
+        //     document.addEventListener('click', (event) => {
+        //         // check if the clicked element is not part of the footer or the footer button
+        //         if (!footerButton.contains(event.target) && !document.querySelector('footer').contains(event.target)) {
+        //             root.classList.remove("footer-expanded");
+        //         }
+        //     });
+        // }
 
         return () => {
             // optionally return a cleanup function that will be called when the media query no longer matches

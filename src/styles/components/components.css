@@ -14,8 +14,10 @@
     &:hover,
     &:focus,
     &:focus-within,
-    &:active {
+    &:active,
+    &.active {
       box-shadow: var(--spacer) var(--spacer) 0 0 var(--tw-color-warning-500);
+      @apply transition-all;
     }
   }
 

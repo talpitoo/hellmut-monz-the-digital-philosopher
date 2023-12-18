@@ -414,7 +414,7 @@
             </div>
             <div class="monz-col-2">
                 <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                    <button type="button" data-monz-modal-trigger class="w-full text-left">
                         <figure data-monz-show-in-modal="true">
                             <div class="h-spacer-14 bg-light mb-spacer-1">
                                 
@@ -443,7 +443,7 @@
                 </div>
 
                 <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                    <button type="button" data-monz-modal-trigger class="w-full text-left">
                         <figure data-monz-show-in-modal="true">
                             <div class="h-spacer-14 bg-light mb-spacer-1">
                                 
@@ -484,7 +484,7 @@
             </div>
             <div class="monz-col-3">
                 <div class="monz-tile break-inside-avoid-column mb-spacer-2">
-                    <button type="button" data-modal-target="modal-gallery" data-modal-toggle="modal-gallery" class="w-full text-left">
+                    <button type="button" data-monz-modal-trigger class="w-full text-left">
                         <figure data-monz-show-in-modal="true">
                             <div class="h-spacer-21 bg-light mb-spacer-1">
                                 
@@ -554,8 +554,8 @@
     </div>
 </div>
     <div class="bg-dark">
-      <div class='monz-container'>
-        <button type="button" id="footer-reveal" class="w-full h-section-sm"><span class="sr-only">reveal the footer</span></button>
+      <div class='monz-container h-section-sm'>
+        
       </div>
     </div>
   </div>
@@ -603,7 +603,7 @@
                 <div class='monz-container'>
                     <div class="monz-grid">
                         <div class="col-span-6 justify-between flex pt-spacer-3 pb-spacer-2">
-                            <p class="text-top-navbar uppercase font-sans">
+                            <p class="text-top-navbar leading-none uppercase font-sans">
                                 <span id="modal-gallery-current">1</span>/<span id="modal-gallery-total">8</span>
                             </p>
                             <button
@@ -623,8 +623,9 @@
                                 aria-label='menu'
                                 id="burger-menu"
                                 class="lg:absolute lg:top-spacer-3 lg:mr-spacer-2 lg:right-spacer-1"
-                                data-modal-hide="modal-gallery"
+                                data-monz-modal-hide
                                 >
+                                
                                 <svg class="w-spacer-2 h-spacer-2 text-light" aria-hidden="true">
                                     <use href="/img/icons/dist/sprite.svg#icon-close"></use>
                                 </svg>
