@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: collections.books
+  size: 2
+permalink: "/work/page/{{ pagination.pageNumber }}/"
+---
+
+<section class='py-section-sm bg-dark text-light'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                <h2 class="mb-spacer-2">Posts per page</h2>
+                {% set posts = pagination.items %}
+                {% include "components/article-list.njk" %}
+
+                {# <ul>
+                    {% for item in pagination.items %}
+                        <li>
+                            <a href="{{ item.data.permalink }}" class="link-underline">{{ item.data.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul> #}
+            </div>
+        </div>
+
+        <div class="monz-grid mt-spacer-7">
+            <div class="monz-col-2 lg:col-start-3">
+                {% include "components/pagination-real-links.njk" %}
+            </div>
+        </div>
+    </div>
+</section>
