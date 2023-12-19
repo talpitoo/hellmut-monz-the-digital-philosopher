@@ -4,7 +4,7 @@
   }
 
   .monz-course-toc {
-    @apply translate-x-spacer-33;
+    @apply translate-x-spacer-33 opacity-0;
   }
 
   #course-content-menu {
@@ -37,7 +37,7 @@
     }
 
     .monz-course-toc {
-      @apply translate-x-0;
+      @apply translate-x-0 opacity-100;
     }
 
     #course-content-menu {
