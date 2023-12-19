@@ -55,6 +55,10 @@
     @apply no-underline hover:underline hover:underline-offset-4 decoration-2;
   }
 
+  .link-underline-active {
+    @apply underline underline-offset-4 decoration-2;
+  }
+
   .link-underline-spacer {
     @apply lg:hover:underline-offset-spacer;
   }

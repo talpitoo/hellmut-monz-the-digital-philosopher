@@ -1,34 +1,38 @@
 {# NOTE: custom .py-spacer-2 vertical spacer as opposed to other sections where it is .py-section-sm #}
-<section class='bg-light py-spacer-2'>
+<section class='bg-light lg:py-spacer-2'>
+    {# NOTE: every page requires a <h1>, even if it is visually hidden with <h1 clas="sr-only"> for accessibility/SEO reasons #}
+    <h1 class='sr-only'>Hellmut MONZ The Digital Philosopher</h1>
+
+    {# NOTE: adaptive markup mobile #}
+    <picture class="h-full block lg:hidden">
+        {# WebP format for modern browsers #}
+        <source srcset="/img/hero-hellmut-monz-mobile.webp 1x, /img/hero-hellmut-monz-mobile@2x.webp 2x" type="image/webp">
+
+        {# JPG format for browsers that do not support WebP #}
+        <source srcset="/img/hero-hellmut-monz-mobile.jpg 1x, /img/hero-hellmut-monz-mobile@2x.jpg 2x" type="image/jpeg">
+
+        {# fallback for browsers that do not support the <picture> element #}
+        <img src="/img/hero-hellmut-monz-mobile.jpg" alt="TODO" class="object-cover w-full h-full" width="960" height="960">
+    </picture>
+
+    {# NOTE: adaptive markup desktop #}
+    <picture class="h-full hidden lg:block">
+        {# WebP format for modern browsers #}
+        <source srcset="/img/hero-hellmut-monz-desktop.webp 1x, /img/hero-hellmut-monz-desktop@2x.webp 2x" type="image/webp">
+
+        {# JPG format for browsers that do not support WebP #}
+        <source srcset="/img/hero-hellmut-monz-desktop.jpg 1x, /img/hero-hellmut-monz-desktop@2x.jpg 2x" type="image/jpeg">
+
+        {# fallback for browsers that do not support the <picture> element #}
+        <img src="/img/hero-hellmut-monz-desktop.jpg" alt="TODO" class="object-cover w-full h-full" width="960" height="490">
+    </picture>
+
+    {# NOTE: put the images here if you want them inside the container
     <div class='monz-container'>
-        {# NOTE: every page requires a <h1>, even if it is visually hidden with <h1 clas="sr-only"> for accessibility/SEO reasons #}
-        <h1 class='sr-only'>Hellmut MONZ The Digital Philosopher</h1>
         <div class="monz-grid">
             <div class="monz-col-6">
-                {# NOTE: adaptive markup mobile #}
-                <picture class="h-full block lg:hidden">
-                    {# WebP format for modern browsers #}
-                    <source srcset="/img/hero-hellmut-monz-mobile.webp 1x, /img/hero-hellmut-monz-mobile@2x.webp 2x" type="image/webp">
-
-                    {# JPG format for browsers that do not support WebP #}
-                    <source srcset="/img/hero-hellmut-monz-mobile.jpg 1x, /img/hero-hellmut-monz-mobile@2x.jpg 2x" type="image/jpeg">
-
-                    {# fallback for browsers that do not support the <picture> element #}
-                    <img src="/img/hero-hellmut-monz-mobile.jpg" alt="TODO" class="object-cover w-full h-full" width="960" height="960">
-                </picture>
-
-                {# NOTE: adaptive markup desktop #}
-                <picture class="h-full hidden lg:block">
-                    {# WebP format for modern browsers #}
-                    <source srcset="/img/hero-hellmut-monz-desktop.webp 1x, /img/hero-hellmut-monz-desktop@2x.webp 2x" type="image/webp">
-
-                    {# JPG format for browsers that do not support WebP #}
-                    <source srcset="/img/hero-hellmut-monz-desktop.jpg 1x, /img/hero-hellmut-monz-desktop@2x.jpg 2x" type="image/jpeg">
-
-                    {# fallback for browsers that do not support the <picture> element #}
-                    <img src="/img/hero-hellmut-monz-desktop.jpg" alt="TODO" class="object-cover w-full h-full" width="960" height="490">
-                </picture>
+                
             </div>
         </div>
-    </div>
+    </div> #}
 </section>

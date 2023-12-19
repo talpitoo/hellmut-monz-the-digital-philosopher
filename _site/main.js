@@ -4609,11 +4609,11 @@ function initializeModalGallery() {
     // options with default values, https://flowbite.com/docs/components/modal/#javascript-behaviour
     const options = {
       onHide: () => {
-        console.debug('modal is hidden');
+        console.debug('gallery modal is hidden');
         root.classList.remove("overflow-hidden");
       },
       onShow: () => {
-        console.debug('modal is shown');
+        console.debug('gallery modal is shown');
         root.classList.add("overflow-hidden");
       },
     };
@@ -4640,10 +4640,9 @@ function initializeModalGallery() {
     });
 
     // prev/next buttons
-    // Keep track of the current index
     let currentIndex = 0;
 
-    // Function to update the modal with the new image
+    // function to update the modal with the new image
     function updateModalGallery(newIndex) {
       document.querySelector('#modal-gallery-list .monz-tile.active').classList.remove('active');
       const newActiveTile = clonedFiguresInsideTheModal[newIndex];
@@ -4655,13 +4654,13 @@ function initializeModalGallery() {
       currentIndex = newIndex;
     }
 
-    // Previous button functionality
+    // previous button functionality
     modalGalleryButtonPrev.addEventListener('click', () => {
       const newIndex = currentIndex === 0 ? figures.length - 1 : currentIndex - 1;
       updateModalGallery(newIndex);
     });
 
-    // Next button functionality
+    // next button functionality
     modalGalleryButtonNext.addEventListener('click', () => {
       const newIndex = currentIndex === figures.length - 1 ? 0 : currentIndex + 1;
       updateModalGallery(newIndex);
