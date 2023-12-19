@@ -7,7 +7,7 @@
 
     {% include "../components/navigation.njk" %}
     <main>
-      <section class='pb-section-sm bg-dark text-light'>
+      <section class='pb-section-sm bg-dark text-light border-b border-muted'>
         <div class='monz-container'>
           <div class="monz-grid relative">
             <button type='button' id="course-content-menu" class="transition-all lg:absolute right-0 mb-spacer-1 bg-primary text-body p-spacer-1 flex justify-between">
@@ -34,22 +34,22 @@
                 </h4>
                 <ul id="accordion-body-1" class="hidden pl-spacer-1.5" aria-labelledby="accordion-heading-1">
                   <li>
-                    <a href="#" class="link-underline">1.1 subchapter - 1</a>
+                    <a href="/work/movies/movie-02-chapter-02" class="link-underline">1.1 subchapter - 1</a>
                   </li>
                   <li>
-                    <a href="#" class="link-underline">1.2 subchapter - 2</a>
+                    <a href="/work/movies/movie-02-chapter-03" class="link-underline">1.2 subchapter - 2</a>
                   </li>
                   <li>
-                    <a href="#" class="link-underline">1.3 subchapter - 3</a>
+                    <a href="/work/movies/movie-02-chapter-03" class="link-underline">1.3 subchapter - 3</a>
                   </li>
                   <li>
-                    <a href="#" class="link-underline">4. The River Riddle</a>
+                    <a href="/work/movies/movie-02-chapter-03" class="link-underline">4. The River Riddle</a>
                   </li>
                   <li>
-                    <a href="#" class="link-underline">5. The Killer Riddle</a>
+                    <a href="/work/movies/movie-02-chapter-03" class="link-underline">5. The Killer Riddle</a>
                   </li>
                   <li>
-                    <a href="#" class="link-underline">6. Truth or Joke?</a>
+                    <a href="/work/movies/movie-02-chapter-03" class="link-underline">6. Truth or Joke?</a>
                   </li>
                 </ul>
                 <h4 id="accordion-heading-2">
@@ -62,10 +62,10 @@
                 </h4>
                 <ul id="accordion-body-2" class="hidden pl-spacer-1.5" aria-labelledby="accordion-heading-2">
                   <li>
-                    <a href="#" class="link-underline">2.1 subchapter - 1</a>
+                    <a href="/work/movies/movie-02-chapter-03" class="link-underline">2.1 subchapter - 1</a>
                   </li>
                   <li>
-                    <a href="#" class="link-underline">2.2 subchapter - 2</a>
+                    <a href="/work/movies/movie-02-chapter-03" class="link-underline">2.2 subchapter - 2</a>
                   </li>
                 </ul>
               </div>
@@ -79,7 +79,7 @@
               <h1 class="sr-only">{{ title }}</h1>
 
               <div class="monz-course-container transition-all">
-                <figure class="mb-spacer-3" data-monz-show-in-modal="false">
+                <figure data-monz-show-in-modal="false">
                   <div class="{% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                     {% include "components/video-example.njk" %}
                   </div>
@@ -90,13 +90,81 @@
                   {% endif %}
                 </figure>
               </div>
-
-              {# {{ content | safe }} #}
             </div>
           </div>
         </div>
       </section>
+
+      <section class='py-section-sm bg-dark text-light border-b border-muted'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-5">
+              {{ content | safe }}
+            </div>
+          </div>
+
+          <div class="monz-grid mt-spacer-7">
+            <div class="monz-col-2 lg:col-start-3">
+              {% include "components/pagination.njk" %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {# {% include "../sections/project-watch.njk" %} #}
+
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-6">
+              <h2 class="mb-spacer-2">Media</h2>
+
+              <div class="mb-spacer-2">
+                {% set slidesHeight = 'h-spacer-14' %}
+                {% set showInModal = true %}
+                {% set slidesData = [
+                  {
+                    'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                    'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                    'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                    'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg',
+                    'caption': 'Slide 1'
+                  }, {
+                    'webP': '/img/pexels-oleksandr-tiupa-192136-640x427.webp',
+                    'webP2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.webp',
+                    'jpg': '/img/pexels-oleksandr-tiupa-192136-640x427.jpg',
+                    'jpg2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.jpg',
+                    'caption': 'Slide 2'
+                  }, {
+                    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+                    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+                    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+                    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+                    'caption': 'Slide 3'
+                  }, {
+                    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+                    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+                    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+                    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+                    'caption': 'Slide 4'
+                  }
+                ] %}
+                {% include "components/swiper.njk" %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {% include "../sections/project-author.njk" %}
+
+      {# NOTE: undo the footer reveal offset #}
+      <div class="bg-dark">
+        <div class='monz-container pb-spacer-33'></div>
+      </div>
     </main>
+
+    {% include "../components/footer.njk" %}
 
     {# NOTE: modals at the very end so their z-index is above everything else #}
     {% include "components/modals/modal-gallery.njk" %}

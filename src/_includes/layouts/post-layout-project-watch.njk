@@ -180,15 +180,15 @@
       {% include "../sections/project-watch.njk" %}
 
       <section class='py-section-sm bg-dark text-light'>
-    <div class='monz-container'>
-        <div class="monz-grid">
+        <div class='monz-container'>
+          <div class="monz-grid">
             <div class="monz-col-6">
-                <h2 class="mb-spacer-2">Media</h2>
+              <h2 class="mb-spacer-2">Media</h2>
 
-                <div class="mb-spacer-2">
-                    {% set slidesHeight = 'h-spacer-14' %}
-                    {% set showInModal = true %}
-                    {% set slidesData = [
+              <div class="mb-spacer-2">
+                {% set slidesHeight = 'h-spacer-14' %}
+                {% set showInModal = true %}
+                {% set slidesData = [
                   {
                     'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
                     'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
@@ -215,12 +215,12 @@
                     'caption': 'Slide 4'
                   }
                 ] %}
-                    {% include "components/swiper.njk" %}
-                </div>
+                {% include "components/swiper.njk" %}
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
 
       {% include "../sections/project-author.njk" %}
 
