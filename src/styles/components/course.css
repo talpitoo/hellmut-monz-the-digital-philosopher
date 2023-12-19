@@ -1,0 +1,59 @@
+@layer components {
+  .monz-course-container {
+    @apply lg:w-full;
+  }
+
+  .monz-course-toc {
+    @apply translate-x-spacer-33;
+  }
+
+  #course-content-menu {
+    @apply lg:w-spacer-5;
+
+    h2 {
+      @apply opacity-0;
+    }
+
+    &:hover {
+      @apply lg:w-spacer-33;
+
+      h2 {
+        @apply opacity-100;
+      }
+    }
+  }
+
+  .monz-icon-close-x {
+    @apply hidden;
+  }
+
+  .monz-icon-toc-expand {
+    @apply block;
+  }
+
+  .course-toc-expanded {
+    .monz-course-container {
+      @apply lg:w-spacer-54;
+    }
+
+    .monz-course-toc {
+      @apply translate-x-0;
+    }
+
+    #course-content-menu {
+      @apply lg:w-spacer-33;
+
+      h2 {
+        @apply opacity-100;
+      }
+    }
+
+    .monz-icon-close-x {
+      @apply block;
+    }
+
+    .monz-icon-toc-expand {
+      @apply hidden;
+    }
+  }
+}

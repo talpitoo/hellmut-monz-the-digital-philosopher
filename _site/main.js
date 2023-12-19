@@ -4668,6 +4668,24 @@ function initializeModalGallery() {
   }
 
 }
+;// CONCATENATED MODULE: ./src/scripts/modules/course.js
+/**
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * course TOC toggle
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+function initializeCourseTOC() {
+    var root = document.documentElement;
+    var courseContentMenu = document.getElementById('course-content-menu');
+
+    if (courseContentMenu) {
+        courseContentMenu.addEventListener('click', function () {
+            root.classList.toggle('course-toc-expanded');
+        });
+    }
+
+    // NOTE: in case we have a button: document.exitFullscreen();
+}
 ;// CONCATENATED MODULE: ./node_modules/gsap/gsap-core.js
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
@@ -23441,6 +23459,7 @@ function initializeNewsBarSessionStorage() {
 
 
 
+
 // NOTE: not used but kept for code reference
 // import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
 // import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
@@ -23455,6 +23474,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeOverlayDebugGrid();
         initializeFullscreen();
         initializeModalGallery();
+        initializeCourseTOC();
         initializeFooterReveal();
         initializeSwiper();
         initializeNewsBarSessionStorage();
