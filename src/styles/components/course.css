@@ -4,21 +4,21 @@
   }
 
   .monz-course-toc {
-    @apply translate-x-spacer-33 opacity-0;
+    @apply hidden lg:block lg:translate-x-spacer-33 lg:opacity-0;
   }
 
   #course-content-menu {
     @apply lg:w-spacer-5;
 
     h2 {
-      @apply opacity-0;
+      @apply lg:opacity-0;
     }
 
     &:hover {
       @apply lg:w-spacer-33;
 
       h2 {
-        @apply opacity-100;
+        @apply lg:opacity-100;
       }
     }
   }
@@ -37,14 +37,14 @@
     }
 
     .monz-course-toc {
-      @apply translate-x-0 opacity-100;
+      @apply block lg:translate-x-0 lg:opacity-100;
     }
 
     #course-content-menu {
       @apply lg:w-spacer-33;
 
       h2 {
-        @apply opacity-100;
+        @apply lg:opacity-100;
       }
     }
 
