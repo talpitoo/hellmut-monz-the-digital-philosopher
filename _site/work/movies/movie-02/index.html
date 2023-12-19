@@ -354,35 +354,91 @@
   
   
     <main>
-      <section class='py-section-sm bg-dark text-light'>
+      <section class='pb-section-sm bg-dark text-light'>
         <div class='monz-container'>
-          <div class="monz-grid">
+          <div class="monz-grid relative">
+            <div class="lg:w-spacer-33 lg:absolute right-0 mb-spacer-1 bg-light text-body p-spacer-1 flex justify-between">
+              <h2 class="leading-none">Course content</h2>
+              <button
+                  type='button'
+                  id="course-content-menu"
+                  class="h2 leading-none lg:mr-spacer-5"
+                >
+                X
+                <span class="sr-only">Close course content</span>
+              </button>
+            </div>
+
+            <div class="lg:w-spacer-26 lg:absolute top-spacer-4 right-spacer-7 mb-spacer-2 p-spacer-1">
+              <h3 class="link-underline-active leading-loose">Introduction</h3>
+
+              <div id="accordion-collapse" data-accordion="collapse" class="text-light">
+                <h4 id="accordion-collapse-heading-1">
+                  <button type="button" class="text-base text-light bg-transparent leading-loose flex items-center justify-between w-full" data-accordion-target="#accordion-collapse-body-1" aria-expanded="false" aria-controls="accordion-collapse-body-1">
+                    <span>1. The Philosopher’s Key</span>
+                    <svg data-accordion-icon class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1 rotate-180 shrink-0" aria-hidden="true" width="16" height="16">
+                      <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                    </svg>
+                  </button>
+                </h4>
+                <ul id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+                  <li>
+                    <a href="#" class="link-underline">1.1 subchapter - 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="link-underline">1.2 subchapter - 2</a>
+                  </li>
+                  <li>
+                    <a href="#" class="link-underline">1.3 subchapter - 3</a>
+                  </li>
+                  <li>
+                    <a href="#" class="link-underline">4. The River Riddle</a>
+                  </li>
+                  <li>
+                    <a href="#" class="link-underline">5. The Killer Riddle</a>
+                  </li>
+                  <li>
+                    <a href="#" class="link-underline">6. Truth or Joke?</a>
+                  </li>
+                </ul>
+                <h4 id="accordion-collapse-heading-2">
+                  <button type="button" class="text-base text-light bg-transparent leading-loose flex items-center justify-between w-full" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+                    <span>2. The Philosopher’s Lock</span>
+                    <svg data-accordion-icon class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1 rotate-180 shrink-0" aria-hidden="true" width="16" height="16">
+                      <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                    </svg>
+                  </button>
+                </h4>
+                <ul id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+                  <li>
+                    <a href="#" class="link-underline">2.1 subchapter - 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="link-underline">2.2 subchapter - 2</a>
+                  </li>
+                </ul>
+              </div>
+
+              <h3 class="leading-loose">Conclusion</h3>
+            </div>
             <div class="monz-col-6">
               
               <h1 class="sr-only">Movie 02</h1>
 
-              <figure class="mb-spacer-3" data-monz-show-in-modal="false">
-                <div class="bg-success ">
-                  
+              <div class="lg:w-spacer-54 transition-all">
+                <figure class="mb-spacer-3" data-monz-show-in-modal="false">
+                  <div class="bg-success ">
+                    
 
 <iframe class="w-full h-full aspect-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9yW--eQaA2I?si=dOoHHK1RWiKCUJYf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                  </div>
 
-                
-                
-                  <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
-                
-              </figure>
-
-              <ul class="list-separator-dot text-muted">
-                
-                  <li class="uppercase">movies</li>
-                
-                  <li class="uppercase">category 2</li>
-                
-                  <li class="uppercase">category 3</li>
-                
-              </ul>
+                  
+                  
+                    <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
+                  
+                </figure>
+              </div>
 
               
             </div>
@@ -440,8 +496,23 @@
                 <div class='monz-container'>
                     <div class="monz-grid">
                         <div class="monz-col-6">
-                            <div class="mb-spacer-2" id="modal-gallery-active">
-                                
+                            <div class="relative">
+                                <div class="mb-spacer-2" id="modal-gallery-active">
+                                    
+                                </div>
+
+                                <button type="button" class="text-light swiper-button-prev -left-spacer-1.5 lg:-left-spacer-3">
+                                    <span class="sr-only">previous image</span>
+                                    <svg class="w-spacer-1 h-spacer-1" aria-hidden="true" width="16" height="16">
+                                        <use href="/img/icons/dist/sprite.svg#icon-caret-left"></use>
+                                    </svg>
+                                </button>
+                                <button type="button" class="text-light swiper-button-next -right-spacer-1.5 lg:-right-spacer-3">
+                                    <span class="sr-only">next image</span>
+                                    <svg class="w-spacer-1 h-spacer-1" aria-hidden="true" width="16" height="16">
+                                        <use href="/img/icons/dist/sprite.svg#icon-caret-right"></use>
+                                    </svg>
+                                </button>
                             </div>
 
                             <ul class="lg:columns-3 gap-x-spacer-2" id="modal-gallery-list">

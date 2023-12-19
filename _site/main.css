@@ -1598,6 +1598,11 @@ video {
   text-decoration-line: underline;
   text-underline-offset: 4px;
 }
+ .link-underline-active {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
  .monz-tile {
   position: relative;
   padding-bottom: var(--spacer);
@@ -1835,6 +1840,9 @@ video {
  .right-0 {
   right: 0px;
 }
+ .right-spacer-7 {
+  right: calc(7 * var(--spacer));
+}
  .top-0 {
   top: 0px;
 }
@@ -1843,6 +1851,9 @@ video {
 }
  .top-spacer-3 {
   top: calc(3 * var(--spacer));
+}
+ .top-spacer-4 {
+  top: calc(4 * var(--spacer));
 }
  .-z-1 {
   z-index: -1;
@@ -2081,6 +2092,9 @@ video {
  .flex-shrink {
   flex-shrink: 1;
 }
+ .shrink-0 {
+  flex-shrink: 0;
+}
  .grow {
   flex-grow: 1;
 }
@@ -2308,6 +2322,9 @@ video {
  .bg-success {
   background-color: var(--tw-color-success-500);
 }
+ .bg-transparent {
+  background-color: transparent;
+}
  .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -2441,6 +2458,9 @@ video {
  .text-\[0px\] {
   font-size: 0px;
 }
+ .text-base {
+  font-size: var(--spacer);
+}
  .text-lg {
   font-size: calc(2 * var(--spacer));
 }
@@ -2470,6 +2490,9 @@ video {
 }
  .leading-9 {
   line-height: 2.25rem;
+}
+ .leading-loose {
+  line-height: 2;
 }
  .leading-none {
   line-height: 1;
@@ -2845,6 +2868,9 @@ video {
   .lg\:mr-spacer-2 {
     margin-right: calc(2 * var(--spacer));
   }
+  .lg\:mr-spacer-5 {
+    margin-right: calc(5 * var(--spacer));
+  }
   .lg\:mt-0 {
     margin-top: 0px;
   }
@@ -2865,6 +2891,15 @@ video {
   }
   .lg\:w-spacer-12 {
     width: calc(12 * var(--spacer));
+  }
+  .lg\:w-spacer-26 {
+    width: calc(26 * var(--spacer));
+  }
+  .lg\:w-spacer-33 {
+    width: calc(33 * var(--spacer));
+  }
+  .lg\:w-spacer-54 {
+    width: calc(54 * var(--spacer));
   }
   .lg\:columns-1 {
     columns: 1;
@@ -2895,6 +2930,10 @@ video {
   }
   .lg\:bg-gray-300 {
     background-color: var(--tw-color-gray-300);
+  }
+  .lg\:py-spacer-2 {
+    padding-top: calc(2 * var(--spacer));
+    padding-bottom: calc(2 * var(--spacer));
   }
   .lg\:pt-section {
     padding-top: calc(11 * var(--spacer));
