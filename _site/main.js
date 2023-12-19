@@ -4557,6 +4557,8 @@ function initializeModalGallery() {
   const modalGalleryList = document.getElementById('modal-gallery-list');
   const modalGalleryCounterCurrent = document.getElementById('modal-gallery-current');
   const modalGalleryCounterTotal = document.getElementById('modal-gallery-total');
+  const modalGalleryButtonPrev = document.querySelector('#modal-gallery .swiper-button-prev');
+  const modalGalleryButtonNext = document.querySelector('#modal-gallery .swiper-button-next');
 
   // find all figure elements with data-monz-show-in-modal="true"
   const figures = document.querySelectorAll('figure[data-monz-show-in-modal="true"]');
@@ -4582,9 +4584,10 @@ function initializeModalGallery() {
       modalGalleryActive.appendChild(figures[0].cloneNode(true));
     }
 
-    // counter
+    // set the total counter
     modalGalleryCounterTotal.innerHTML = figures.length;
 
+    // event listener for click on individual images
     const clonedFiguresInsideTheModal = document.querySelectorAll('#modal-gallery-list .monz-tile');
     clonedFiguresInsideTheModal.forEach(clonedFigureInsideTheModal => {
       clonedFigureInsideTheModal.addEventListener('click', (event) => {
@@ -4599,43 +4602,71 @@ function initializeModalGallery() {
         modalGalleryCounterCurrent.innerHTML = Array.from(clonedFiguresInsideTheModal).indexOf(clonedFigureInsideTheModal) + 1;
       });
     });
-  }
 
-  // set the modal menu element
-  const $targetEl = document.getElementById('modal-gallery');
+    // initialize the modal programmatically instead of via markup (required to utilize onShow and onHide)
+    const $targetEl = document.getElementById('modal-gallery');
 
-  // options with default values, https://flowbite.com/docs/components/modal/#javascript-behaviour
-  const options = {
-    onHide: () => {
-      console.debug('modal is hidden');
-      root.classList.remove("overflow-hidden");
-    },
-    onShow: () => {
-      console.debug('modal is shown');
-      root.classList.add("overflow-hidden");
-    },
-  };
+    // options with default values, https://flowbite.com/docs/components/modal/#javascript-behaviour
+    const options = {
+      onHide: () => {
+        console.debug('modal is hidden');
+        root.classList.remove("overflow-hidden");
+      },
+      onShow: () => {
+        console.debug('modal is shown');
+        root.classList.add("overflow-hidden");
+      },
+    };
 
-  // instance options object
-  const instanceOptions = {
-    id: 'modal-gallery',
-    override: true
-  };
+    // instance options object
+    const instanceOptions = {
+      id: 'modal-gallery',
+      override: true
+    };
 
-  const modalGallery = new Modal($targetEl, options, instanceOptions);
+    const modalGallery = new Modal($targetEl, options, instanceOptions);
 
-  const modalGalleryTriggers = document.querySelectorAll('button[data-monz-modal-trigger]');
-  const modalGalleryClose = document.querySelector('button[data-monz-modal-hide]');
+    const modalGalleryTriggers = document.querySelectorAll('button[data-monz-modal-trigger]');
+    const modalGalleryClose = document.querySelector('button[data-monz-modal-hide]');
 
-  modalGalleryTriggers.forEach(button => {
-    button.addEventListener('click', () => {
-      modalGallery.show()
+    modalGalleryTriggers.forEach(button => {
+      button.addEventListener('click', () => {
+        modalGallery.show()
+      });
     });
-  });
 
-  modalGalleryClose.addEventListener('click', () => {
-    modalGallery.hide()
-  });
+    modalGalleryClose.addEventListener('click', () => {
+      modalGallery.hide()
+    });
+
+    // prev/next buttons
+    // Keep track of the current index
+    let currentIndex = 0;
+
+    // Function to update the modal with the new image
+    function updateModalGallery(newIndex) {
+      document.querySelector('#modal-gallery-list .monz-tile.active').classList.remove('active');
+      const newActiveTile = clonedFiguresInsideTheModal[newIndex];
+      newActiveTile.classList.add('active');
+      modalGalleryActive.innerHTML = '';
+      const figureToDisplay = newActiveTile.querySelector('figure').cloneNode(true);
+      modalGalleryActive.appendChild(figureToDisplay);
+      modalGalleryCounterCurrent.innerHTML = newIndex + 1;
+      currentIndex = newIndex;
+    }
+
+    // Previous button functionality
+    modalGalleryButtonPrev.addEventListener('click', () => {
+      const newIndex = currentIndex === 0 ? figures.length - 1 : currentIndex - 1;
+      updateModalGallery(newIndex);
+    });
+
+    // Next button functionality
+    modalGalleryButtonNext.addEventListener('click', () => {
+      const newIndex = currentIndex === figures.length - 1 ? 0 : currentIndex + 1;
+      updateModalGallery(newIndex);
+    });
+  }
 
 }
 ;// CONCATENATED MODULE: ./node_modules/gsap/gsap-core.js
