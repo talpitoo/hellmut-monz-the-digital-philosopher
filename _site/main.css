@@ -1332,6 +1332,60 @@ video {
     max-width: 1536px;
   }
 }
+ @media (min-width: 1024px) {
+  .monz-course-container {
+    width: 100%;
+  }
+}
+ .monz-course-toc {
+  --tw-translate-x: calc(33 * var(--spacer));
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+ @media (min-width: 1024px) {
+  #course-content-menu {
+    width: calc(5 * var(--spacer));
+  }
+}
+ #course-content-menu h2 {
+  opacity: 0;
+}
+ @media (min-width: 1024px) {
+  #course-content-menu:hover {
+    width: calc(33 * var(--spacer));
+  }
+}
+ #course-content-menu:hover h2 {
+  opacity: 1;
+}
+ .monz-icon-close-x {
+  display: none;
+}
+ .monz-icon-toc-expand {
+  display: block;
+}
+ @media (min-width: 1024px) {
+  .course-toc-expanded .monz-course-container {
+    width: calc(54 * var(--spacer));
+  }
+}
+ .course-toc-expanded .monz-course-toc {
+  --tw-translate-x: 0px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+ @media (min-width: 1024px) {
+  .course-toc-expanded #course-content-menu {
+    width: calc(33 * var(--spacer));
+  }
+}
+ .course-toc-expanded #course-content-menu h2 {
+  opacity: 1;
+}
+ .course-toc-expanded .monz-icon-close-x {
+  display: block;
+}
+ .course-toc-expanded .monz-icon-toc-expand {
+  display: none;
+}
  /* [type="text"],
   [type="email"],
   [type="url"],
@@ -2831,6 +2885,9 @@ video {
   .lg\:right-spacer-1 {
     right: var(--spacer);
   }
+  .lg\:right-spacer-2 {
+    right: calc(2 * var(--spacer));
+  }
   .lg\:top-spacer-3 {
     top: calc(3 * var(--spacer));
   }
@@ -2894,12 +2951,6 @@ video {
   }
   .lg\:w-spacer-26 {
     width: calc(26 * var(--spacer));
-  }
-  .lg\:w-spacer-33 {
-    width: calc(33 * var(--spacer));
-  }
-  .lg\:w-spacer-54 {
-    width: calc(54 * var(--spacer));
   }
   .lg\:columns-1 {
     columns: 1;

@@ -4,6 +4,7 @@ import { initializeMobileMenu } from './modules/hamburger';
 import { initializeOverlayDebugGrid } from './modules/gridDebugOverlay';
 import { initializeFullscreen } from './modules/fullscreen';
 import { initializeModalGallery } from './modules/modalGallery';
+import { initializeCourseTOC } from './modules/course';
 import { initializeFooterReveal } from './modules/footerReveal';
 import { initializeSwiper } from './modules/swiperInstances';
 import { initializeNewsBarSessionStorage } from './modules/newsBar';
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeOverlayDebugGrid();
         initializeFullscreen();
         initializeModalGallery();
+        initializeCourseTOC();
         initializeFooterReveal();
         initializeSwiper();
         initializeNewsBarSessionStorage();
