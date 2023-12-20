@@ -67,6 +67,16 @@
             </url>
     
             <url>
+                <loc>/work/movies/movie-02/</loc>
+                <lastmod>2019-03-09T00:00:00.000Z</lastmod>
+            </url>
+    
+            <url>
+                <loc>/work/movies/movie-02-chapter-01/</loc>
+                <lastmod>2019-03-10T00:00:00.000Z</lastmod>
+            </url>
+    
+            <url>
                 <loc>/work/books/book-01/</loc>
                 <lastmod>2019-03-11T00:00:00.000Z</lastmod>
             </url>
@@ -93,11 +103,6 @@
     
             <url>
                 <loc>/work/movies/movie-02-chapter-03/</loc>
-                <lastmod>2019-03-11T00:00:00.000Z</lastmod>
-            </url>
-    
-            <url>
-                <loc>/work/movies/movie-02/</loc>
                 <lastmod>2019-03-11T00:00:00.000Z</lastmod>
             </url>
     
@@ -209,11 +214,6 @@
             <url>
                 <loc>/about/hello/</loc>
                 <lastmod>2023-12-15T00:00:00.000Z</lastmod>
-            </url>
-    
-            <url>
-                <loc>/work/page/0/</loc>
-                <lastmod>2023-12-19T19:49:43.747Z</lastmod>
             </url>
     
 </urlset>

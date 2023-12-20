@@ -4,8 +4,11 @@ pagination:
   data: collections.books
   size: 2
 permalink: "/work/page/{{ pagination.pageNumber }}/"
+includeSelf: false
+eleventyExcludeFromCollections: true
 ---
 
+{# NOTE: pagination https://www.11ty.dev/docs/pagination/nav/ and https://www.11ty.dev/docs/pagination/#}
 <section class='py-section-sm bg-dark text-light'>
     <div class='monz-container'>
         <div class="monz-grid">
@@ -26,7 +29,7 @@ permalink: "/work/page/{{ pagination.pageNumber }}/"
 
         <div class="monz-grid mt-spacer-7">
             <div class="monz-col-2 lg:col-start-3">
-                {% include "components/pagination-real-links.njk" %}
+                {% include "components/pagination.njk" %}
             </div>
         </div>
     </div>
