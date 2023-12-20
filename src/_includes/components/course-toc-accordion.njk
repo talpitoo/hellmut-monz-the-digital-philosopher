@@ -1,0 +1,28 @@
+<h3 class="link-underline {% if page.url == courseTOC.first.url %}link-underline-active{% endif %} leading-loose">
+    <a href="{{ courseTOC.first.url }}">{{ courseTOC.first.title }}</a>
+</h3>
+
+<div id="accordion-collapse" data-accordion="collapse" class="text-light">
+    {% for block in courseTOC.sections %}
+        <h4 id="accordion-heading-{{ loop.index }}">
+            <button type="button" class="text-base text-light bg-transparent leading-loose flex items-center justify-between w-full" data-accordion-target="#accordion-body-{{ loop.index }}" aria-expanded="false" aria-controls="accordion-body-{{ loop.index }}">
+                <span>{{ block.title }}</span>
+                <svg data-accordion-icon class="w-spacer-1/2 h-spacer-1/2 ml-spacer-1 rotate-180 transition-transform shrink-0" aria-hidden="true" width="16" height="16">
+                    <use href="/img/icons/dist/sprite.svg#icon-caret-down"></use>
+                </svg>
+            </button>
+        </h4>
+        <ul id="accordion-body-{{ loop.index }}" class="hidden pl-spacer-1.5" aria-labelledby="accordion-heading-{{ loop.index }}">
+            {% for item in block.items %}
+                <li>
+                    <a href="{{ item.url }}" class="link-underline {% if page.url == item.url %}link-underline-active{% endif %}">{{ item.chapter }}
+                        {{ item.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</div>
+
+<h3 class="link-underline {% if page.url == courseTOC.last.url %}link-underline-active{% endif %} leading-loose">
+    <a href="{{ courseTOC.last.url }}">{{ courseTOC.last.title }}</a>
+</h3>
