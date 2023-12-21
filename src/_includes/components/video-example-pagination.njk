@@ -1,0 +1,15 @@
+{# NOTE: static example <iframe class="w-full h-full aspect-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/0t4aKJuKP0Q?si=pRyG1NssfeX134T4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> #}
+
+{# NOTE: variation a)
+    <iframe class="w-full h-full aspect-video" width="560" height="315" src="{{ coverVideo }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+#}
+
+{# NOTE: variation b)
+    {% for item in pagination.items %}
+        <iframe class="w-full h-full aspect-video" width="560" height="315" src="{{ item.data.coverVideo }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    {% endfor %}
+#}
+
+{# NOTE: variation c) #}
+{% set currentItem = pagination.pages[pagination.pageNumber] %}
+<iframe class="w-full h-full aspect-video" width="560" height="315" src="{{ currentItem.data.coverVideo }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -19,13 +19,10 @@
             {% include "components/course-content-menu.njk" %}
 
             <div class="monz-course-toc transition-all lg:w-spacer-26 lg:absolute top-spacer-4 right-spacer-7 mb-spacer-2 p-spacer-1">
-              {% include "components/course-toc-accordion.njk" %}
+              {% include "components/course-toc-accordion-pagination.njk" %}
             </div>
 
             <div class="monz-col-6">
-              {# NOTE: every page requires a <h1>, even if it is visually hidden with <h1 clas="sr-only"> for accessibility/SEO reasons #}
-              <h1 class="sr-only">{{ title }}</h1>
-
               <div class="monz-course-container transition-all">
                 <figure data-monz-show-in-modal="false">
                   <div class="{% if coverPhoto.figureBackgroundColor is defined and coverPhoto.figureBackgroundColor !== '' %}{{ coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">

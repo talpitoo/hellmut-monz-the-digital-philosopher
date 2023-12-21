@@ -17,7 +17,8 @@ eleventyExcludeFromCollections: true
                 {% set posts = pagination.items %}
                 {% include "components/article-list.njk" %}
 
-                {# <ul>
+                {# NOTE: example code, leave it for reference
+                <ul>
                     {% for item in pagination.items %}
                         <li>
                             <a href="{{ item.data.permalink }}" class="link-underline">{{ item.data.title }}</a>
