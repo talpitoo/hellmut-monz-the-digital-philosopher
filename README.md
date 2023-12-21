@@ -24,4 +24,4 @@ This boilerplate/skeleton is based on [Minimal 11ty Starter](https://github.com/
 ```
 
 * All URLs must end with `/`, e.g. `permalink: "/work/movies/course17/chapter-{{ pagination.pageNumber }}/"`
-* The single most important way to group items is e.g. `tags: ["work", "movies", "course", "course17", "course17section1"]`, this will create `collections.work`, `collections.movies`, `collections.course`, `collections.course17` and `collections.course17section1` collections which you can iterate through later with e.g. `{% for item in collections.movies %}`.
+* The single most important way to group items is e.g. `tags: ["work", "movies", "course", "course17"]`, this will create `collections.work`, `collections.movies`, `collections.course` and `collections.course17` collections which you can iterate through later with e.g. `{% for item in collections.movies %}`.

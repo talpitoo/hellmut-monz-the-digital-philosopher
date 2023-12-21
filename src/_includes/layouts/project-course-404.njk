@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth newsbar-hidden course-toc-expanded">
+  <head>
+    {% include "../components/meta.njk" %}
+  </head>
+  <body>
+
+    {% include "../components/navigation.njk" %}
+    <main>
+      <section class='py-section-sm bg-dark text-light'>
+        <div class='monz-container'>
+          <div class="monz-grid">
+            <div class="monz-col-6">
+              <h1>404</h1>
+              <p>Please use the project navigation instead.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {# NOTE: undo the footer reveal offset #}
+      <div class="bg-dark">
+        <div class='monz-container pb-spacer-33'></div>
+      </div>
+    </main>
+
+    {% include "../components/footer.njk" %}
+
+    {# NOTE: modals at the very end so their z-index is above everything else #}
+    {% include "components/modals/modal-gallery.njk" %}
+
+    <script src="/main.js" defer></script>
+  </body>
+</html>

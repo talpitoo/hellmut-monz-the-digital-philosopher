@@ -1,17 +1,15 @@
-<h3 class="link-underline {% if page.url == courseTOC.first.url %}link-underline-active{% endif %} leading-loose">
-    <a href="{{ courseTOC.first.url }}">{{ courseTOC.first.title }}</a>
-</h3>
+{# TODO: fix the chapter links #}
+
+{% for item in collections.course17 %}
+    {% if loop.index == 1 %}
+        {# NOTE: get the first item from the collection which is the introduction #}
+        <h3 class="link-underline {% if page.url == item.url %}link-underline-active{% endif %} leading-loose">
+            <a href="{{ item.url }}">{{ item.data.title }}</a>
+        </h3>
+    {% endif %}
+{% endfor %}
 
 <div id="accordion-collapse" data-accordion="collapse" class="text-light">
-    {# TODO {% for section in collections.course17section1 %}
-        {{ section.title }}
-        {% for chapter in collections.course17 %}
-            {% if section.name == chapter.name %}
-                {{ chapter.title }}
-            {% endif %}
-        {% endfor %}
-    {% endfor %} #}
-
     {% for section in sections %}
         <h4 id="accordion-heading-{{ loop.index }}">
             <button type="button" class="text-base text-light bg-transparent leading-loose flex items-center justify-between w-full" data-accordion-target="#accordion-body-{{ loop.index }}" aria-expanded="false" aria-controls="accordion-body-{{ loop.index }}">
@@ -22,17 +20,39 @@
             </button>
         </h4>
         <ul id="accordion-body-{{ loop.index }}" class="hidden pl-spacer-1.5" aria-labelledby="accordion-heading-{{ loop.index }}">
+            {% set chapterIndex = 1 %}
             {% set parentIndex = loop.index %}
-            {% for item in collections.course17 %}
-                <li>
-                    <a href="{{ item.url }}" class="link-underline {% if page.url == item.url %}link-underline-active{% endif %}">{{ item.chapter }}
-                        {{ parentIndex }}.{{ loop.index }} {{ item.data.title }}</a>
-                </li>
+            {# NOTE: generic loop, not working but keep it for reference #}
+            {# {% for item in collections.course17 %}
+                {% if item.data.section == parentIndex %}
+                    <li>
+                        <a href="{{ item.url }}" class="link-underline {% if page.url == item.url %}link-underline-active{% endif %}">{{ item.chapter }}
+                            {{ parentIndex }}.{{ loop.index - 1 }}
+                            {{ item.data.title }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %} #}
+
+            {# NOTE: loop over the course17's defined pagination object (defined in /src/pages/work/movies/course17-pagination.njk) #}
+            {% for item in pagination.pages %}
+                {% if item.data.section == parentIndex %}
+                    <li>
+                        <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="link-underline {% if page.url == item.url %}link-underline-active{% endif %}">{{ item.chapter }}
+                            {{ parentIndex }}.{{ chapterIndex }}
+                            {{ item.data.title }}</a>
+                    </li>
+                    {% set chapterIndex = chapterIndex + 1 %}
+                {% endif %}
             {% endfor %}
         </ul>
     {% endfor %}
 </div>
 
-<h3 class="link-underline {% if page.url == courseTOC.last.url %}link-underline-active{% endif %} leading-loose">
-    <a href="{{ courseTOC.last.url }}">{{ courseTOC.last.title }}</a>
-</h3>
+{% for item in collections.course17 %}
+    {% if loop.index == collections.course17 | length %}
+        {# NOTE: get the last item from the collection which is the conclusion #}
+        <h3 class="link-underline {% if page.url == item.url %}link-underline-active{% endif %} leading-loose">
+            <a href="{{ item.url }}">{{ item.data.title }}</a>
+        </h3>
+    {% endif %}
+{% endfor %}
