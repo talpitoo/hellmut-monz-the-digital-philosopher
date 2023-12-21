@@ -1,10 +1,8 @@
-{# TODO: fix the chapter links #}
-
-{% for item in collections.course17 %}
+{% for item in pagination.pages %}
     {% if loop.index == 1 %}
         {# NOTE: get the first item from the collection which is the introduction #}
-        <h3 class="link-underline {% if page.url == item.url %}link-underline-active{% endif %} leading-loose">
-            <a href="{{ item.url }}">{{ item.data.title }}</a>
+        <h3 class="link-underline {% if page.url == pagination.hrefs[ loop.index0 ] %}link-underline-active{% endif %} leading-loose">
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}">{{ item.data.title }}</a>
         </h3>
     {% endif %}
 {% endfor %}
@@ -37,7 +35,7 @@
             {% for item in pagination.pages %}
                 {% if item.data.section == parentIndex %}
                     <li>
-                        <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="link-underline {% if page.url == item.url %}link-underline-active{% endif %}">{{ item.chapter }}
+                        <a href="{{ pagination.hrefs[ loop.index0 ] }}" class="link-underline {% if page.url == pagination.hrefs[ loop.index0 ] %}link-underline-active{% endif %}">{{ item.chapter }}
                             {{ parentIndex }}.{{ chapterIndex }}
                             {{ item.data.title }}</a>
                     </li>
@@ -48,11 +46,11 @@
     {% endfor %}
 </div>
 
-{% for item in collections.course17 %}
-    {% if loop.index == collections.course17 | length %}
+{% for item in pagination.pages %}
+    {% if loop.index == pagination.pages | length %}
         {# NOTE: get the last item from the collection which is the conclusion #}
-        <h3 class="link-underline {% if page.url == item.url %}link-underline-active{% endif %} leading-loose">
-            <a href="{{ item.url }}">{{ item.data.title }}</a>
+        <h3 class="link-underline {% if page.url == pagination.hrefs[ loop.index0 ] %}link-underline-active{% endif %} leading-loose">
+            <a href="{{ pagination.hrefs[ loop.index0 ] }}">{{ item.data.title }}</a>
         </h3>
     {% endif %}
 {% endfor %}
