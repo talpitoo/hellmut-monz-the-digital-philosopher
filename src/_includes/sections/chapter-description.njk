@@ -2,7 +2,7 @@
     <div class='monz-container'>
         <div class="monz-grid">
             <div class="monz-col-5">
-                <h2 class="font-serif normal-case">Chapter Description</h2>
+                <h2 class="font-serif normal-case">Chapter #{{ pagination.pageNumber }} Description</h2>
                 {# NOTE: variation a)
                     <p>{{ chapterDescription }}</p>
                 #}
@@ -20,7 +20,7 @@
         </div>
 
         <div class="monz-grid mt-spacer-7">
-            <div class="monz-col-4 lg:col-start-2">
+            <div class="monz-col-2 lg:col-start-3">
                 {% include "components/pagination.njk" %}
             </div>
         </div>

@@ -20,11 +20,22 @@
         <li>
             <span class="bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none">…</span>
         </li>
-        {%- for pageEntry in pagination.pages %}
+        {# NOTE: this would display all pages {%- for pageEntry in pagination.pages %}
             <li>
                 <a href="{{ pagination.hrefs[ loop.index0 ] }}"{% if page.url == pagination.hrefs[ loop.index0 ] %} aria-current="page"{% endif %} class="link-underline bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none {% if page.url == pagination.hrefs[ loop.index0 ] %}link-underline-active{% endif %}">{{ loop.index - 1 }}</a>
             </li>
+        {%- endfor %} #}
+
+        {# NOTE: this displays prev/current/next page numbers only in the middle #}
+        {% set currentIndex = pagination.pageNumber %}
+        {%- for index in range(currentIndex - 1, currentIndex + 2) %}
+            {% if pagination.pages[index] %}
+                <li>
+                    <a href="{{ pagination.hrefs[index] }}"{% if currentIndex == index %} aria-current="page"{% endif %} class="link-underline bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none {% if currentIndex == index %}link-underline-active{% endif %}">{{ index + 1 }}</a>
+                </li>
+            {% endif %}
         {%- endfor %}
+
         <li>
             <span class="bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none">…</span>
         </li>
