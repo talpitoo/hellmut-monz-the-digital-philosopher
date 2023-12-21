@@ -31,7 +31,7 @@
         {%- for index in range(currentIndex - 1, currentIndex + 2) %}
             {% if pagination.pages[index] %}
                 <li>
-                    <a href="{{ pagination.hrefs[index] }}"{% if currentIndex == index %} aria-current="page"{% endif %} class="link-underline bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none {% if currentIndex == index %}link-underline-active{% endif %}">{{ index + 1 }}</a>
+                    <a href="{{ pagination.hrefs[index] }}"{% if currentIndex == index %} aria-current="page"{% endif %} class="link-underline bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none {% if currentIndex == index %}link-underline-active{% endif %}">{{ index }}</a>
                 </li>
             {% endif %}
         {%- endfor %}
