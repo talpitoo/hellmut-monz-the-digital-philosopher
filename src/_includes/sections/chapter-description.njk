@@ -3,15 +3,25 @@
         <div class="monz-grid">
             <div class="monz-col-5">
                 <h2 class="font-serif normal-case">Chapter Description</h2>
-                <p>{{ chapterDescription }}</p>
+                {# NOTE: variation a)
+                    <p>{{ chapterDescription }}</p>
+                #}
+
+                {# NOTE: variation b)
+                    {% for item in pagination.items %}
+                        <p>{{ item.data.chapterDescription }}</p>
+                    {% endfor %}
+                #}
+
+                {# NOTE: variation c) #}
+                {% set currentItem = pagination.pages[pagination.pageNumber] %}
+                <p>{{ currentItem.data.chapterDescription }}</p>
             </div>
         </div>
 
         <div class="monz-grid mt-spacer-7">
             <div class="monz-col-4 lg:col-start-2">
-                {# TODO: chapters pagination, the current paginates chapter 1 only #}
-                {% set chapters = courseTOC.sections[0] %}
-                {% include "components/pagination-chapters.njk" %}
+                {% include "components/pagination.njk" %}
             </div>
         </div>
     </div>

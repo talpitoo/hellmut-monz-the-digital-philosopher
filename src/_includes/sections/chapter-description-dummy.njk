@@ -1,0 +1,18 @@
+<section class='py-section-sm bg-dark text-light border-t border-muted'>
+    <div class='monz-container'>
+        <div class="monz-grid">
+            <div class="monz-col-5">
+                <h2 class="font-serif normal-case">Chapter Description</h2>
+                <p>{{ chapterDescription }}</p>
+            </div>
+        </div>
+
+        <div class="monz-grid mt-spacer-7">
+            <div class="monz-col-4 lg:col-start-2">
+                {# TODO: chapters pagination, the current paginates chapter 1 only #}
+                {% set chapters = courseTOC.sections[0] %}
+                {% include "components/pagination-chapters.njk" %}
+            </div>
+        </div>
+    </div>
+</section>

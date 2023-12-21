@@ -1,0 +1,65 @@
+---
+layout: layouts/project-course-chapter.njk
+pagination:
+  data: collections.course17
+  size: 1
+permalink: "/work/movies/course17/chapter-{{ pagination.pageNumber }}/"
+includeSelf: false
+eleventyExcludeFromCollections: true
+sections:
+  - title: "The Philosopher’s Key"
+    chapter: "1"
+  - title: "The Philosopher’s Lock"
+    chapter: "2"
+  - title: "Philosophy 101"
+    chapter: "3"
+  - title: "The River Riddle"
+    chapter: "4"
+  - title: "The Killer Riddle"
+    chapter: "5"
+  - title: "Truth or Joke?"
+    chapter: "6"
+
+courseTOC:
+  first:
+    title: "Introduction"
+    chapter: "1.0"
+    url: "/work/movies/course17/"
+  sections:
+    - title: "The Philosopher’s Key"
+      items:
+        - title: "subchapter - 1"
+          chapter: "1.1"
+          url: "/work/movies/course17-chapter-01/"
+        - title: "subchapter - 2"
+          chapter: "1.2"
+          url: "/work/movies/course17-chapter-02/"
+        - title: "subchapter - 3"
+          chapter: "1.3"
+          url: "/work/movies/course17-chapter-03/"
+        - title: "subchapter - 4"
+          chapter: "1.4"
+          url: "/work/movies/course17-chapter-04/"
+        - title: "subchapter - 5"
+          chapter: "1.5"
+          url: "/work/movies/course17-chapter-05/"
+        - title: "subchapter - 6"
+          chapter: "1.6"
+          url: "/work/movies/course17-chapter-06/"
+    - title: "The Philosopher’s Lock"
+      items:
+        - title: "subchapter - 1"
+          chapter: "2.1"
+          url: "/work/movies/course17-chapter-03/"
+  last:
+    title: "Conclusion"
+    chapter: "3.0"
+    url: "/work/movies/course17-conclusion/"
+---
+
+{# NOTE: pagination https://www.11ty.dev/docs/pagination/nav/ and https://www.11ty.dev/docs/pagination/#}
+
+{# NOTE: this files controls the pagination of the whole course #}
+
+{# NOTE: although individual chapters/posts have their own URL e.g. http://localhost:8080/work/movies/course17-chapter-01/ those 
+shouldn't be listed in the final pages, only the `paginated` URLs should be used e.g. http://localhost:8080/work/movies/course17/chapter-1/ #}

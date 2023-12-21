@@ -67,12 +67,17 @@
             </url>
     
             <url>
-                <loc>/work/movies/movie-02/</loc>
+                <loc>/work/movies/course17-introduction/</loc>
                 <lastmod>2019-03-09T00:00:00.000Z</lastmod>
             </url>
     
             <url>
-                <loc>/work/movies/movie-02-chapter-01/</loc>
+                <loc>/work/movies/course17/</loc>
+                <lastmod>2019-03-09T00:00:00.000Z</lastmod>
+            </url>
+    
+            <url>
+                <loc>/work/movies/course17-chapter-01/</loc>
                 <lastmod>2019-03-10T00:00:00.000Z</lastmod>
             </url>
     
@@ -92,17 +97,17 @@
             </url>
     
             <url>
+                <loc>/work/movies/course17-chapter-02/</loc>
+                <lastmod>2019-03-11T00:00:00.000Z</lastmod>
+            </url>
+    
+            <url>
+                <loc>/work/movies/course17-chapter-03/</loc>
+                <lastmod>2019-03-11T00:00:00.000Z</lastmod>
+            </url>
+    
+            <url>
                 <loc>/work/movies/movie-01/</loc>
-                <lastmod>2019-03-11T00:00:00.000Z</lastmod>
-            </url>
-    
-            <url>
-                <loc>/work/movies/movie-02-chapter-02/</loc>
-                <lastmod>2019-03-11T00:00:00.000Z</lastmod>
-            </url>
-    
-            <url>
-                <loc>/work/movies/movie-02-chapter-03/</loc>
                 <lastmod>2019-03-11T00:00:00.000Z</lastmod>
             </url>
     
