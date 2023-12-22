@@ -2257,6 +2257,9 @@ video {
  .gap-0 {
   gap: 0px;
 }
+ .gap-spacer-2 {
+  gap: calc(2 * var(--spacer));
+}
  .gap-x-spacer-2 {
   column-gap: calc(2 * var(--spacer));
 }
@@ -2370,6 +2373,9 @@ video {
  .bg-light {
   background-color: var(--tw-color-gray-100);
 }
+ .bg-muted {
+  background-color: var(--tw-color-gray-400);
+}
  .bg-primary {
   background-color: var(--tw-color-primary-500);
 }
@@ -2394,6 +2400,9 @@ video {
 }
  .bg-transparent {
   background-color: transparent;
+}
+ .bg-warning {
+  background-color: var(--tw-color-warning-500);
 }
  .bg-white {
   --tw-bg-opacity: 1;

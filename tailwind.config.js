@@ -25,12 +25,6 @@ module.exports = {
           700: 'var(--tw-color-primary-700)',
           900: 'var(--tw-color-primary-900)',
         },
-        secondary: {
-          100: 'var(--tw-color-secondary-100)',
-          DEFAULT: 'var(--tw-color-secondary-300)',
-          500: 'var(--tw-color-secondary-500)',
-        },
-        tertiary: 'var(--tw-color-tertiary)',
         gray: {
           100: 'var(--tw-color-gray-100)',
           200: 'var(--tw-color-gray-200)',
@@ -166,7 +160,7 @@ module.exports = {
       'xsmax': { 'max': '320px' }, // => @media (max-width: 320px) { ... }
       'sm': '640px', // => @media (min-width: 640px) { ... }
       'md': '768px', // => @media (min-width: 768px) { ... }
-      'lg': '1024px', // => @media (min-width: 1024px) { ... }
+      'lg': '1024px', // => @media (min-width: 1024px) { ... } NOTE: only breakpoint used
       'xl': '1280px', // => @media (min-width: 1280px) { ... }
       '2xl': '1536px', // => @media (min-width: 1536px) { ... }
     },
