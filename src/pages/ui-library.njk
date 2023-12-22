@@ -54,14 +54,24 @@ eleventyExcludeFromCollections: true
             <div class="monz-col-6">
                 <h2 class="font-serif h3 normal-case mb-spacer-2">Typography</h2>
                 <h1>&lt;h1&gt; or .h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
-                <h2>&lt;h2&gt; or .h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
-                <h3>&lt;h3&gt; or .h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                 <h1 class="font-serif">&lt;h1 class="font-serif"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <h2>&lt;h2&gt; or .h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                 <h2 class="font-serif normal-case">&lt;h2 class="font-serif normal-case"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <h3>&lt;h3&gt; or .h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                 <h3 class="uppercase">&lt;h3 class="uppercase"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
                 <p class="text-lg leading-relaxed">&lt;p class="text-lg leading-relaxed"&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit.</p>
-                <p>&lt;p&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit.</p>
-                <p class="text-sm">&lt;p class="text-sm"&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit.</p>
+                <p>&lt;p&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit. Vivamus felis metus, lacinia ut dui sit amet, fermentum vulputate est. Praesent ultrices sagittis risus ut egestas. Mauris urna velit, mattis ac mattis in, pretium vitae neque. Sed ac aliquet nisi, sit amet egestas nibh. Phasellus eu erat ultricies, gravida augue sit amet, maximus ex. Pellentesque vel orci eu lectus blandit pellentesque.</p>
+                <p class="text-sm">&lt;p class="text-sm"&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit. Vivamus felis metus, lacinia ut dui sit amet, fermentum vulputate est. Praesent ultrices sagittis risus ut egestas. Mauris urna velit, mattis ac mattis in, pretium vitae neque. Sed ac aliquet nisi, sit amet egestas nibh. Phasellus eu erat ultricies, gravida augue sit amet, maximus ex. Pellentesque vel orci eu lectus blandit pellentesque.</p>
+                <ul class="list-greater">
+                    <li>&lt;ul class="list-greater"&gt;</li>
+                    <li>List item #2</li>
+                    <li>List item #3</li>
+                </ul>
+                <ul class="list-disc">
+                    <li>&lt;ul class="list-disc"&gt;</li>
+                    <li>List item #2</li>
+                    <li>List item #3</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -285,6 +295,23 @@ eleventyExcludeFromCollections: true
                 {% set figureHeight = "!h-spacer-14" %}
                 {% set figureBackgroundColor = "!bg-success" %}
                 {% set numberOfColumns = 1 %}
+                {% include "components/article-list.njk" %}
+            </div>
+        </div>
+    </div>
+
+    <div class='monz-container pt-section-sm'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                {% raw %}
+                    <code class="font-mono whitespace-pre-line">
+                        {% set posts = collections.pre2001 | reverse %}
+                        {% set numberOfColumns = 3 %}
+                        {% include "components/article-list.njk" %}
+                    </code>
+                {% endraw %}
+                {% set posts = collections.pre2001 | reverse %}
+                {% set numberOfColumns = 3 %}
                 {% include "components/article-list.njk" %}
             </div>
         </div>
@@ -529,4 +556,94 @@ eleventyExcludeFromCollections: true
             </div>
         </div>
     </div>
+
+    <div class='monz-container pt-section'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                {% raw %}
+                    <code class="font-mono whitespace-pre">
+{% set slidesHeight = 'h-spacer-14' %}
+{% set showInModal = true %}
+{% set slidesData = [
+    {
+    'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+    'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+    'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+    'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg',
+    'caption': 'Slide 1'
+    }, {
+    'webP': '/img/pexels-oleksandr-tiupa-192136-640x427.webp',
+    'webP2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.webp',
+    'jpg': '/img/pexels-oleksandr-tiupa-192136-640x427.jpg',
+    'jpg2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.jpg',
+    'caption': 'Slide 2'
+    }, {
+    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+    'caption': 'Slide 3'
+    }, {
+    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+    'caption': 'Slide 4'
+    }
+] %}
+{% include "components/swiper.njk" %}
+                    </code>
+                {% endraw %}
+            </div>
+            <div class="monz-col-6">
+                {% set slidesHeight = 'h-spacer-14' %}
+                {% set showInModal = true %}
+                {% set slidesData = [
+                  {
+                    'webP': '/img/pexels-rdne-stock-project-8474487-640x424.webp',
+                    'webP2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.webp',
+                    'jpg': '/img/pexels-rdne-stock-project-8474487-640x424.jpg',
+                    'jpg2x': '/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg',
+                    'caption': 'Slide 1'
+                  }, {
+                    'webP': '/img/pexels-oleksandr-tiupa-192136-640x427.webp',
+                    'webP2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.webp',
+                    'jpg': '/img/pexels-oleksandr-tiupa-192136-640x427.jpg',
+                    'jpg2x': '/img/pexels-oleksandr-tiupa-192136-640x427@2x.jpg',
+                    'caption': 'Slide 2'
+                  }, {
+                    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+                    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+                    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+                    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+                    'caption': 'Slide 3'
+                  }, {
+                    'webP': '/img/pexels-daniel-cid-17505905-640x448.webp',
+                    'webP2x': '/img/pexels-daniel-cid-17505905-640x448@2x.webp',
+                    'jpg': '/img/pexels-daniel-cid-17505905-640x448.jpg',
+                    'jpg2x': '/img/pexels-daniel-cid-17505905-640x448@2x.jpg',
+                    'caption': 'Slide 4'
+                  }
+                ] %}
+                {% include "components/swiper.njk" %}
+                </div>
+            </div>
+        </div>
+
+        <div class='monz-container pt-section'>
+            <div class="monz-grid">
+                <div class="monz-col-6">
+                {% raw %}
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-col-3">
+    {% include "components/swiper-gallery.njk" %}
+&lt;/div>
+                    </code>
+                {% endraw %}
+                </div>
+                <div class="monz-col-3">
+                    {% include "components/swiper-gallery.njk" %}
+                </div>
+            </div>
+        </div>
 </div>
