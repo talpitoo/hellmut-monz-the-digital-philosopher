@@ -2280,6 +2280,12 @@ video {
  .whitespace-nowrap {
   white-space: nowrap;
 }
+ .whitespace-pre {
+  white-space: pre;
+}
+ .whitespace-pre-line {
+  white-space: pre-line;
+}
  .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -2452,6 +2458,10 @@ video {
  .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+ .py-section {
+  padding-top: calc(11 * var(--spacer));
+  padding-bottom: calc(11 * var(--spacer));
 }
  .py-section-sm {
   padding-top: calc(4 * var(--spacer));
