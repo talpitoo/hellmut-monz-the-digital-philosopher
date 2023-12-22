@@ -33,7 +33,105 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 <h1 class="h2">UI Library</h1>
-                <p class="mb-section-sm">Copy-paste the following code snippets (or in more complex layouts peek into the source):</p>
+                <p class="mb-section-sm">Copy-paste the following code snippets (or in more complex layouts peek inside the source code).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class='monz-container py-section-sm'>
+        <div class="monz-grid gap-spacer-2">
+            <div class="monz-col-6">
+                <h2 class="font-serif h3 normal-case">Colors</h2>
+            </div>
+            <div class="monz-col-1 bg-primary text-dark p-spacer-1">
+                .bg-primary
+            </div>
+            <div class="monz-col-1 bg-success text-dark p-spacer-1">
+                .bg-success
+            </div>
+            <div class="monz-col-1 bg-error text-dark p-spacer-1">
+                .bg-error
+            </div>
+            <div class="monz-col-1 bg-info text-dark p-spacer-1">
+                .bg-info
+            </div>
+            <div class="monz-col-1 bg-light text-dark p-spacer-1">
+                .bg-light
+            </div>
+            <div class="monz-col-1 bg-dark text-light p-spacer-1">
+                .bg-dark
+            </div>
+            <div class="monz-col-1 bg-warning text-dark p-spacer-1">
+                .bg-warning
+            </div>
+            <div class="monz-col-1 bg-muted text-dark p-spacer-1">
+                .bg-muted
+            </div>
+        </div>
+    </div>
+
+    <div class='monz-container py-section-sm'>
+        <div class="monz-grid gap-spacer-2">
+            <div class="monz-col-6">
+                <h2 class="font-serif h3 normal-case mb-spacer-2">Typography</h2>
+                <h1>&lt;h1&gt; or .h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <h2>&lt;h2&gt; or .h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <h3>&lt;h3&gt; or .h3 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                <h1 class="font-serif">&lt;h1 class="font-serif"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+                <h2 class="font-serif normal-case">&lt;h2 class="font-serif normal-case"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
+                <h3 class="uppercase">&lt;h3 class="uppercase"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+                <p class="text-lg leading-relaxed">&lt;p class="text-lg leading-relaxed"&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit.</p>
+                <p>&lt;p&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit.</p>
+                <p class="text-sm">&lt;p class="text-sm"&gt; Lorem ipsum dolor sit amet, <a  href="#" class="text-primary link-underline">consectetur adipiscing</a> elit.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class='monz-container pt-section-sm'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid">
+    &lt;div class="monz-col-2 lg:col-start-3">
+        &lt;a href="/work" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">A link --&gt;</a>
+    &lt;/div>
+&lt;/div>
+                    </code>
+                
+            </div>
+        </div>
+        <div class="monz-grid">
+            <div class="monz-col-2 lg:col-start-3">
+                <a href="/work" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body">A link --&gt;</a>
+            </div>
+        </div>
+    </div>
+
+    <div class='monz-container pt-section-sm'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
+                
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid">
+    &lt;div class="monz-col-2 lg:col-start-3">
+        &lt;button type="button" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body w-full">A button --&gt;</button>
+    &lt;/div>
+&lt;/div>
+                    </code>
+                
+            </div>
+        </div>
+        <div class="monz-grid">
+            <div class="monz-col-2 lg:col-start-3">
+                <button type="button" class="mt-spacer-2 link-underline bg-primary block uppercase p-spacer-1 text-left text-spacer-1 leading-none text-body w-full">A button --&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <div class='monz-container pt-section-sm'>
+        <div class="monz-grid">
+            <div class="monz-col-6">
                 
                     <code class="font-mono whitespace-pre-line">{% include "components/cover-photo-edge-to-edge-example.njk" %}</code>
                 
@@ -179,12 +277,12 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">
-                        {% set newsbarVisible = true %}
-                        {% set newsbarLinkText = "Read" %}
-                        {% set newsbarLinkHref = "#read" %}
-                        {% include "components/news.njk" %}
-                    </code>
+                <code class="font-mono whitespace-pre-line">
+                    {% set newsbarVisible = true %}
+                    {% set newsbarLinkText = "Read" %}
+                    {% set newsbarLinkHref = "#read" %}
+                    {% include "components/news.njk" %}
+                </code>
                 
             </div>
         </div>
@@ -207,8 +305,18 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">{% include "components/pagination-dummy-example.njk" %}</code>
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid mt-spacer-7">
+    &lt;div class="monz-col-2 lg:col-start-3">
+        {% include "components/pagination-dummy-example.njk" %}
+    &lt;/div>
+&lt;/div>
+                    </code>
                 
+            </div>
+        </div>
+        <div class="monz-grid mt-spacer-7">
+            <div class="monz-col-2 lg:col-start-3">
                 
 <nav aria-label="Pagination">
     <ul class="flex justify-between">
@@ -243,8 +351,18 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">{% include "components/pagination.njk" %}</code>
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid mt-spacer-7">
+    &lt;div class="monz-col-2 lg:col-start-3">
+        {% include "components/pagination.njk" %}
+    &lt;/div>
+&lt;/div>
+                    </code>
                 
+            </div>
+        </div>
+        <div class="monz-grid mt-spacer-7">
+            <div class="monz-col-2 lg:col-start-3">
                 
 <nav aria-label="Pagination">
     <ul class="flex justify-between">
@@ -799,7 +917,11 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">layouts/post-layout-columns-2-4.njk</code>
+                    <code class="font-mono whitespace-pre-line">
+                        ---
+                        layout: layouts/post-layout-columns-2-4.njk
+                        ---
+                    </code>
                 
             </div>
             <div class="monz-col-2">
@@ -856,15 +978,19 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">layouts/post-layout-columns-3-3.njk</code>
+                    <code class="font-mono whitespace-pre-line">
+                        ---
+                        layout: layouts/post-layout-columns-3-3.njk
+                        ---
+                    </code>
                 
             </div>
             <div class="monz-col-3">
-              <figure class="mb-spacer-3" data-monz-show-in-modal="true">
-                
-                <div class="h-spacer-46 bg-light !bg-success">
-                  
-                  
+                <figure class="mb-spacer-3" data-monz-show-in-modal="true">
+                    
+                    <div class="h-spacer-46 bg-light !bg-success">
+                        
+                        
 
 
 
@@ -881,29 +1007,29 @@
     
     <img src="/img/pexels-pixabay-301614-640x427.jpg" alt="Back View of Astronauts Holding Hands" class="object-cover w-full h-full" width="640" height="424">
 </picture>
-                </div>
+                    </div>
 
-                
-                
-                  <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
-                
-              </figure>
+                    
+                    
+                        <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
+                    
+                </figure>
             </div>
             <div class="monz-col-3">
-              
-              <h1 class="sr-only">UI Library</h1>
+                
+                <h1 class="sr-only">UI Library</h1>
 
-              <p class="mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat consectetur libero sit amet vehicula. Praesent vitae nunc eu dolor efficitur dignissim dapibus quis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer congue, sem laoreet eleifend accumsan, tortor libero pretium nibh, vitae placerat dolor ante ac dolor.</p>
+                <p class="mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat consectetur libero sit amet vehicula. Praesent vitae nunc eu dolor efficitur dignissim dapibus quis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer congue, sem laoreet eleifend accumsan, tortor libero pretium nibh, vitae placerat dolor ante ac dolor.</p>
 
-              <ul class="list-separator-dot text-muted">
-                
-                  <li class="uppercase">category #1</li>
-                
-                  <li class="uppercase">category #2</li>
-                
-                  <li class="uppercase">category #3</li>
-                
-              </ul>
+                <ul class="list-separator-dot text-muted">
+                    
+                        <li class="uppercase">category #1</li>
+                    
+                        <li class="uppercase">category #2</li>
+                    
+                        <li class="uppercase">category #3</li>
+                    
+                </ul>
             </div>
         </div>
     </div>
@@ -912,15 +1038,19 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">layouts/post-layout-columns-4-2.njk</code>
+                    <code class="font-mono whitespace-pre-line">
+                        ---
+                        layout: layouts/post-layout-columns-4-2.njk
+                        ---
+                    </code>
                 
             </div>
             <div class="monz-col-4">
-              <figure class="mb-spacer-3" data-monz-show-in-modal="true">
-                
-                <div class="h-spacer-46 bg-light !bg-success">
-                  
-                  
+                <figure class="mb-spacer-3" data-monz-show-in-modal="true">
+                    
+                    <div class="h-spacer-46 bg-light !bg-success">
+                        
+                        
 
 
 
@@ -937,29 +1067,29 @@
     
     <img src="/img/pexels-pixabay-301614-640x427.jpg" alt="Back View of Astronauts Holding Hands" class="object-cover w-full h-full" width="640" height="424">
 </picture>
-                </div>
+                    </div>
 
-                
-                
-                  <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
-                
-              </figure>
+                    
+                    
+                        <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
+                    
+                </figure>
             </div>
             <div class="monz-col-2">
-              
-              <h1 class="sr-only">UI Library</h1>
+                
+                <h1 class="sr-only">UI Library</h1>
 
-              <p class="mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat consectetur libero sit amet vehicula. Praesent vitae nunc eu dolor efficitur dignissim dapibus quis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer congue, sem laoreet eleifend accumsan, tortor libero pretium nibh, vitae placerat dolor ante ac dolor.</p>
+                <p class="mt-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris volutpat consectetur libero sit amet vehicula. Praesent vitae nunc eu dolor efficitur dignissim dapibus quis neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer congue, sem laoreet eleifend accumsan, tortor libero pretium nibh, vitae placerat dolor ante ac dolor.</p>
 
-              <ul class="list-separator-dot text-muted">
-                
-                  <li class="uppercase">category #1</li>
-                
-                  <li class="uppercase">category #2</li>
-                
-                  <li class="uppercase">category #3</li>
-                
-              </ul>
+                <ul class="list-separator-dot text-muted">
+                    
+                        <li class="uppercase">category #1</li>
+                    
+                        <li class="uppercase">category #2</li>
+                    
+                        <li class="uppercase">category #3</li>
+                    
+                </ul>
             </div>
         </div>
     </div>
@@ -968,18 +1098,22 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">layouts/post-layout-cover-only.njk</code>
+                    <code class="font-mono whitespace-pre-line">
+                        ---
+                        layout: layouts/post-layout-cover-only.njk
+                        ---
+                    </code>
                 
             </div>
             <div class="monz-col-5">
-              
-              <h1 class="sr-only">UI Library</h1>
-
-              <figure class="mb-spacer-3" data-monz-show-in-modal="true">
                 
-                <div class="h-spacer-46 bg-light !bg-success">
-                  
-                  
+                <h1 class="sr-only">UI Library</h1>
+
+                <figure class="mb-spacer-3" data-monz-show-in-modal="true">
+                    
+                    <div class="h-spacer-46 bg-light !bg-success">
+                        
+                        
 
 
 
@@ -996,23 +1130,23 @@
     
     <img src="/img/pexels-pixabay-301614-640x427.jpg" alt="Back View of Astronauts Holding Hands" class="object-cover w-full h-full" width="640" height="424">
 </picture>
-                </div>
+                    </div>
 
-                
-                
-                  <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
-                
-              </figure>
+                    
+                    
+                        <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
+                    
+                </figure>
 
-              <ul class="list-separator-dot text-muted">
-                
-                  <li class="uppercase">category #1</li>
-                
-                  <li class="uppercase">category #2</li>
-                
-                  <li class="uppercase">category #3</li>
-                
-              </ul>
+                <ul class="list-separator-dot text-muted">
+                    
+                        <li class="uppercase">category #1</li>
+                    
+                        <li class="uppercase">category #2</li>
+                    
+                        <li class="uppercase">category #3</li>
+                    
+                </ul>
             </div>
         </div>
     </div>
@@ -1021,24 +1155,28 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">layouts/post-layout-no-cover.njk</code>
+                    <code class="font-mono whitespace-pre-line">
+                        ---
+                        layout: layouts/post-layout-no-cover.njk
+                        ---
+                    </code>
                 
             </div>
             <div class="monz-col-4">
-              <h1 class="font-serif normal-case">UI Library</h1>
+                <h1 class="font-serif normal-case">UI Library</h1>
 
-              <p>In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta.</p>
+                <p>In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta.</p>
                 <p>Sed consectetur viverra urna id porttitor. Maecenas risus lorem, sollicitudin at leo sed, consequat convallis velit. Pellentesque fermentum finibus libero, non mattis lectus sagittis mattis. Donec maximus, magna ac pharetra condimentum, lorem justo posuere lacus, et dignissim purus risus sit amet nunc. Duis ultricies mauris sed orci convallis, et auctor nisl condimentum. Nunc elementum, ipsum id auctor egestas, sem ante mattis ex, nec pharetra ex dui eu eros. Nam in accumsan tellus. Nulla tincidunt neque erat, id cursus elit iaculis et. Duis dapibus enim volutpat lorem rutrum, id tincidunt velit accumsan.</p>
 
-              <ul class="list-separator-dot text-muted">
-                
-                  <li class="uppercase">category #1</li>
-                
-                  <li class="uppercase">category #2</li>
-                
-                  <li class="uppercase">category #3</li>
-                
-              </ul>
+                <ul class="list-separator-dot text-muted">
+                    
+                        <li class="uppercase">category #1</li>
+                    
+                        <li class="uppercase">category #2</li>
+                    
+                        <li class="uppercase">category #3</li>
+                    
+                </ul>
             </div>
         </div>
     </div>
@@ -1047,37 +1185,39 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">layouts/post-layout-video.njk</code>
+                    <code class="font-mono whitespace-pre-line">
+                        ---
+                        layout: layouts/post-layout-video.njk
+                        ---
+                    </code>
                 
             </div>
             <div class="monz-col-6">
-              
-              <h1 class="sr-only">UI Library</h1>
+                
+                <h1 class="sr-only">UI Library</h1>
 
-              <figure class="mb-spacer-3" data-monz-show-in-modal="false">
-                <div class="bg-light !bg-success">
-                  
+                <figure class="mb-spacer-3" data-monz-show-in-modal="false">
+                    <div class="bg-light !bg-success">
+                        
 
 <iframe class="w-full h-full aspect-video" width="560" height="315" src="https://www.youtube-nocookie.com/embed/9yW--eQaA2I?si=dOoHHK1RWiKCUJYf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+                    </div>
 
-                
-                
-                  <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
-                
-              </figure>
+                    
+                    
+                        <figcaption class="mt-spacer-1">Back View of Astronauts Holding Hands</figcaption>
+                    
+                </figure>
 
-              <ul class="list-separator-dot text-muted">
-                
-                  <li class="uppercase">category #1</li>
-                
-                  <li class="uppercase">category #2</li>
-                
-                  <li class="uppercase">category #3</li>
-                
-              </ul>
-
-              
+                <ul class="list-separator-dot text-muted">
+                    
+                        <li class="uppercase">category #1</li>
+                    
+                        <li class="uppercase">category #2</li>
+                    
+                        <li class="uppercase">category #3</li>
+                    
+                </ul>
             </div>
         </div>
     </div>
