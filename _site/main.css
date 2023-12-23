@@ -1626,6 +1626,7 @@ video {
   .h2,
   .h3 {
   font-weight: 700;
+  line-height: 1.5;
 }
  h1,
   .h1 {
@@ -2472,10 +2473,6 @@ video {
  .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-}
- .py-section {
-  padding-top: calc(11 * var(--spacer));
-  padding-bottom: calc(11 * var(--spacer));
 }
  .py-section-sm {
   padding-top: calc(4 * var(--spacer));
