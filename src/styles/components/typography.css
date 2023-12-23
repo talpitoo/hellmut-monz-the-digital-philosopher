@@ -6,7 +6,8 @@
   ul + p,
   p + ul,
   p + code,
-  code + p {
+  code + p,
+  ul + ul {
     @apply mt-spacer-1;
   }
 
