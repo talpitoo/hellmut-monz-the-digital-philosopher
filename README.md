@@ -40,3 +40,46 @@ Take a look at the reusable snippets at http://localhost:8080/ui-library/
 * The CSS utility classes are 'controlled' centrally from `tailwind.config.js`, the grid calculation is in `src/styles/variables.css`, the color variables in `src/styles/colors.css`.
 * `src/sitemap.njk` is responsible for generating the `sitemap.xml`, double-check its conditions in case you want to exclude some pages, collections from it.
 * Update the `robots.txt` once deployed to production.
+* A typical post could contain all this information (depending on post type):
+
+```
+---
+title: Teaching 47
+date: 2018-05-01
+excerpt: "Excerpt for Teaching 47"
+coverPhoto: {
+                "webP": "/img/pexels-rdne-stock-project-8474487-640x424.webp",
+                "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
+                "jpg": "/img/pexels-rdne-stock-project-8474487-640x424.jpg",
+                "jpg2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
+                "height": "small",
+                "figureBackgroundColor": "bg-info",
+                "figcaption": "Back View of Astronauts Holding Hands"
+            }
+coverVideo: https://www.youtube-nocookie.com/embed/r6sGWTCMz2k?si=DI0OK3Ee9riTKDHT
+layout: layouts/post-layout-cover-only.njk
+permalink: /doc/2017-21/teaching-47/
+
+# NOTE: tags are the means of creating 11ty collections e.g. `collections.teching`
+tags: ["doc", "year2017to2021", "teaching"]
+
+# NOTE: categories are just for display no related functionality
+categories: ["blog", "philosophy"]
+
+projectDetails:
+  Director: "Ali Abbasi"
+  Year: 2018
+  Genre: "crime, drama, fantasy"
+  Duration: "1h 50m"
+price: "$11.11 - $44.50"
+bookDetailsReviews:
+  - text: “No, don’t quote me.”
+    source: Enzo Ledoux, PhD, author Le Pantalon
+  - text: “Can’t talk now.”
+    source: Luke Horowitz, cashier Coles
+
+# NOTE: each chapter should have its corresponding `section` set
+section: 2
+chapterDescription: "Course 17 chapter 2.2 - - - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+---
+```

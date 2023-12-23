@@ -33,7 +33,7 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 <h1 class="h2">UI Library</h1>
-                <p class="mb-section-sm">Copy-paste the following code snippets (or in more complex layouts peek inside the source code). Please note that these are not components, rather markup snippets. In case you do not find what you are looking for, inspect the code and modify it following the established patterns.</p>
+                <p class="mb-section-sm">Copy-paste the following code snippets (or in more complex layouts peek inside the source code). Please note that these are not components, rather markup snippets. In case you do not find what you are looking for, inspect the code and modify it following the established patterns. Please read the <a href="#" class="text-primary link-underline">README.md</a> for more information.</p>
             </div>
         </div>
     </div>
@@ -624,77 +624,27 @@
             <div class="monz-col-6">
                 
                     <code class="font-mono whitespace-pre">
-&lt;div class="monz-grid mt-spacer-7">
-    &lt;div class="monz-col-2 lg:col-start-3">
-        {% include "components/pagination.njk" %}
+&lt;div class="monz-grid">
+    &lt;div class="monz-col-3">
+        {% set pictureObject = {
+            "webP": "/img/pexels-rdne-stock-project-8474487-640x424.webp",
+            "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
+            "jpg": "/img/pexels-rdne-stock-project-8474487-640x424.jpg",
+            "jpg2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
+            "height": "small",
+            "figureBackgroundColor": "bg-success",
+            "figcaption": "Back View of Astronauts Holding Hands"
+        }
+        %}
+        {% include "components/picture-example.njk" %}
     &lt;/div>
 &lt;/div>
                     </code>
                 
             </div>
         </div>
-        <div class="monz-grid mt-spacer-7">
-            <div class="monz-col-2 lg:col-start-3">
-                
-<nav aria-label="Pagination">
-    <ul class="flex justify-between">
-        <li class="grow">
-            
-                <a href="" class="link-underline bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none">
-                    <span class="sr-only">First</span>&lt;&lt;</a>
-            
-        </li>
-        <li>
-            
-                <span class="bg-primary text-muted block uppercase p-spacer-1 text-left text-spacer-1 leading-none">Prev</span>
-            
-        </li>
-        <li>
-            <span class="bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none">…</span>
-        </li>
-        
-
-        
-        
-
-        <li>
-            <span class="bg-primary text-body block uppercase p-spacer-1 text-left text-spacer-1 leading-none">…</span>
-        </li>
-        <li>
-            
-                <span class="bg-primary text-muted block uppercase p-spacer-1 text-right text-spacer-1 leading-none whitespace-nowrap">Next</span>
-            
-        </li>
-        <li class="grow">
-            
-                <a href="" class="link-underline bg-primary text-body block uppercase p-spacer-1 text-right text-spacer-1 leading-none whitespace-nowrap">
-                    <span class="sr-only">Last</span>&gt;&gt;</a>
-            
-        </li>
-    </ul>
-</nav>
-            </div>
-        </div>
-    </div>
-
-    <div class='monz-container py-section-sm'>
         <div class="monz-grid">
-            <div class="monz-col-6">
-                
-                    <code class="font-mono whitespace-pre">
-{% set pictureObject = {
-    "webP": "/img/pexels-rdne-stock-project-8474487-640x424.webp",
-    "webP2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.webp",
-    "jpg": "/img/pexels-rdne-stock-project-8474487-640x424.jpg",
-    "jpg2x": "/img/pexels-rdne-stock-project-8474487-640x424@2x.jpg",
-    "height": "small",
-    "figureBackgroundColor": "bg-success",
-    "figcaption": "Back View of Astronauts Holding Hands"
-}
-%}
-{% include "components/picture-example.njk" %}
-                    </code>
-                
+            <div class="monz-col-3">
                 
                 
 
@@ -717,19 +667,23 @@
         </div>
     </div>
 
-    <div class='monz-container py-section'>
-        &nbsp;
-    </div>
-
     <div class='monz-container py-section-sm'>
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">
-                        {% set coverVideo = 'https://www.youtube-nocookie.com/embed/0t4aKJuKP0Q?si=pRyG1NssfeX134T4' %}
-                        {% include "components/video-example.njk" %}
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid">
+    &lt;div class="monz-col-4 lg:col-start-3">
+        {% set coverVideo = 'https://www.youtube-nocookie.com/embed/0t4aKJuKP0Q?si=pRyG1NssfeX134T4' %}
+        {% include "components/video-example.njk" %}
+    &lt;/div>
+&lt;/div>
                     </code>
                 
+            </div>
+        </div>
+        <div class="monz-grid">
+            <div class="monz-col-4 lg:col-start-3">
                 
                 
 
@@ -742,14 +696,22 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">
-                        {% set posts = collections.work.slice(1, 2) %}
-                        {% set figureHeight = "!h-spacer-14" %}
-                        {% set figureBackgroundColor = "!bg-success" %}
-                        {% set numberOfColumns = 1 %}
-                        {% include "components/article-list.njk" %}
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid">
+    &lt;div class="monz-col-2">
+        {% set posts = collections.work.slice(1, 2) %}
+        {% set figureHeight = "!h-spacer-14" %}
+        {% set figureBackgroundColor = "!bg-success" %}
+        {% set numberOfColumns = 1 %}
+        {% include "components/article-list.njk" %}
+    &lt;/div>
+&lt;/div>
                     </code>
                 
+            </div>
+        </div>
+        <div class="monz-grid">
+            <div class="monz-col-2">
                 
                 
                 
@@ -835,10 +797,14 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">
-                        {% set posts = collections.pre2001 | reverse %}
-                        {% set numberOfColumns = 3 %}
-                        {% include "components/article-list.njk" %}
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid">
+    &lt;div class="monz-col-6">
+        {% set posts = collections.pre2001 | reverse %}
+        {% set numberOfColumns = 3 %}
+        {% include "components/article-list.njk" %}
+    &lt;/div>
+&lt;/div>
                     </code>
                 
                 
@@ -1129,12 +1095,16 @@
         <div class="monz-grid">
             <div class="monz-col-6">
                 
-                    <code class="font-mono whitespace-pre-line">
-                        {% set posts = collections.work.slice(0, 7) | reverse %}
-                        {% set figureHeight = "!h-spacer-14" %}
-                        {% set figureBackgroundColor = "!bg-success" %}
-                        {% set numberOfColumns = 3 %}
-                        {% include "components/article-list.njk" %}
+                    <code class="font-mono whitespace-pre">
+&lt;div class="monz-grid">
+    &lt;div class="monz-col-6">
+        {% set posts = collections.work.slice(0, 7) | reverse %}
+        {% set figureHeight = "!h-spacer-14" %}
+        {% set figureBackgroundColor = "!bg-success" %}
+        {% set numberOfColumns = 3 %}
+        {% include "components/article-list.njk" %}
+    &lt;/div>
+&lt;/div>
                     </code>
                 
                 
@@ -1731,7 +1701,7 @@
             <div class="monz-col-4">
                 <h1 class="font-serif normal-case">UI Library</h1>
 
-                <p>In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta. In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Nunc pulvinar facilisis consequat. Donec nec purus imperdiet, vehicula erat non, sollicitudin libero. Aliquam eu viverra mauris. Morbi consectetur ante ac fringilla condimentum. Quisque ut elit massa. Aenean congue tincidunt dignissim. Quisque vestibulum eget ligula et porta.</p>
+                <p>In eget condimentum libero. Phasellus rhoncus lobortis ante a dictum. Phasellus sodales ut risus aliquet dapibus. Quisque vestibulum eget ligula et porta.</p>
                 <p>Sed consectetur viverra urna id porttitor. Maecenas risus lorem, sollicitudin at leo sed, consequat convallis velit. Pellentesque fermentum finibus libero, non mattis lectus sagittis mattis. Donec maximus, magna ac pharetra condimentum, lorem justo posuere lacus, et dignissim purus risus sit amet nunc. Duis ultricies mauris sed orci convallis, et auctor nisl condimentum. Nunc elementum, ipsum id auctor egestas, sem ante mattis ex, nec pharetra ex dui eu eros. Nam in accumsan tellus. Nulla tincidunt neque erat, id cursus elit iaculis et. Duis dapibus enim volutpat lorem rutrum, id tincidunt velit accumsan.</p>
 
                 <ul class="list-separator-dot text-muted">
