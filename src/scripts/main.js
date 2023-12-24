@@ -8,6 +8,7 @@ import { initializeCourseTOC } from './modules/course';
 import { initializeFooterReveal } from './modules/footerReveal';
 import { initializeSwiper } from './modules/swiperInstances';
 import { initializeNewsBarSessionStorage } from './modules/newsBar';
+import { initializeSearch } from './modules/search';
 // NOTE: not used but kept for code reference
 // import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
 // import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeFooterReveal();
         initializeSwiper();
         initializeNewsBarSessionStorage();
+        initializeSearch();
 
         // NOTE: not used but kept for code reference
         // initializeNewsletterAnimation();

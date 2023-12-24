@@ -23449,7 +23449,34 @@ function initializeNewsBarSessionStorage() {
   }
 
 }
+;// CONCATENATED MODULE: ./src/scripts/modules/search.js
+/**
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * search
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ */
+function initializeSearch() {
+    document.getElementById('search').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const searchTerm = event.target.search.value.toLowerCase();
+        const listItems = document.querySelectorAll('#search-all-posts [data-monz-search-result]');
+
+        listItems.forEach(item => {
+            const textContent = item.textContent.toLowerCase();
+            if (textContent.includes(searchTerm)) {
+                // item.classList.add('match');
+                item.classList.remove('hidden');
+            } else {
+                // item.classList.remove('match');
+                item.classList.add('hidden');
+            }
+        });
+    });
+
+}
 ;// CONCATENATED MODULE: ./src/scripts/main.js
+
 
 
 
@@ -23478,6 +23505,7 @@ document.addEventListener("DOMContentLoaded", function () {
         initializeFooterReveal();
         initializeSwiper();
         initializeNewsBarSessionStorage();
+        initializeSearch();
 
         // NOTE: not used but kept for code reference
         // initializeNewsletterAnimation();

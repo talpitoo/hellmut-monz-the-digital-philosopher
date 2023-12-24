@@ -7,7 +7,7 @@
                 .includes(post) %}
                 {% if post.data.title is defined and post.data.title !== '' %}
                     {# TODO: note to self for later if we want to change the CSS columns <div class="monz-col-2"> #}
-                    <li class="mb-spacer-2">
+                    <li class="mb-spacer-2 hidden" data-monz-search-result>
                         <div class="monz-tile break-inside-avoid-column">
                             <figure class="mb-spacer-1" data-monz-show-in-modal="false">
                                 {% if post.data.coverVideo is defined and post.data.coverVideo !== '' %}
@@ -49,6 +49,8 @@
                                         <a href="{{ post.data.permalink }}" class="stretched-link">{{ post.data.title }}</a>
                                     </h3>
                                     <p>{{ post.data.excerpt }}</p>
+
+                                    {# NOTE: if you want to post's data to be searched, include it here with .hidden so that it is present in the markup but hidden visually #}
                                 {% endif %}
                             {% endif %}
 
@@ -61,11 +63,6 @@
                                     <li>{{ post.data.date.toDateString().slice(4) }}</li>
                                 {% endif %}
                             </ul>
-
-                            {# NOTE: the price will be shown if exists/defined in the post's meta data #}
-                            {% if post.data.price is defined and post.data.price !== '' %}
-                                <p class="h3">{{ post.data.price }}</p>
-                            {% endif %}
                         </div>
                     </li>
                 {% endif %}
