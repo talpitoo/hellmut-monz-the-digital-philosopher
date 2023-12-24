@@ -32,7 +32,7 @@ Take a look at the reusable snippets at http://localhost:8080/ui-library/
 
   ```
   ---
-  tags: ["work", "movies", "course", "course17"]
+  tags: ["work", "movies", "course", "courseChapter", "course17"]
   ---
   ```
 
@@ -83,3 +83,17 @@ section: 2
 chapterDescription: "Course 17 chapter 2.2 - - - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
 ---
 ```
+
+## Search
+
+Since this is 11ty, there are no API calls neither a DB to fetch posts, rather `collections.all`. We are fetching all posts with
+
+```
+<div id="search-all-posts">
+    {# NOTE: the content comes from collections.all #}
+    {% set posts = collections.all %}
+    {% include "components/article-list-search-results.njk" %}
+</div>
+```
+
+...and then show/hide them with the `.hidden` class from JS (all items all hidden by default, prior to the search).

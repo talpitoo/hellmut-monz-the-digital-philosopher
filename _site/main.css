@@ -1910,6 +1910,9 @@ video {
  .right-0 {
   right: 0px;
 }
+ .right-spacer-1\/2 {
+  right: calc(0.5 * var(--spacer));
+}
  .right-spacer-7 {
   right: calc(7 * var(--spacer));
 }
@@ -2119,6 +2122,9 @@ video {
 }
  .h-spacer-46 {
   height: calc(46 * var(--spacer));
+}
+ .min-h-screen {
+  min-height: 100vh;
 }
  .w-1\/2 {
   width: 50%;
@@ -2515,6 +2521,9 @@ video {
 }
  .pr-spacer-1\/2 {
   padding-right: calc(0.5 * var(--spacer));
+}
+ .pr-spacer-3 {
+  padding-right: calc(3 * var(--spacer));
 }
  .pt-2 {
   padding-top: 0.5rem;
