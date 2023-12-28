@@ -12,6 +12,7 @@ import { initializeSearch } from './modules/search';
 // NOTE: not used but kept for code reference
 // import { initializeNewsletterAnimation } from './modules/newsletterAnimation';
 // import { initializeNewsbarReveal } from './modules/topNavbarNewsBarReveal';
+// import { initializeCapHeightTypography } from './modules/enablecapHeightTypography';
 
 // wait until DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
@@ -32,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // NOTE: not used but kept for code reference
         // initializeNewsletterAnimation();
         // initializeNewsbarReveal();
+        // initializeCapHeightTypography();
 
         console.debug("window loaded");
     }, false);

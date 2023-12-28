@@ -56,15 +56,24 @@
     /* NOTE: .font-sans */
     h2,
     .h2 {
-      line-height: 1.537;
+      line-height: 1.534;
       font-size: calc(1.95 * var(--spacer));
 
       &::before {
-        margin-top: calc(-0.8 * var(--spacer));
+        margin-top: calc(-0.3 * var(--spacer));
       }
 
       &::after {
-        margin-bottom: calc(-1 * var(--spacer));
+        margin-bottom: calc(-0.5 * var(--spacer));
+      }
+    }
+
+    /* NOTE: .font-sans */
+    h2 + .h2,
+    .h2 + h2,
+    .h2 + .h2 {
+      &::before {
+        margin-top: calc(-0.99 * var(--spacer));
       }
     }
 
@@ -80,7 +89,7 @@
       }
 
       &::after {
-        margin-bottom: calc(-1 * var(--spacer));
+        margin-bottom: calc(-0.99 * var(--spacer));
       }
     }
 

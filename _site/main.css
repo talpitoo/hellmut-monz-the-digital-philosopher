@@ -1170,7 +1170,7 @@ video {
         margin-top: calc(-0.25 * var(--spacer));
       }
  .cap-height-adjust h2body::after, .cap-height-adjust body.h2::after {
-        margin-bottom: calc(-1 * var(--spacer));
+        margin-bottom: calc(-0.99 * var(--spacer));
       }
  body {
   position: relative;
@@ -1674,14 +1674,18 @@ video {
  /* NOTE: .font-sans */
  .cap-height-adjust h2,
     .cap-height-adjust .h2 {
-      line-height: 1.537;
+      line-height: 1.534;
       font-size: calc(1.95 * var(--spacer));
     }
  .cap-height-adjust h2::before, .cap-height-adjust .h2::before {
-        margin-top: calc(-0.8 * var(--spacer));
+        margin-top: calc(-0.3 * var(--spacer));
       }
  .cap-height-adjust h2::after, .cap-height-adjust .h2::after {
-        margin-bottom: calc(-1 * var(--spacer));
+        margin-bottom: calc(-0.5 * var(--spacer));
+      }
+ /* NOTE: .font-sans */
+ .cap-height-adjust h2 + .h2::before, .cap-height-adjust .h2 + h2::before, .cap-height-adjust .h2 + .h2::before {
+        margin-top: calc(-0.99 * var(--spacer));
       }
  /* NOTE: .font-serif but also <p class="text-lg"> since they have the same height of 2 * var(--spacer) */
  .cap-height-adjust h2.font-serif,
@@ -1694,17 +1698,7 @@ video {
         margin-top: calc(-0.25 * var(--spacer));
       }
  .cap-height-adjust h2.font-serif::after, .cap-height-adjust .h2.font-serif::after, .cap-height-adjust p.text-lg::after {
-        margin-bottom: calc(-1 * var(--spacer));
-      }
- .cap-height-adjust p {
-      line-height: 2.222;
-      font-size: calc(0.9 * var(--spacer));
-    }
- .cap-height-adjust p::before {
-        margin-top: calc(-0.8 * var(--spacer));
-      }
- .cap-height-adjust p::after {
-        margin-bottom: calc(-1 * var(--spacer));
+        margin-bottom: calc(-0.99 * var(--spacer));
       }
  #modal-gallery-active .monz-figure-edge-to-edge p.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge p.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
   h1.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge 
@@ -1789,7 +1783,7 @@ video {
       }
   .cap-height-adjust ph2::after, .cap-height-adjust p
   .h2::after {
-        margin-bottom: calc(-1 * var(--spacer));
+        margin-bottom: calc(-0.99 * var(--spacer));
       }
  h2,
   .h2 {
