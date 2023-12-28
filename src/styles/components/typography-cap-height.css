@@ -1,0 +1,109 @@
+/* NOTE: cap height adjustments: https://seek-oss.github.io/capsize/ and https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align */
+
+@layer components {
+  .cap-height-adjust {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    p,
+    ul,
+    ol,
+    dl,
+    cite,
+    figcaption {
+      /* NOTE: margin top/bottom values are calculated based on the specific font */
+      @apply relative;
+      @apply before:block before:h-0 before:w-0;
+      @apply after:block after:h-0 after:w-0;
+    }
+
+    /* NOTE: .font-sans */
+    h1,
+    .h1 {
+      line-height: 1.405;
+      font-size: calc(2.85 * var(--spacer));
+
+      &::before {
+        margin-top: calc(-1.05 * var(--spacer));
+      }
+
+      &::after {
+        margin-bottom: calc(0 * var(--spacer));
+      }
+    }
+
+    /* NOTE: .font-serif */
+    h1.font-serif,
+    .h1.font-serif {
+      line-height: 1.291;
+      font-size: calc(3.1 * var(--spacer));
+
+      &::before {
+        margin-top: calc(1.1 * var(--spacer));
+      }
+
+      &::after {
+        margin-bottom: calc(-0.99 * var(--spacer));
+      }
+    }
+
+    /* NOTE: .font-sans */
+    h2,
+    .h2 {
+      line-height: 1.534;
+      font-size: calc(1.95 * var(--spacer));
+
+      &::before {
+        margin-top: calc(-0.3 * var(--spacer));
+      }
+
+      &::after {
+        margin-bottom: calc(-0.5 * var(--spacer));
+      }
+    }
+
+    /* NOTE: .font-sans */
+    h2 + .h2,
+    .h2 + h2,
+    .h2 + .h2 {
+      &::before {
+        margin-top: calc(-0.99 * var(--spacer));
+      }
+    }
+
+    /* NOTE: .font-serif but also <p class="text-lg"> since they have the same height of 2 * var(--spacer) */
+    h2.font-serif,
+    .h2.font-serif,
+    p.text-lg {
+      line-height: 1.5;
+      font-size: calc(2 * var(--spacer));
+
+      &::before {
+        margin-top: calc(-0.25 * var(--spacer));
+      }
+
+      &::after {
+        margin-bottom: calc(-0.99 * var(--spacer));
+      }
+    }
+
+    p {
+      line-height: 2.222;
+      font-size: calc(0.9 * var(--spacer));
+
+      &::before {
+        margin-top: calc(-0.8 * var(--spacer));
+      }
+
+      &::after {
+        margin-bottom: calc(-1 * var(--spacer));
+      }
+    }
+  }
+}

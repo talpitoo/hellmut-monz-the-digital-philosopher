@@ -1149,11 +1149,35 @@ video {
 }
  body {
     /* @apply bg-background text-foreground; */
-    position: relative;
-    min-height: 100vh;
-    background-color: var(--tw-color-gray-800);
-    font-family: Monz-1500MegaRegular, sans-serif;
   }
+ .cap-height-adjust h1body,
+    .cap-height-adjust body.h1 {
+      line-height: 1.291;
+      font-size: calc(3.1 * var(--spacer));
+    }
+ .cap-height-adjust h1body::before, .cap-height-adjust body.h1::before {
+        margin-top: calc(1.1 * var(--spacer));
+      }
+ .cap-height-adjust h1body::after, .cap-height-adjust body.h1::after {
+        margin-bottom: calc(-0.99 * var(--spacer));
+      }
+ .cap-height-adjust h2body,
+    .cap-height-adjust body.h2 {
+      line-height: 1.5;
+      font-size: calc(2 * var(--spacer));
+    }
+ .cap-height-adjust h2body::before, .cap-height-adjust body.h2::before {
+        margin-top: calc(-0.25 * var(--spacer));
+      }
+ .cap-height-adjust h2body::after, .cap-height-adjust body.h2::after {
+        margin-bottom: calc(-0.99 * var(--spacer));
+      }
+ body {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--tw-color-gray-800);
+  font-family: Monz-1500MegaRegular, sans-serif;
+}
  /* NOTE: for fixed top navbar, .pt-spacer-11 was used to offset */
  #modal-gallery-active .monz-figure-edge-to-edge .debug body::after, #modal-gallery-list .monz-figure-edge-to-edge .debug body::after {
         content: var(--tw-content);
@@ -1565,6 +1589,117 @@ video {
   content: var(--tw-content);
   height: calc(11 * var(--spacer));
 }
+ .cap-height-adjust h1,
+    .cap-height-adjust h2,
+    .cap-height-adjust h3,
+    .cap-height-adjust h4,
+    .cap-height-adjust h5,
+    .cap-height-adjust h6,
+    .cap-height-adjust .h1,
+    .cap-height-adjust .h2,
+    .cap-height-adjust .h3,
+    .cap-height-adjust p,
+    .cap-height-adjust ul,
+    .cap-height-adjust ol,
+    .cap-height-adjust dl,
+    .cap-height-adjust cite,
+    .cap-height-adjust figcaption {
+      /* NOTE: margin top/bottom values are calculated based on the specific font */
+      position: relative;
+    }
+ .cap-height-adjust h1::before,
+    .cap-height-adjust h2::before,
+    .cap-height-adjust h3::before,
+    .cap-height-adjust h4::before,
+    .cap-height-adjust h5::before,
+    .cap-height-adjust h6::before,
+    .cap-height-adjust .h1::before,
+    .cap-height-adjust .h2::before,
+    .cap-height-adjust .h3::before,
+    .cap-height-adjust p::before,
+    .cap-height-adjust ul::before,
+    .cap-height-adjust ol::before,
+    .cap-height-adjust dl::before,
+    .cap-height-adjust cite::before,
+    .cap-height-adjust figcaption::before {
+  display: block;
+  height: 0px;
+  content: var(--tw-content);
+  width: 0px;
+}
+ .cap-height-adjust h1::after,
+    .cap-height-adjust h2::after,
+    .cap-height-adjust h3::after,
+    .cap-height-adjust h4::after,
+    .cap-height-adjust h5::after,
+    .cap-height-adjust h6::after,
+    .cap-height-adjust .h1::after,
+    .cap-height-adjust .h2::after,
+    .cap-height-adjust .h3::after,
+    .cap-height-adjust p::after,
+    .cap-height-adjust ul::after,
+    .cap-height-adjust ol::after,
+    .cap-height-adjust dl::after,
+    .cap-height-adjust cite::after,
+    .cap-height-adjust figcaption::after {
+  display: block;
+  height: 0px;
+  content: var(--tw-content);
+  width: 0px;
+}
+ /* NOTE: .font-sans */
+ .cap-height-adjust h1,
+    .cap-height-adjust .h1 {
+      line-height: 1.405;
+      font-size: calc(2.85 * var(--spacer));
+    }
+ .cap-height-adjust h1::before, .cap-height-adjust .h1::before {
+        margin-top: calc(-1.05 * var(--spacer));
+      }
+ .cap-height-adjust h1::after, .cap-height-adjust .h1::after {
+        margin-bottom: calc(0 * var(--spacer));
+      }
+ /* NOTE: .font-serif */
+ .cap-height-adjust h1.font-serif,
+    .cap-height-adjust .h1.font-serif {
+      line-height: 1.291;
+      font-size: calc(3.1 * var(--spacer));
+    }
+ .cap-height-adjust h1.font-serif::before, .cap-height-adjust .h1.font-serif::before {
+        margin-top: calc(1.1 * var(--spacer));
+      }
+ .cap-height-adjust h1.font-serif::after, .cap-height-adjust .h1.font-serif::after {
+        margin-bottom: calc(-0.99 * var(--spacer));
+      }
+ /* NOTE: .font-sans */
+ .cap-height-adjust h2,
+    .cap-height-adjust .h2 {
+      line-height: 1.534;
+      font-size: calc(1.95 * var(--spacer));
+    }
+ .cap-height-adjust h2::before, .cap-height-adjust .h2::before {
+        margin-top: calc(-0.3 * var(--spacer));
+      }
+ .cap-height-adjust h2::after, .cap-height-adjust .h2::after {
+        margin-bottom: calc(-0.5 * var(--spacer));
+      }
+ /* NOTE: .font-sans */
+ .cap-height-adjust h2 + .h2::before, .cap-height-adjust .h2 + h2::before, .cap-height-adjust .h2 + .h2::before {
+        margin-top: calc(-0.99 * var(--spacer));
+      }
+ /* NOTE: .font-serif but also <p class="text-lg"> since they have the same height of 2 * var(--spacer) */
+ .cap-height-adjust h2.font-serif,
+    .cap-height-adjust .h2.font-serif,
+    .cap-height-adjust p.text-lg {
+      line-height: 1.5;
+      font-size: calc(2 * var(--spacer));
+    }
+ .cap-height-adjust h2.font-serif::before, .cap-height-adjust .h2.font-serif::before, .cap-height-adjust p.text-lg::before {
+        margin-top: calc(-0.25 * var(--spacer));
+      }
+ .cap-height-adjust h2.font-serif::after, .cap-height-adjust .h2.font-serif::after, .cap-height-adjust p.text-lg::after {
+        margin-bottom: calc(-0.99 * var(--spacer));
+      }
  #modal-gallery-active .monz-figure-edge-to-edge p.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge p.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
   h1.monz-container + p, #modal-gallery-list .monz-figure-edge-to-edge 
   h1.monz-container + p,#modal-gallery-active .monz-figure-edge-to-edge 
@@ -1627,6 +1762,7 @@ video {
   .h3 {
   font-weight: 700;
   line-height: 1.5;
+    /* NOTE: .leading-normal = line-height: 1.5; */
 }
  h1,
   .h1 {
@@ -1634,6 +1770,21 @@ video {
   font-size: calc(3 * var(--spacer));
   text-transform: uppercase;
 }
+ 
+    .cap-height-adjust ph2,
+    .cap-height-adjust p
+  .h2 {
+      line-height: 1.5;
+      font-size: calc(2 * var(--spacer));
+    }
+  .cap-height-adjust ph2::before, .cap-height-adjust p
+  .h2::before {
+        margin-top: calc(-0.25 * var(--spacer));
+      }
+  .cap-height-adjust ph2::after, .cap-height-adjust p
+  .h2::after {
+        margin-bottom: calc(-0.99 * var(--spacer));
+      }
  h2,
   .h2 {
   font-family: Monz-069HexagonaBold, serif;
@@ -1656,6 +1807,7 @@ video {
   code {
   font-size: var(--spacer);
   line-height: 2;
+    /* NOTE: .leading-loose = line-height: 2; */
 }
  .link-underline {
   text-decoration-line: none;
@@ -1817,6 +1969,7 @@ video {
 .swiper-pagination-bullet {
   @apply !border !border-primary;
 } */
+ /* NOTE: cap height adjustments: https://seek-oss.github.io/capsize/ and https://iamvdo.me/en/blog/css-font-metrics-line-height-and-vertical-align */
  /**
  * Custom styles to immediately follow Tailwind’s `components` layer
  *

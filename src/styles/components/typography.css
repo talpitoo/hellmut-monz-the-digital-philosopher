@@ -21,6 +21,7 @@
   .h2,
   .h3 {
     @apply font-bold leading-normal;
+    /* NOTE: .leading-normal = line-height: 1.5; */
   }
 
   h1,
@@ -50,6 +51,7 @@
   cite,
   code {
     @apply text-base leading-loose;
+    /* NOTE: .leading-loose = line-height: 2; */
   }
 
   .link-underline {
