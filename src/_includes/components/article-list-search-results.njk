@@ -19,7 +19,7 @@
 
                                     {% if post.data.layout != 'layouts/post-layout-no-cover.njk' %}
                                         {# NOTE: keeping for the default syntax <div class="h-spacer-{{ post.data.coverPhoto.height | default('14') }} bg-success mb-spacer-1"> #}
-                                        <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% else %}h-spacer-14{% endif %} {{ figureHeight }} {% if post.data.coverPhoto.figureBackgroundColor is defined and post.data.coverPhoto.figureBackgroundColor !== '' %}{{ post.data.coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
+                                        <div class="{% if post.data.coverPhoto.height == 'small' %}h-spacer-14{% elif post.data.coverPhoto.height == 'medium' %}h-spacer-21{% elif post.data.coverPhoto.height == 'large' %}h-spacer-33{% elif post.data.coverPhoto.height == 'auto' %}h-auto{% else %}h-spacer-14{% endif %} {{ figureHeight }} {% if post.data.coverPhoto.figureBackgroundColor is defined and post.data.coverPhoto.figureBackgroundColor !== '' %}{{ post.data.coverPhoto.figureBackgroundColor }}{% else %}bg-light{% endif %} {{ figureBackgroundColor }}">
                                             {# NOTE: example of setting an dynamic pictureObject before including components/picture-example.njk #}
                                             {% set pictureObject = post.data.coverPhoto %}
                                             {% include "components/picture-example.njk" %}
